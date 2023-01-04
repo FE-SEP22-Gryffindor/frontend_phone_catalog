@@ -55,6 +55,10 @@
     "eslint": "^8.31.0",
     "eslint-plugin-react": "^7.31.11",
     "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "prettier": "2.8.1"
+  },
+  "lint-staged": {
+    "*.tsx, *.css": "npm run lint"
   }
 }
