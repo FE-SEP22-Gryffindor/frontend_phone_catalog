@@ -1,0 +1,36 @@
+@font-face {
+  font-family: Mont;
+  src: url(./fonts/Mont-Trial-Regular.ttf);
+}
+
+@font-face {
+  font-family: Mont;
+  font-weight: bold;
+  src: url(./fonts/Mont-Trial-Bold.ttf);
+}
+
+@font-face {
+  font-family: Mont;
+  font-style: italic;
+  src: url(./fonts/Mont-Trial-RegularItalic.ttf);
+}
+
+@font-face {
+  font-family: Mont;
+  font-weight: bold;
+  font-style: italic;
+  src: url(./fonts/Mont-Trial-BoldItalic.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: 'Mont', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAFBFC;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
