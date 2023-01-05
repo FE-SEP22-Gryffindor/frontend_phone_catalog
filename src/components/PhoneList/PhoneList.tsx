@@ -43,8 +43,9 @@ export const PhoneList: React.FC = () => {
 
   const start = perPage * currentPage - perPage + 1;
   const end = Math.min(start + perPage - 1, total);
-  const visibleItems = phones
-    .filter(phone => phone.id >= start && phone.id <= end);
+  const visibleItems = phones.filter(
+    (phone) => phone.id >= start && phone.id <= end,
+  );
 
   const onPageChange = (page: number | string) => {
     if (typeof page === 'number') {
