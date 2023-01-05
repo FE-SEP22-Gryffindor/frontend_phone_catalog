@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-// import './App.css';
 import { Pagination } from '../Pagination';
 import { getNumbers } from '../../utils/utils';
 
@@ -10,9 +9,9 @@ export const PhoneList: React.FC = () => {
   const perPage = 16;
 
   const start = perPage * currentPage - perPage + 1;
-  const end = Math.min((start + perPage - 1), total);
+  const end = Math.min(start + perPage - 1, total);
   const visibleItems = useMemo(() => {
-    return getNumbers(start, end).map(n => `Item ${n}`);
+    return getNumbers(start, end).map((n) => `Item ${n}`);
   }, [start, end]);
 
   const onPageChange = (page: number | string) => {
@@ -31,16 +30,13 @@ export const PhoneList: React.FC = () => {
 
   return (
     <div className="container">
-      <p className="lead" data-cy="info">
+      {/* <p className="lead" data-cy="info">
         {`Page ${currentPage} (items ${start} - ${end} of ${total})`}
-      </p>
+      </p> */}
 
       <ul>
-        {visibleItems.map(item => (
-          <li
-            key={item}
-            data-cy="item"
-          >
+        {visibleItems.map((item) => (
+          <li key={item}>
             {item}
           </li>
         ))}

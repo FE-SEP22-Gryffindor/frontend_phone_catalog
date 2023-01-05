@@ -5,10 +5,10 @@ import './Pagination.scss';
 import { getNumbers } from '../../utils/utils';
 
 interface Props {
-  total: number,
-  perPage: number,
-  currentPage: number,
-  onPageChange: (page: number | string) => void,
+  total: number;
+  perPage: number;
+  currentPage: number;
+  onPageChange: (page: number | string) => void;
 }
 
 export const Pagination: React.FC<Props> = ({
@@ -40,36 +40,29 @@ export const Pagination: React.FC<Props> = ({
 
   return (
     <ul className="pagination">
-      <li className={classNames(
-        'pagination-item',
-        {
+      <li
+        className={classNames('pagination__item', {
           disabled: isFirstPage,
-        },
-      )}
+        })}
       >
         <a
-          // data-cy="prevLink"
-          className="pagination-link"
-          href="#prev"
+          className="pagination__link pagination__link-arrow"
+          href={`#${currentPage}`}
           aria-disabled={isFirstPage}
           onClick={onPrevPage}
         >
           {'<'}
         </a>
       </li>
-      {pageAmount.map(numberOfPage => (
+      {pageAmount.map((numberOfPage) => (
         <li
           key={numberOfPage}
-          className={classNames(
-            'pagination-item',
-            {
-              active: numberOfPage === currentPage,
-            },
-          )}
+          className="pagination__item"
         >
           <a
-            // data-cy="pageLink"
-            className="pagination-link"
+            className={classNames('pagination__link', {
+              'pagination__link-active': numberOfPage === currentPage,
+            })}
             href={`#${numberOfPage}`}
             onClick={() => onPageChange(numberOfPage)}
           >
@@ -77,17 +70,14 @@ export const Pagination: React.FC<Props> = ({
           </a>
         </li>
       ))}
-      <li className={classNames(
-        'pagination-item',
-        {
+      <li
+        className={classNames('pagination__item', {
           disabled: isLastPage,
-        },
-      )}
+        })}
       >
         <a
-          // data-cy="nextLink"
-          className="pagination-link"
-          href="#next"
+          className="pagination__link pagination__link-arrow"
+          href={`#${currentPage}`}
           aria-disabled={isLastPage}
           onClick={onNextPage}
         >
