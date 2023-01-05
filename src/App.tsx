@@ -1,28 +1,16 @@
 import React from 'react';
 import './App.css';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { PhonesPage } from './modules/PhonesPage';
+import { Header } from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Link
-          className="App-link"
-          to="/"
-        >
-          Home Page
-        </Link>
-        <Link
-          className="App-link"
-          to="/phones"
-        >
-          PhonesPage
-        </Link>
-      </header>
+      <Header />
       <main>
         <Routes>
-        <Route
+          <Route
             path="/"
             element={<h1>Home Page</h1>}
           />
