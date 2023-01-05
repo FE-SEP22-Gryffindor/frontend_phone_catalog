@@ -1,0 +1,18 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+  &-item {
+    list-style: none;
+    width: 32px;
+    height: 32px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+  &-link {
+    color: black;
+    text-decoration: none;
+  }
+}
