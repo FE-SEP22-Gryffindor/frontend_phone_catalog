@@ -44,21 +44,21 @@
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
-}
 
-.icon--home {
-  background-image: url('../../img/icon-home.svg');
-  margin-right: 27px;
-}
+  &--home {
+    background-image: url('../../img/icon-home.svg');
+    margin-right: 27px;
+  }
 
-.icon--home::after {
-  content: "";
-  background-image: url('../../img/icon-chevron.svg');
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  top: 2px;
-  left: 14px;
+  &--home::after {
+    content: "";
+    background-image: url('../../img/icon-chevron.svg');
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 2px;
+    left: 14px;
+  }
 }
 
 .result-items {
