@@ -9,62 +9,65 @@ import classNames from 'classnames';
 
 export const Header: React.FC = () => {
   return (
-    <header className='header'>
+    <header className="header">
       <div className="container">
-        <div className='header__content'>
+        <div className="header__content">
           <nav className="header__content__nav">
-            <NavLink to="/" className='header__logo'>
+            <NavLink to="/" className="header__logo">
               <img src={`${logo}`} alt="logo" />
             </NavLink>
 
-            <ul className='header__content__nav__list menu-moved'>
-              <li className='header__content__nav__item'>
+            <ul className="header__content__nav__list menu-moved">
+              <li className="header__content__nav__item">
                 <NavLink
                   to="/"
-                  className={({ isActive }) => classNames(
-                    'header__content__nav__link',
-                    { 'is-active': isActive },
-                  )
+                  className={({ isActive }) =>
+                    classNames('header__content__nav__link', {
+                      'is-active': isActive,
+                    })
                   }
                 >
                   Home
                 </NavLink>
               </li>
 
-              <li className='header__content__nav__item'>
-                <NavLink to="/phones" className={({ isActive }) => classNames(
-                  'header__content__nav__link',
-                  { 'is-active': isActive },
-                )
-                }>
+              <li className="header__content__nav__item">
+                <NavLink
+                  to="/phones"
+                  className={({ isActive }) =>
+                    classNames('header__content__nav__link', {
+                      'is-active': isActive,
+                    })
+                  }
+                >
                   Phones
                 </NavLink>
               </li>
 
-              <li className='header__content__nav__item'>
-                <NavLink to="/" className='header__content__nav__link'>
+              <li className="header__content__nav__item">
+                <NavLink to="/" className="header__content__nav__link">
                   Tablets
                 </NavLink>
               </li>
 
-              <li className='header__content__nav__item'>
-                <NavLink to="/" className='header__content__nav__link'>
+              <li className="header__content__nav__item">
+                <NavLink to="/" className="header__content__nav__link">
                   Accessories
                 </NavLink>
               </li>
             </ul>
           </nav>
 
-          <div className='header__content__buttons'>
-            <Link to="/" className='header__content__buttons-right menu-moved'>
+          <div className="header__content__buttons">
+            <Link to="/" className="header__content__buttons-right menu-moved">
               <img src={`${heartIcon}`} alt="favorites" />
             </Link>
 
-            <Link to="/" className='header__content__buttons-right menu-moved'>
+            <Link to="/" className="header__content__buttons-right menu-moved">
               <img src={`${shopIcon}`} alt="shopCard" />
             </Link>
 
-            <Link to="/" className='header__content__buttons-right menu'>
+            <Link to="/" className="header__content__buttons-right menu">
               <img src={`${burgerOpenIcon}`} alt="Menu" />
             </Link>
           </div>

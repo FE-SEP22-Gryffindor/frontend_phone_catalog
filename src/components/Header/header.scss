@@ -26,7 +26,6 @@
   }
 }
 
-
 .header {
   background-color: #fff;
   width: 100%;
@@ -86,7 +85,7 @@
         }
 
         &:hover {
-          color: #0F0F11;
+          color: #0f0f11;
         }
       }
     }
@@ -101,8 +100,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #FFFFFF;
-      box-shadow: -1px 0px 0px #E2E6E9;
+      background: #ffffff;
+      box-shadow: -1px 0px 0px #e2e6e9;
 
       height: 48px;
       width: 48px;
@@ -116,27 +115,26 @@
 }
 
 .is-active {
-  color: #0F0F11;
-  ;
+  color: #0f0f11;
 }
 
 .is-active::after {
   @include onTablet {
-    content: " ";
+    content: ' ';
     position: absolute;
     width: 15px;
     height: 4px;
-    background: #0F0F11;
+    background: #0f0f11;
     border-radius: 8px;
     top: 45px;
   }
 
   @include onDesktop() {
-    content: " ";
+    content: ' ';
     position: absolute;
     width: 15px;
     height: 4px;
-    background: #0F0F11;
+    background: #0f0f11;
     border-radius: 8px;
     top: 60px;
   }
