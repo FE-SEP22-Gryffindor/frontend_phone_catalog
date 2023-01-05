@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Link, Routes, Route } from 'react-router-dom';
 import { PhonesPage } from './modules/PhonesPage';
+import { Footer } from './components/footer/Footer';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           />
         </Routes>
 
+        <Footer />
       </main>
     </div>
   );
