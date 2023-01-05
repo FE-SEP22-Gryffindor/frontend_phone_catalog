@@ -41,6 +41,7 @@ export const PhonesPage = () => {
         </select>
       </div>
       <div>
+
       <label htmlFor="page-items">Items on page:</label>
         <select name="page-items" id="page-items">
           <option value="16">16</option>
