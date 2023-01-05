@@ -1,3 +1,7 @@
-export const PhonesPage = () => (
-  <h1 className="title">PhonesPage</h1>
-);
+import React from 'react';
+
+export const PhonesPage = () => {
+  return (
+    <h1 className="title">PhonesPage</h1>
+  );
+};
