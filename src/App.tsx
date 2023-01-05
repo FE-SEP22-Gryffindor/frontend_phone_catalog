@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { Link, Routes, Route } from 'react-router-dom';
 import { PhonesPage } from './modules/PhonesPage';
 
