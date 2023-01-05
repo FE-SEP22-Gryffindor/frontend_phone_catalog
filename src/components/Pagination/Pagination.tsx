@@ -55,10 +55,7 @@ export const Pagination: React.FC<Props> = ({
         </a>
       </li>
       {pageAmount.map((numberOfPage) => (
-        <li
-          key={numberOfPage}
-          className="pagination__item"
-        >
+        <li key={numberOfPage} className="pagination__item">
           <a
             className={classNames('pagination__link', {
               'pagination__link-active': numberOfPage === currentPage,

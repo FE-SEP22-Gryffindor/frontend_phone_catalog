@@ -36,9 +36,7 @@ export const PhoneList: React.FC = () => {
 
       <ul>
         {visibleItems.map((item) => (
-          <li key={item}>
-            {item}
-          </li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
       <Pagination
