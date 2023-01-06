@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import './App.scss';
 import { PhonesPage } from './modules/PhonesPage';
 import { Header } from './components/Header';
 
