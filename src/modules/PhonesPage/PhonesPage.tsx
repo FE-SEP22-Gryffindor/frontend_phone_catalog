@@ -82,7 +82,8 @@ export const PhonesPage = () => {
         total={8}
         perPage={3}
         currentPage={currentPage}
-        onPageChange={onPageChange}/>
+        onPageChange={onPageChange}
+      />
     </div>
   );
 };
