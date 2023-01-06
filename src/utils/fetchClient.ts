@@ -1,9 +1,10 @@
-// eslint-disable-next-line max-len
-const BASE_URL = 'https://deploy-preview-3--stupendous-douhua-9a8b1c.netlify.app/.netlify/functions/server/';
+const BASE_URL
+  // eslint-disable-next-line max-len
+  = 'https://deploy-preview-3--stupendous-douhua-9a8b1c.netlify.app/.netlify/functions/server/';
 
 // a promise resolved after a given delay
 function wait(delay: number) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, delay);
   });
 }
@@ -31,7 +32,7 @@ function request<T>(
   // we wait for testing purpose to see loaders
   return wait(300)
     .then(() => fetch(BASE_URL + url, options))
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error();
       }
