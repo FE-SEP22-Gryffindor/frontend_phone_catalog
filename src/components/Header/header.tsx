@@ -10,8 +10,8 @@ import classNames from 'classnames';
 import { BurgerMenu } from '../BurgerMenu';
 
 interface Props {
-  burgerMenu: boolean,
-  isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>
+  burgerMenu: boolean;
+  isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const navigationLinks = [
@@ -42,7 +42,7 @@ export const Header: React.FC<Props> = ({ burgerMenu, isBurgerMenu }) => {
             </NavLink>
 
             <ul className="header__content__nav__list menu-moved">
-              {navigationLinks.map(link => (
+              {navigationLinks.map((link) => (
                 <li key={link.text} className="header__content__nav__item">
                   <NavLink
                     to={link.to}
@@ -60,33 +60,29 @@ export const Header: React.FC<Props> = ({ burgerMenu, isBurgerMenu }) => {
           </nav>
 
           <div className="header__content__buttons">
-            <button
-              className="header__content__buttons-right menu-moved">
+            <button className="header__content__buttons-right menu-moved">
               <img src={heartIcon} alt="favorites" />
             </button>
 
-            <button
-              className="header__content__buttons-right menu-moved">
+            <button className="header__content__buttons-right menu-moved">
               <img src={shopIcon} alt="shopCard" />
             </button>
 
-            {burgerMenu
-              ? (
-                <button
-                  className="header__content__buttons-right menu"
-                  onClick={() => isBurgerMenu(false)}
-                >
-                  <img src={burgerCloseIcon} alt="Menu" />
-                </button>
-              )
-              : (
-                <button
-                  className="header__content__buttons-right menu"
-                  onClick={() => isBurgerMenu(true)}
-                >
-                  <img src={burgerOpenIcon} alt="Menu" />
-                </button>
-              )}
+            {burgerMenu ? (
+              <button
+                className="header__content__buttons-right menu"
+                onClick={() => isBurgerMenu(false)}
+              >
+                <img src={burgerCloseIcon} alt="Menu" />
+              </button>
+            ) : (
+              <button
+                className="header__content__buttons-right menu"
+                onClick={() => isBurgerMenu(true)}
+              >
+                <img src={burgerOpenIcon} alt="Menu" />
+              </button>
+            )}
           </div>
         </div>
         <BurgerMenu

@@ -9,16 +9,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        burgerMenu={burgerMenuStatus}
-        isBurgerMenu={isBurgerMenu}
-      />
+      <Header burgerMenu={burgerMenuStatus} isBurgerMenu={isBurgerMenu} />
       <main>
         <Routes>
           <Route path="/" element={<h1>Home Page</h1>} />
-          <Route path="phones" element={
-            <PhonesPage burgerMenu={burgerMenuStatus} />
-          } />
+          <Route
+            path="phones"
+            element={<PhonesPage burgerMenu={burgerMenuStatus} />}
+          />
         </Routes>
       </main>
     </div>

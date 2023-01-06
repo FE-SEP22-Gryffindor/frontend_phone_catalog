@@ -22,19 +22,19 @@ const phones = [
 ];
 
 interface Props {
-  burgerMenu: boolean,
+  burgerMenu: boolean;
 }
 
 export const PhonesPage: React.FC<Props> = ({ burgerMenu }) => {
   return (
-    <div className='container-phone-page'>
-      <div className={classNames('breadcrumbs',
-        {
+    <div className="container-phone-page">
+      <div
+        className={classNames('breadcrumbs', {
           'breadcrumbs-hidden': burgerMenu,
         })}
       >
-        <a className='icon icon--home'></a>
-        <a className=''>Phones</a>
+        <a className="icon icon--home"></a>
+        <a className="">Phones</a>
       </div>
       <div>
         <h1 className="title">Mobile phones</h1>
@@ -42,7 +42,7 @@ export const PhonesPage: React.FC<Props> = ({ burgerMenu }) => {
       <div>
         <p className="result-items">95 models</p>
       </div>
-      <div className='sort-items'>
+      <div className="sort-items">
         <div>
           <label htmlFor="phones-sort">Sort buy:</label>
           <select name="phones-sort" id="phones-sort">
@@ -50,7 +50,6 @@ export const PhonesPage: React.FC<Props> = ({ burgerMenu }) => {
           </select>
         </div>
         <div>
-
           <label htmlFor="page-items">Items on page:</label>
           <select name="page-items" id="page-items">
             <option value="16">16</option>
@@ -58,16 +57,14 @@ export const PhonesPage: React.FC<Props> = ({ burgerMenu }) => {
           </select>
         </div>
       </div>
-      <div className='products-catalog'>
-        {phones.map(phone => (
-          <div className='products-catalog__card' key={phone.id}>
+      <div className="products-catalog">
+        {phones.map((phone) => (
+          <div className="products-catalog__card" key={phone.id}>
             {`${phone.title} ${phone.id}`}
           </div>
         ))}
       </div>
-      <div>
-        pagination
-      </div>
+      <div>pagination</div>
     </div>
   );
 };

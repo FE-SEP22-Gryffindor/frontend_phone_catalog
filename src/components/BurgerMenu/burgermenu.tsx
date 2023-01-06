@@ -9,8 +9,8 @@ import shopIcon from '../../img/ShoppingBag.svg';
 
 interface Props {
   navLinks: headerNavLinks[];
-  burgerMenu: boolean,
-  isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>
+  burgerMenu: boolean;
+  isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const BurgerMenu: React.FC<Props> = ({
@@ -19,15 +19,14 @@ export const BurgerMenu: React.FC<Props> = ({
   isBurgerMenu,
 }) => {
   return (
-    <div className={classNames('burger__menu',
-      {
+    <div
+      className={classNames('burger__menu', {
         'burger__menu-open': burgerMenu,
-      })
-    }
+      })}
     >
       <nav className="burger__menu__nav">
         <ul className="burger__menu__nav__list">
-          {navLinks.map(link => (
+          {navLinks.map((link) => (
             <li key={link.text} className="burger__menu__nav__item">
               <NavLink
                 to={link.to}

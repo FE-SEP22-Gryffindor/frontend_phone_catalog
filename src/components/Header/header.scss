@@ -117,7 +117,7 @@
 
   &__is-active {
     color: #0f0f11;
-  
+
     &::after {
       @include onTablet {
         content: ' ';
@@ -127,7 +127,7 @@
         background: #0f0f11;
         border-radius: 8px;
         top: 45px;
-  
+
         @include onDesktop() {
           content: ' ';
           position: absolute;
@@ -140,7 +140,6 @@
       }
     }
   }
-  
 }
 
 .menu {

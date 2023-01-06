@@ -95,7 +95,7 @@
 
   &__is-active {
     color: #0f0f11;
-  
+
     &::after {
       content: ' ';
       position: absolute;
@@ -106,5 +106,4 @@
       top: 45px;
     }
   }
-  
 }
