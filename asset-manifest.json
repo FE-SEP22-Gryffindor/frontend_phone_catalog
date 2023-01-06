@@ -1,26 +1,32 @@
 {
   "files": {
-    "main.css": "/frontend_phone_catalog/static/css/main.3ccfa4ef.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.62650cfc.js",
+    "main.css": "/frontend_phone_catalog/static/css/main.a082d947.css",
+    "main.js": "/frontend_phone_catalog/static/js/main.1530034f.js",
     "static/js/787.c8915dc9.chunk.js": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js",
     "static/media/Mont-Trial-BoldItalic.ttf": "/frontend_phone_catalog/static/media/Mont-Trial-BoldItalic.5af83cdfd93fb2a78282.ttf",
     "static/media/Mont-Trial-Bold.ttf": "/frontend_phone_catalog/static/media/Mont-Trial-Bold.cc2531ea010c551605a0.ttf",
     "static/media/Mont-Trial-RegularItalic.ttf": "/frontend_phone_catalog/static/media/Mont-Trial-RegularItalic.297e562f1629e492242e.ttf",
     "static/media/Mont-Trial-Regular.ttf": "/frontend_phone_catalog/static/media/Mont-Trial-Regular.2228b639502aab6769a7.ttf",
     "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.ccaf7a234c9d096c90d06573cdbddc94.svg",
+    "static/media/Mont-Regular.ttf": "/frontend_phone_catalog/static/media/Mont-Regular.e797167c18f9897bb607.ttf",
+    "static/media/Mont-Regular.woff": "/frontend_phone_catalog/static/media/Mont-Regular.5f2dd0890a78d28216de.woff",
+    "static/media/Mont-Regular.woff2": "/frontend_phone_catalog/static/media/Mont-Regular.efd082cbd3e10b7e9c88.woff2",
+    "static/media/image 2.jpg": "/frontend_phone_catalog/static/media/image 2.7257fc38903a49e73cc4.jpg",
     "static/media/ShoppingBag.svg": "/frontend_phone_catalog/static/media/ShoppingBag.df23e4fbb25ff3701b16978082a61721.svg",
     "static/media/Favourites.svg": "/frontend_phone_catalog/static/media/Favourites.12c132c09ca4cbb24783a8409e029a4b.svg",
     "static/media/icon-home.svg": "/frontend_phone_catalog/static/media/icon-home.9a24a70540404ccecd05.svg",
+    "static/media/like_favourite_favorite_icon.svg": "/frontend_phone_catalog/static/media/like_favourite_favorite_icon.d6fa1bd595623abe9089c282515ff4b5.svg",
     "index.html": "/frontend_phone_catalog/index.html",
     "static/media/Menu.svg": "/frontend_phone_catalog/static/media/Menu.73ddde2c093f9fb313b993eaba038f9a.svg",
+    "static/media/footerButton.svg": "/frontend_phone_catalog/static/media/footerButton.411b5a1b4b9eda1837e8.svg",
     "static/media/icon-chevron.svg": "/frontend_phone_catalog/static/media/icon-chevron.e028d3889646e0b5e56c.svg",
     "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.b87d883446f750defdba.svg",
-    "main.3ccfa4ef.css.map": "/frontend_phone_catalog/static/css/main.3ccfa4ef.css.map",
-    "main.62650cfc.js.map": "/frontend_phone_catalog/static/js/main.62650cfc.js.map",
+    "main.a082d947.css.map": "/frontend_phone_catalog/static/css/main.a082d947.css.map",
+    "main.1530034f.js.map": "/frontend_phone_catalog/static/js/main.1530034f.js.map",
     "787.c8915dc9.chunk.js.map": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ccfa4ef.css",
-    "static/js/main.62650cfc.js"
+    "static/css/main.a082d947.css",
+    "static/js/main.1530034f.js"
   ]
 }
