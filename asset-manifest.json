@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/frontend_phone_catalog/static/css/main.c92723df.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.b433c496.js",
+    "main.css": "/frontend_phone_catalog/static/css/main.cb9c050e.css",
+    "main.js": "/frontend_phone_catalog/static/js/main.9547e01a.js",
     "static/js/787.c8915dc9.chunk.js": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js",
+    "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.ccaf7a234c9d096c90d06573cdbddc94.svg",
+    "static/media/ShoppingBag.svg": "/frontend_phone_catalog/static/media/ShoppingBag.df23e4fbb25ff3701b16978082a61721.svg",
+    "static/media/Favourites.svg": "/frontend_phone_catalog/static/media/Favourites.12c132c09ca4cbb24783a8409e029a4b.svg",
     "index.html": "/frontend_phone_catalog/index.html",
-    "main.c92723df.css.map": "/frontend_phone_catalog/static/css/main.c92723df.css.map",
-    "main.b433c496.js.map": "/frontend_phone_catalog/static/js/main.b433c496.js.map",
+    "static/media/Menu.svg": "/frontend_phone_catalog/static/media/Menu.73ddde2c093f9fb313b993eaba038f9a.svg",
+    "main.cb9c050e.css.map": "/frontend_phone_catalog/static/css/main.cb9c050e.css.map",
+    "main.9547e01a.js.map": "/frontend_phone_catalog/static/js/main.9547e01a.js.map",
     "787.c8915dc9.chunk.js.map": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c92723df.css",
-    "static/js/main.b433c496.js"
+    "static/css/main.cb9c050e.css",
+    "static/js/main.9547e01a.js"
   ]
 }
