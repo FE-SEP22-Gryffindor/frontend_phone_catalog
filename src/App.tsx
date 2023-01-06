@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Link, Routes, Route } from 'react-router-dom';
 import { PhonesPage } from './modules/PhonesPage';
+import { PhoneCard } from './components/PhoneCard';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<h1>Home Page</h1>} />
-          <Route path="test" element={<PhonesPage />} />
+          <Route path="test" element={<PhoneCard />} />
         </Routes>
       </main>
     </div>
