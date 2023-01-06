@@ -4,6 +4,7 @@ import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import { PhoneCard } from './components/PhoneCard';
 import { PhonesPage } from './modules/PhonesPage';
+import { Footer } from './components/footer/Footer';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { Header } from './components/Header';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }
