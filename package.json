@@ -63,6 +63,6 @@
     "prettier": "2.8.1"
   },
   "lint-staged": {
-    "*.tsx, *.css": "npm run lint"
+    "*.tsx, *.scss": "npm run lint"
   }
 }
