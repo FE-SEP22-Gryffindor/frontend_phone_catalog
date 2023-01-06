@@ -1,41 +1,40 @@
+/* eslint-disable no-shadow */
 import React, { useCallback, useEffect, useState } from 'react';
 import './PhonesPage.scss';
 import { getPhones } from '../../api/phones';
 import { Phone } from '../../types/Phone';
-
-// const phonesOld = [
-//   { id: 1, title: 'Item' },
-//   { id: 2, title: 'Item' },
-//   { id: 3, title: 'Item' },
-//   { id: 4, title: 'Item' },
-//   { id: 5, title: 'Item' },
-//   { id: 6, title: 'Item' },
-//   { id: 7, title: 'Item' },
-//   { id: 8, title: 'Item' },
-//   { id: 9, title: 'Item' },
-//   { id: 10, title: 'Item' },
-//   { id: 11, title: 'Item' },
-//   { id: 12, title: 'Item' },
-//   { id: 13, title: 'Item' },
-//   { id: 14, title: 'Item' },
-//   { id: 15, title: 'Item' },
-//   { id: 16, title: 'Item' },
-// ];
+import { Pagination } from '../../components/Pagination';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage, setPerPage] = useState(2);
 
   const loadPhones = useCallback(async() => {
     try {
-      setPhones(await getPhones(1, 3));
+      setPhones(await getPhones(currentPage, perPage));
     } catch {
       throw new Error('Error loading phones');
     }
-  }, []);
+  }, [currentPage, perPage]);
 
   useEffect(() => {
     loadPhones().then();
-  });
+  }, [currentPage, perPage]);
+
+  const onPageChange = (page: number | string) => {
+    if (typeof page === 'number') {
+      setCurrentPage(page);
+    }
+
+    if (page === 'next') {
+      setCurrentPage((prevCurrent) => prevCurrent + 1);
+    }
+
+    if (page === 'prev') {
+      setCurrentPage((prevCurrent) => prevCurrent - 1);
+    }
+  };
 
   return (
     <div className="container-phone-page">
@@ -58,7 +57,15 @@ export const PhonesPage = () => {
         </div>
         <div>
           <label htmlFor="page-items">Items on page:</label>
-          <select name="page-items" id="page-items">
+          <select
+            name="page-items"
+            id="page-items"
+            onChange={(event) => {
+              setPerPage(Number(event.target.value));
+            }}
+          >
+            <option value="2">2</option>
+            <option value="3">3</option>
             <option value="16">16</option>
             <option value="32">32</option>
           </select>
@@ -71,7 +78,11 @@ export const PhonesPage = () => {
           </div>
         ))}
       </div>
-      <div>pagination</div>
+      <Pagination
+        total={8}
+        perPage={3}
+        currentPage={currentPage}
+        onPageChange={onPageChange}/>
     </div>
   );
 };
