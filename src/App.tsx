@@ -1,5 +1,4 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import { PhoneCard } from './components/PhoneCard';
