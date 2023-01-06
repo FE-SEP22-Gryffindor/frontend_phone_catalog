@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './PhonesPage.scss';
+import { getPhones } from '../../api/phones';
+import { Phone } from '../../types/Phone';
 
-const phones = [
+const phonesOld = [
   { id: 1, title: 'Item' },
   { id: 2, title: 'Item' },
   { id: 3, title: 'Item' },
@@ -21,6 +23,20 @@ const phones = [
 ];
 
 export const PhonesPage = () => {
+  const [phones, setPhones] = useState<Phone[]>([]);
+
+  const loadPhones = useCallback(async() => {
+    try {
+      setPhones(await getPhones(1, 3));
+    } catch {
+      throw new Error('Error loading phones');
+    }
+  }, []);
+
+  useEffect(() => {
+    loadPhones().then();
+  });
+
   return (
     <div className='container-phone-page'>
       <div className='breadcrumbs'>
@@ -51,8 +67,8 @@ export const PhonesPage = () => {
       </div>
       <div className='products-catalog'>
         {phones.map(phone => (
-          <div className='products-catalog__card' key={phone.id}>
-            {`${phone.title} ${phone.id}`}
+          <div className='products-catalog__card' key={phone.slug}>
+            {`${phone.name}`}
           </div>
         ))}
       </div>
