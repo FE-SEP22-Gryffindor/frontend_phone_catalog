@@ -1,0 +1,151 @@
+.container-phone-page {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 488px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  @media (min-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+
+.container-phone-page .title {
+  margin-top: 40px;
+  display: flex;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+
+  letter-spacing: -0.01em;
+
+  color: #0F0F11;
+}
+
+.breadcrumbs {
+  display: flex;
+  position: relative;
+  margin-top: 25px;
+  color: #89939A;
+}
+
+.icon {
+  display: block;
+  width: 14px;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+
+  &--home {
+    background-image: url('../../img/icon-home.svg');
+    margin-right: 27px;
+  }
+
+  &--home::after {
+    content: "";
+    background-image: url('../../img/icon-chevron.svg');
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 2px;
+    left: 14px;
+  }
+}
+
+.result-items {
+  display: flex;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #89939A;
+}
+
+.sort-items {
+  display: grid;
+  grid-template-columns: 204px 156px;
+
+  & label {
+    display: flex;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+  
+    color: #89939A;
+    margin-bottom: 4px;
+  }
+
+  & div {
+    margin-right: 28px;
+  }
+
+  & select {
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+  
+    color: #0F0F11;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #B4BDC4;
+    border-radius: 8px;
+  
+    appearance: none;
+    background-image: url("../../img/icon-chevron-arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+  }
+}
+
+%grid-center {
+  display: grid;
+  justify-content: center;
+}
+
+@mixin template-columns ($columns) {
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+// $card-width: 272px;
+
+.products-catalog {
+  @extend %grid-center;
+  @include template-columns(1);
+  gap: 16px;
+  justify-content: space-around;
+  
+  margin-top: 56px;
+
+  @media (min-width: 488px) {
+    @include template-columns(2);
+  }
+
+  @media (min-width: 768px) {
+    @include template-columns(3);
+  }
+
+  @media (min-width: 1024px) {
+    @include template-columns(4);
+  }
+
+  &__card {
+    @extend %grid-center;
+    align-items: center;
+    // width: $card-width;
+    height: 506px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+}
+
