@@ -5,50 +5,74 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import './PhoneCard.scss';
 import picture from './imagesCard/image 2.jpg';
-import heartLogo from './imagesCard/heart.png';
+import heartLogo from './imagesCard/Favourites (Heart Like).svg';
 import heartLogoActive from './imagesCard/like_favourite_favorite_icon.svg';
 import { Link } from 'react-router-dom';
 
-const product = {
-  id: '1',
-  title: 'Apple iPhone Xs 64GB Silver (iMT9G2FS/A)',
-  price: '899',
-  discountPrice: '799',
-  color: 'silver',
-  specs: {
-    screen: '5.8” OLED',
-    resolution: '2688x1242',
-    processor: 'Apple A12 Bionic',
-    ram: '4 GB',
-    memory: '64 GB',
-    camera: '12 Mp + 12 Mp + 12 Mp (Triple)',
-    zoom: 'Optical, 2x',
-    cell: 'GSM, LTE, UMTS',
-  },
-  about: [
-    {
-      header: 'And then there was Pro',
-      description:
-        'A transformative triple‑camera system that adds tons of capability without complexity. \n'
-        + '\n'
-        + 'An unprecedented leap in battery life. And a mind‑blowing chip that doubles down on machine learning and pushes the boundaries of what a smartphone can do. Welcome to the first iPhone powerful enough to be called Pro.',
-    },
-    {
-      header: 'Camera',
-      description:
-        'Meet the first triple‑camera system to combine cutting‑edge technology with the legendary simplicity of iPhone. Capture up to four times more scene. Get beautiful images in drastically lower light. Shoot the highest‑quality video in a smartphone — then edit with the same tools you love for photos. You’ve never shot with anything like it.',
-    },
-    {
-      header:
-        'Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it. Love it.',
-      description:
-        'iPhone 11 Pro lets you capture videos that are beautifully true to life, with greater detail and smoother motion. Epic processing power means it can shoot 4K video with extended dynamic range and cinematic video stabilization — all at 60 fps. You get more creative control, too, with four times more scene and powerful new editing tools to play with.',
-    },
-  ],
-  images: ['link1', 'link2', 'link3', 'link4', 'link5'],
+// const product = {
+//   id: '1',
+//   title: 'Apple iPhone Xs 64GB Silver (iMT9G2FS/A)',
+//   price: '899',
+//   discountPrice: '799',
+//   color: 'silver',
+//   specs: {
+//     screen: '5.8” OLED',
+//     resolution: '2688x1242',
+//     processor: 'Apple A12 Bionic',
+//     ram: '4 GB',
+//     memory: '64 GB',
+//     camera: '12 Mp + 12 Mp + 12 Mp (Triple)',
+//     zoom: 'Optical, 2x',
+//     cell: 'GSM, LTE, UMTS',
+//   },
+//   about: [
+//     {
+//       header: 'And then there was Pro',
+//       description:
+//         'A transformative triple‑camera system that adds tons of capability without complexity. \n'
+//         + '\n'
+//         + 'An unprecedented leap in battery life. And a mind‑blowing chip that doubles down on machine learning and pushes the boundaries of what a smartphone can do. Welcome to the first iPhone powerful enough to be called Pro.',
+//     },
+//     {
+//       header: 'Camera',
+//       description:
+//         'Meet the first triple‑camera system to combine cutting‑edge technology with the legendary simplicity of iPhone. Capture up to four times more scene. Get beautiful images in drastically lower light. Shoot the highest‑quality video in a smartphone — then edit with the same tools you love for photos. You’ve never shot with anything like it.',
+//     },
+//     {
+//       header:
+//         'Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it. Love it.',
+//       description:
+//         'iPhone 11 Pro lets you capture videos that are beautifully true to life, with greater detail and smoother motion. Epic processing power means it can shoot 4K video with extended dynamic range and cinematic video stabilization — all at 60 fps. You get more creative control, too, with four times more scene and powerful new editing tools to play with.',
+//     },
+//   ],
+//   images: ['link1', 'link2', 'link3', 'link4', 'link5'],
+// };
+
+// const totest = {
+//   slug: 'apple-iphone-xs-64gb-silver-imt9g2fs-a-1',
+//   name: 'Apple iPhone Xs 64GB Silver (iMT9G2FS/A)',
+//   price: '899',
+//   discountPrice: '799',
+//   year: '2022',
+//   screen: '5.8" OLED',
+//   memory: '64 GB',
+//   ram: '4 GB',
+//   image: 'https://androidnik.ru/wp-content/uploads/2019/07/kak-skinut-fotografii-s-telefona-android-na-kompyuter-cherez-shnur-ot-zaryadki1.jpg',
+// };
+
+type Props = {
+  slug: string;
+  name: string;
+  price: string;
+  discountPrice: string;
+  year: string;
+  screen: string;
+  memory: string;
+  ram: string;
+  image: string;
 };
 
-export const PhoneCard: React.FC = () => {
+export const PhoneCard: React.FC<Props> = (phoneInfo) => {
   const [isActiveToCard, setIsActiveToCard] = useState(false);
   const handleCardButton = () => setIsActiveToCard(!isActiveToCard);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -59,14 +83,14 @@ export const PhoneCard: React.FC = () => {
   return (
     <section className="card">
       <div className="card__img-box">
-        <img src={picture} alt="Phone logo" className="card__image" />
+        <img src={phoneInfo.image} alt="Phone logo" className="card__image" />
       </div>
 
-      <h2 className="card__title">{product.title}</h2>
+      <h2 className="card__title">{phoneInfo.name}</h2>
 
       <div className="card__price-box">
-        <p className="card__price-discount">${product.discountPrice}</p>
-        <p className="card__price-price">${product.price}</p>
+        <p className="card__price-discount">${phoneInfo.discountPrice}</p>
+        <p className="card__price-price">${phoneInfo.price}</p>
       </div>
 
       <div className="card__product-devider"></div>
@@ -74,15 +98,15 @@ export const PhoneCard: React.FC = () => {
       <div className="specs__block">
         <div className="card__specs">
           <div className="card__specs-title">Screen</div>
-          <div className="card__specs-text">{product.specs.screen}</div>
+          <div className="card__specs-text">{phoneInfo.screen}</div>
         </div>
         <div className="card__specs">
           <div className="card__specs-title">Capacity</div>
-          <div className="card__specs-text">{product.specs.memory}</div>
+          <div className="card__specs-text">{phoneInfo.memory}</div>
         </div>
         <div className="card__specs">
           <div className="card__specs-title">RAM</div>
-          <div className="card__specs-text">{product.specs.ram}</div>
+          <div className="card__specs-text">{phoneInfo.ram}</div>
         </div>
       </div>
 
