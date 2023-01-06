@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.scss';
 import { Link, Routes, Route } from 'react-router-dom';
-import { PhonesPage } from './modules/PhonesPage';
 import { PhoneCard } from './components/PhoneCard';
 
 function App() {
