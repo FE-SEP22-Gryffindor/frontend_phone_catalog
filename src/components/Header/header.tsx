@@ -1,77 +1,99 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './header.scss';
 import logo from '../../img/Logo.svg';
 import heartIcon from '../../img/Favourites.svg';
 import shopIcon from '../../img/ShoppingBag.svg';
 import burgerOpenIcon from '../../img/Menu.svg';
+import burgerCloseIcon from '../../img/Close.svg';
 import classNames from 'classnames';
+import { BurgerMenu } from '../BurgerMenu';
 
-export const Header: React.FC = () => {
+interface Props {
+  burgerMenu: boolean,
+  isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const navigationLinks = [
+  { to: '/', text: 'Home' },
+  { to: '/phones', text: 'Phones' },
+  { to: '/tablets', text: 'Tablets' },
+  { to: '/Accessories', text: 'Accessories' },
+];
+
+export const Header: React.FC<Props> = ({ burgerMenu, isBurgerMenu }) => {
+  if (burgerMenu) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+
   return (
     <header className="header">
       <div className="container">
         <div className="header__content">
           <nav className="header__content__nav">
-            <NavLink to="/" className="header__logo">
-              <img src={`${logo}`} alt="logo" />
+            <NavLink
+              to="/"
+              className="header__logo"
+              onClick={() => isBurgerMenu(false)}
+            >
+              <img src={logo} alt="logo" />
             </NavLink>
 
             <ul className="header__content__nav__list menu-moved">
-              <li className="header__content__nav__item">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    classNames('header__content__nav__link', {
-                      'is-active': isActive,
-                    })
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
-
-              <li className="header__content__nav__item">
-                <NavLink
-                  to="/phones"
-                  className={({ isActive }) =>
-                    classNames('header__content__nav__link', {
-                      'is-active': isActive,
-                    })
-                  }
-                >
-                  Phones
-                </NavLink>
-              </li>
-
-              <li className="header__content__nav__item">
-                <NavLink to="/" className="header__content__nav__link">
-                  Tablets
-                </NavLink>
-              </li>
-
-              <li className="header__content__nav__item">
-                <NavLink to="/" className="header__content__nav__link">
-                  Accessories
-                </NavLink>
-              </li>
+              {navigationLinks.map(link => (
+                <li key={link.text} className="header__content__nav__item">
+                  <NavLink
+                    to={link.to}
+                    className={({ isActive }) =>
+                      classNames('header__content__nav__link', {
+                        'header__is-active': isActive,
+                      })
+                    }
+                  >
+                    {link.text}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </nav>
 
           <div className="header__content__buttons">
-            <Link to="/" className="header__content__buttons-right menu-moved">
-              <img src={`${heartIcon}`} alt="favorites" />
-            </Link>
+            <button
+              className="header__content__buttons-right menu-moved">
+              <img src={heartIcon} alt="favorites" />
+            </button>
 
-            <Link to="/" className="header__content__buttons-right menu-moved">
-              <img src={`${shopIcon}`} alt="shopCard" />
-            </Link>
+            <button
+              className="header__content__buttons-right menu-moved">
+              <img src={shopIcon} alt="shopCard" />
+            </button>
 
-            <Link to="/" className="header__content__buttons-right menu">
-              <img src={`${burgerOpenIcon}`} alt="Menu" />
-            </Link>
+            {burgerMenu
+              ? (
+                <button
+                  className="header__content__buttons-right menu"
+                  onClick={() => isBurgerMenu(false)}
+                >
+                  <img src={burgerCloseIcon} alt="Menu" />
+                </button>
+              )
+              : (
+                <button
+                  className="header__content__buttons-right menu"
+                  onClick={() => isBurgerMenu(true)}
+                >
+                  <img src={burgerOpenIcon} alt="Menu" />
+                </button>
+              )}
           </div>
         </div>
+        <BurgerMenu
+          navLinks={navigationLinks}
+          burgerMenu={burgerMenu}
+          isBurgerMenu={isBurgerMenu}
+        />
       </div>
     </header>
   );

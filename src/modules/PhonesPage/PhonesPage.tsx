@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 import './PhonesPage.scss';
 
@@ -20,10 +21,18 @@ const phones = [
   { id: 16, title: 'Item' },
 ];
 
-export const PhonesPage = () => {
+interface Props {
+  burgerMenu: boolean,
+}
+
+export const PhonesPage: React.FC<Props> = ({ burgerMenu }) => {
   return (
     <div className='container-phone-page'>
-      <div className='breadcrumbs'>
+      <div className={classNames('breadcrumbs',
+        {
+          'breadcrumbs-hidden': burgerMenu,
+        })}
+      >
         <a className='icon icon--home'></a>
         <a className=''>Phones</a>
       </div>
@@ -34,20 +43,20 @@ export const PhonesPage = () => {
         <p className="result-items">95 models</p>
       </div>
       <div className='sort-items'>
-      <div>
-      <label htmlFor="phones-sort">Sort buy:</label>
-        <select name="phones-sort" id="phones-sort">
-          <option value="newest">Newest</option>
-        </select>
-      </div>
-      <div>
+        <div>
+          <label htmlFor="phones-sort">Sort buy:</label>
+          <select name="phones-sort" id="phones-sort">
+            <option value="newest">Newest</option>
+          </select>
+        </div>
+        <div>
 
-      <label htmlFor="page-items">Items on page:</label>
-        <select name="page-items" id="page-items">
-          <option value="16">16</option>
-          <option value="32">32</option>
-        </select>
-      </div>
+          <label htmlFor="page-items">Items on page:</label>
+          <select name="page-items" id="page-items">
+            <option value="16">16</option>
+            <option value="32">32</option>
+          </select>
+        </div>
       </div>
       <div className='products-catalog'>
         {phones.map(phone => (

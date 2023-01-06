@@ -36,6 +36,10 @@
   position: relative;
   margin-top: 25px;
   color: #89939A;
+
+  &-hidden {
+    visibility: hidden;
+  }
 }
 
 .icon {
