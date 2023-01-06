@@ -13,11 +13,14 @@ function App() {
         <Link className="App-link" to="/phones">
           PhonesPage
         </Link>
+        <Link className="App-link" to="/test">
+          test Product Card
+        </Link>
       </header>
       <main>
         <Routes>
           <Route path="/" element={<h1>Home Page</h1>} />
-          <Route path="phones" element={<PhonesPage />} />
+          <Route path="test" element={<PhonesPage />} />
         </Routes>
       </main>
     </div>
