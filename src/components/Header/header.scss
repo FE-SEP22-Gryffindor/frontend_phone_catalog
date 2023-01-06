@@ -116,38 +116,38 @@
 
 .is-active {
   color: #0f0f11;
+
+  &::after {
+    @include onTablet {
+      content: ' ';
+      position: absolute;
+      width: 15px;
+      height: 4px;
+      background: #0f0f11;
+      border-radius: 8px;
+      top: 45px;
+
+      @include onDesktop() {
+        content: ' ';
+        position: absolute;
+        width: 15px;
+        height: 4px;
+        background: #0f0f11;
+        border-radius: 8px;
+        top: 60px;
+      }
+    }
+  }
 }
 
-.is-active::after {
+.menu {
   @include onTablet {
-    content: ' ';
-    position: absolute;
-    width: 15px;
-    height: 4px;
-    background: #0f0f11;
-    border-radius: 8px;
-    top: 45px;
-  }
-
-  @include onDesktop() {
-    content: ' ';
-    position: absolute;
-    width: 15px;
-    height: 4px;
-    background: #0f0f11;
-    border-radius: 8px;
-    top: 60px;
-  }
-}
-
-@media (max-width: 639px) {
-  .menu-moved {
     display: none;
   }
-}
 
-@include onTablet {
-  .menu {
-    display: none;
+  &-moved {
+    @media (max-width: 639px) {
+      display: none;
+    }
   }
 }
