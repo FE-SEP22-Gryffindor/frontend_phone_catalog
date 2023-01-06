@@ -1,12 +1,12 @@
 interface Specs {
-  screen: string,
-  resolution: string,
-  processor: string,
-  ram: string,
-  memory: string,
-  camera: string,
-  zoom: string,
-  cell: string,
+  screen: string;
+  resolution: string;
+  processor: string;
+  ram: string;
+  memory: string;
+  camera: string;
+  zoom: string;
+  cell: string;
 }
 
 interface About {
@@ -22,7 +22,7 @@ export interface Phone {
   color: string;
   year: number;
   specs: Specs;
-  about:About[];
+  about: About[];
   image: string;
   additionalImages: string[];
 }
