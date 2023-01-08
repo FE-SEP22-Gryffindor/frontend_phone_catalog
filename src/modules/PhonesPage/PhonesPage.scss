@@ -18,7 +18,6 @@
   }
 }
 
-
 .container-phone-page .title {
   margin-top: 40px;
   display: flex;
@@ -28,14 +27,14 @@
 
   letter-spacing: -0.01em;
 
-  color: #0F0F11;
+  color: #0f0f11;
 }
 
 .breadcrumbs {
   display: flex;
   position: relative;
   margin-top: 25px;
-  color: #89939A;
+  color: #89939a;
 }
 
 .icon {
@@ -51,7 +50,7 @@
   }
 
   &--home::after {
-    content: "";
+    content: '';
     background-image: url('../../img/icon-chevron.svg');
     width: 14px;
     height: 14px;
@@ -66,7 +65,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
-  color: #89939A;
+  color: #89939a;
 }
 
 .sort-items {
@@ -78,8 +77,8 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
-  
-    color: #89939A;
+
+    color: #89939a;
     margin-bottom: 4px;
   }
 
@@ -88,19 +87,18 @@
   }
 
   & select {
-
     font-weight: 700;
     font-size: 14px;
     line-height: 21px;
-  
-    color: #0F0F11;
+
+    color: #0f0f11;
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid #B4BDC4;
+    border: 1px solid #b4bdc4;
     border-radius: 8px;
-  
+
     appearance: none;
-    background-image: url("../../img/icon-chevron-arrow-down.svg");
+    background-image: url('../../img/icon-chevron-arrow-down.svg');
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1em;
@@ -112,7 +110,7 @@
   justify-content: center;
 }
 
-@mixin template-columns ($columns) {
+@mixin template-columns($columns) {
   grid-template-columns: repeat($columns, 1fr);
 }
 
@@ -123,7 +121,7 @@
   @include template-columns(1);
   gap: 16px;
   justify-content: space-around;
-  
+
   margin-top: 56px;
 
   @media (min-width: 488px) {
@@ -148,4 +146,3 @@
     border-radius: 5px;
   }
 }
-
