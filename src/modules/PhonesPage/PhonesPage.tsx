@@ -2,11 +2,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './PhonesPage.scss';
 import { getPhones } from '../../api/phones';
-import { Phone } from '../../types/Phone';
+import { SmallPhone } from '../../types/Phone';
 import { Pagination } from '../../components/Pagination';
+import { PhoneCard } from '../../components/PhoneCard';
 
 export const PhonesPage = () => {
-  const [phones, setPhones] = useState<Phone[]>([]);
+  const [phones, setPhones] = useState<SmallPhone[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(2);
 
@@ -81,9 +82,10 @@ export const PhonesPage = () => {
       </div>
       <div className="products-catalog">
         {phones.map((phone) => (
-          <div className="products-catalog__card" key={phone.slug}>
-            {`${phone.name}`}
-          </div>
+          <PhoneCard phone={phone} key={phone.slug}/>
+          // <div className="products-catalog__card" key={phone.slug}>
+          //   {`${phone.name}`}
+          // </div>
         ))}
       </div>
       <Pagination

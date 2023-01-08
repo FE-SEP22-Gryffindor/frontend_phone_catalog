@@ -26,3 +26,15 @@ export interface Phone {
   image: string;
   additionalImages: string[];
 }
+
+export interface SmallPhone {
+  slug: string,
+  name: string,
+  price: number,
+  discountPrice: number,
+  year: number,
+  screen: string,
+  memory: string,
+  ram: string,
+  image: string
+}
