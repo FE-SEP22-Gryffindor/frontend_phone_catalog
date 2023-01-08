@@ -1,25 +1,12 @@
 @font-face {
   font-family: Mont;
-  src: url(./fonts/Mont-Trial-Regular.ttf);
+  src: url(./font/Mont-Regular.woff2);
 }
 
 @font-face {
   font-family: Mont;
   font-weight: bold;
-  src: url(./fonts/Mont-Trial-Bold.ttf);
-}
-
-@font-face {
-  font-family: Mont;
-  font-style: italic;
-  src: url(./fonts/Mont-Trial-RegularItalic.ttf);
-}
-
-@font-face {
-  font-family: Mont;
-  font-weight: bold;
-  font-style: italic;
-  src: url(./fonts/Mont-Trial-BoldItalic.ttf);
+  src: url(./font/Mont-SemiBold.woff2);
 }
 
 body {

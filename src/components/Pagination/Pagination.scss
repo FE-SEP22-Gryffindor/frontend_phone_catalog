@@ -1,4 +1,4 @@
-@import url('../../fonts/Mont-Regular/style.css');
+// @import url('../../fonts/Mont-Regular/style.css');
 
 .pagination {
   display: flex;
@@ -33,6 +33,7 @@
     text-decoration: none;
     border: 1px solid #e2e6e9;
     border-radius: 50%;
+    cursor: pointer;
 
     &-arrow {
       border: 1px solid #b4bdc4;
