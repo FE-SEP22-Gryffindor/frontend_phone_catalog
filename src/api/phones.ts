@@ -2,7 +2,7 @@ import { client } from '../utils/fetchClient';
 import { Phone } from '../types/Phone';
 
 export const getPhones = (page: number, perPage: number) => {
-  return client.get<Phone[]>(`/phones?page=${page}&perPage=${perPage}`);
+  return client.get<Phone[]>(`/phones?page=${page}&perPage=${perPage}`, 'phones-count');
 };
 
 // export const postTodo = (newTodo: Omit<Todo, 'id'>) => {
