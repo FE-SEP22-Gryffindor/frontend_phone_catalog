@@ -1,53 +1,32 @@
-import React, { useState } from 'react';
+/* eslint-disable no-shadow */
+import React, { useCallback, useEffect, useState } from 'react';
+import './PhonesPage.scss';
+import { getPhones } from '../../api/phones';
+import { Phone } from '../../types/Phone';
 import { Pagination } from '../../components/Pagination';
 
-import './PhonesPage.scss';
-
 export const PhonesPage = () => {
-  const phones = [
-    { id: 1, title: 'Item' },
-    { id: 2, title: 'Item' },
-    { id: 3, title: 'Item' },
-    { id: 4, title: 'Item' },
-    { id: 5, title: 'Item' },
-    { id: 6, title: 'Item' },
-    { id: 7, title: 'Item' },
-    { id: 8, title: 'Item' },
-    { id: 9, title: 'Item' },
-    { id: 10, title: 'Item' },
-    { id: 11, title: 'Item' },
-    { id: 12, title: 'Item' },
-    { id: 13, title: 'Item' },
-    { id: 14, title: 'Item' },
-    { id: 15, title: 'Item' },
-    { id: 16, title: 'Item' },
-    { id: 17, title: 'Item' },
-    { id: 18, title: 'Item' },
-    { id: 19, title: 'Item' },
-    { id: 20, title: 'Item' },
-    { id: 21, title: 'Item' },
-    { id: 22, title: 'Item' },
-    { id: 23, title: 'Item' },
-    { id: 24, title: 'Item' },
-    { id: 25, title: 'Item' },
-    { id: 26, title: 'Item' },
-    { id: 27, title: 'Item' },
-    { id: 28, title: 'Item' },
-    { id: 29, title: 'Item' },
-    { id: 30, title: 'Item' },
-    { id: 31, title: 'Item' },
-    { id: 32, title: 'Item' },
-  ];
-  const total = phones.length;
+  const [phones, setPhones] = useState<Phone[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [perPage, setPerPage] = useState(8);
-  // const perPage = 4;
+  const [perPage, setPerPage] = useState(2);
 
-  const start = perPage * currentPage - perPage + 1;
-  const end = Math.min(start + perPage - 1, total);
-  const visibleItems = phones.filter(
-    (phone) => phone.id >= start && phone.id <= end,
-  );
+  // const start = perPage * currentPage - perPage + 1;
+  // const end = Math.min(start + perPage - 1, total);
+  // const visibleItems = phones.filter(
+  //   (phone) => phone.id >= start && phone.id <= end,
+  // );
+
+  const loadPhones = useCallback(async() => {
+    try {
+      setPhones(await getPhones(currentPage, perPage));
+    } catch {
+      throw new Error('Error loading phones');
+    }
+  }, [currentPage, perPage]);
+
+  useEffect(() => {
+    loadPhones().then();
+  }, [currentPage, perPage]);
 
   const onPageChange = (page: number | string) => {
     if (typeof page === 'number') {
@@ -94,27 +73,24 @@ export const PhonesPage = () => {
               setCurrentPage(1);
             }}
           >
-            <option value={8}>8</option>
-            <option value={16}>16</option>
-            <option value={32}>32</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
           </select>
         </div>
       </div>
       <div className="products-catalog">
-        {visibleItems.map((phone) => (
-          <div className="products-catalog__card" key={phone.id}>
-            {`${phone.title} ${phone.id}`}
+        {phones.map((phone) => (
+          <div className="products-catalog__card" key={phone.slug}>
+            {`${phone.name}`}
           </div>
         ))}
       </div>
-      <div>
-        <Pagination
-          total={total}
-          perPage={perPage}
-          currentPage={currentPage}
-          onPageChange={onPageChange}
-        />
-      </div>
+      <Pagination
+        total={phones.length}
+        perPage={perPage}
+        currentPage={currentPage}
+        onPageChange={onPageChange}/>
     </div>
   );
 };
