@@ -12,12 +12,6 @@ export const PhonesPage = () => {
   const [perPage, setPerPage] = useState(2);
   const total = 8;
 
-  // const start = perPage * currentPage - perPage + 1;
-  // const end = Math.min(start + perPage - 1, total);
-  // const visibleItems = phones.filter(
-  //   (phone) => phone.id >= start && phone.id <= end,
-  // );
-
   const loadPhones = useCallback(async() => {
     try {
       setPhones(await getPhones(currentPage, perPage));
@@ -27,7 +21,7 @@ export const PhonesPage = () => {
   }, [currentPage, perPage]);
 
   useEffect(() => {
-    loadPhones().then();
+    loadPhones();
   }, [currentPage, perPage]);
 
   const onPageChange = (page: number | string) => {
@@ -84,9 +78,6 @@ export const PhonesPage = () => {
       <div className="products-catalog">
         {phones.map((phone) => (
           <PhoneCard phone={phone} key={phone.slug} />
-          // <div className="products-catalog__card" key={phone.slug}>
-          //   {`${phone.name}`}
-          // </div>
         ))}
       </div>
       <Pagination
