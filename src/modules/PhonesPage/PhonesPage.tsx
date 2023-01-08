@@ -82,7 +82,7 @@ export const PhonesPage = () => {
       </div>
       <div className="products-catalog">
         {phones.map((phone) => (
-          <PhoneCard phone={phone} key={phone.slug}/>
+          <PhoneCard phone={phone} key={phone.slug} />
           // <div className="products-catalog__card" key={phone.slug}>
           //   {`${phone.name}`}
           // </div>

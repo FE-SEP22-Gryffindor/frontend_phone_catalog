@@ -28,13 +28,13 @@ export interface Phone {
 }
 
 export interface SmallPhone {
-  slug: string,
-  name: string,
-  price: number,
-  discountPrice: number,
-  year: number,
-  screen: string,
-  memory: string,
-  ram: string,
-  image: string
+  slug: string;
+  name: string;
+  price: number;
+  discountPrice: number;
+  year: number;
+  screen: string;
+  memory: string;
+  ram: string;
+  image: string;
 }

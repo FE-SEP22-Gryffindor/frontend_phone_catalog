@@ -50,7 +50,7 @@ import { SmallPhone } from '../../types/Phone';
 // };
 
 interface Props {
-  phone: SmallPhone,
+  phone: SmallPhone;
 }
 
 export const PhoneCard: React.FC<Props> = ({ phone }) => {
