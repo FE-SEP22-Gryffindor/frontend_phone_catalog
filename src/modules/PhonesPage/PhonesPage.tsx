@@ -10,6 +10,7 @@ export const PhonesPage = () => {
   const [phones, setPhones] = useState<SmallPhone[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(2);
+  const total = 8;
 
   // const start = perPage * currentPage - perPage + 1;
   // const end = Math.min(start + perPage - 1, total);
@@ -53,11 +54,11 @@ export const PhonesPage = () => {
         <h1 className="title">Mobile phones</h1>
       </div>
       <div>
-        <p className="result-items">95 models</p>
+        <p className="result-items">{`${total} models`}</p>
       </div>
       <div className="sort-items">
         <div>
-          <label htmlFor="phones-sort">Sort buy:</label>
+          <label htmlFor="phones-sort">Sort by:</label>
           <select name="phones-sort" id="phones-sort">
             <option value="newest">Newest</option>
           </select>
@@ -89,7 +90,7 @@ export const PhonesPage = () => {
         ))}
       </div>
       <Pagination
-        total={8}
+        total={total}
         perPage={perPage}
         currentPage={currentPage}
         onPageChange={onPageChange}
