@@ -14,7 +14,7 @@ interface About {
   description: string;
 }
 
-export interface Phone {
+export interface FullPhone {
   slug: string;
   name: string;
   price: number;
@@ -25,4 +25,16 @@ export interface Phone {
   about: About[];
   image: string;
   additionalImages: string[];
+}
+
+export interface Phone {
+  slug: string;
+  name: string;
+  price: number;
+  discountPrice: number;
+  year: number;
+  screen: string;
+  memory: string;
+  ram: string;
+  image: string;
 }

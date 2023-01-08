@@ -2,8 +2,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './PhonesPage.scss';
 import { getPhones } from '../../api/phones';
-import { Phone } from '../../types/Phone';
 import { Pagination } from '../../components/Pagination';
+import { Phone } from '../../types/Phone';
+import { PhoneCard } from '../../components/PhoneCard';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -23,7 +24,7 @@ export const PhonesPage = () => {
   }, [currentPage, perPage]);
 
   useEffect(() => {
-    loadPhones().then();
+    loadPhones();
   }, [currentPage, perPage]);
 
   const onPageChange = (page: number | string) => {
@@ -54,7 +55,8 @@ export const PhonesPage = () => {
       </div>
       <div className="sort-items">
         <div>
-          <label htmlFor="phones-sort">Sort buy:</label>
+          <label htmlFor="phones-sort">Sort by:</label>
+
           <select name="phones-sort" id="phones-sort">
             <option value="newest">Newest</option>
           </select>
@@ -64,23 +66,22 @@ export const PhonesPage = () => {
           <select
             name="page-items"
             id="page-items"
+            value={perPage}
             onChange={(event) => {
               setPerPage(Number(event.target.value));
               setCurrentPage(1);
             }}
           >
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="16">16</option>
-            <option value="32">32</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={16}>16</option>
+            <option value={32}>32</option>
           </select>
         </div>
       </div>
       <div className="products-catalog">
         {phones.map((phone) => (
-          <div className="products-catalog__card" key={phone.slug}>
-            {`${phone.name}`}
-          </div>
+          <PhoneCard phone={phone} key={phone.slug} />
         ))}
       </div>
       <Pagination
