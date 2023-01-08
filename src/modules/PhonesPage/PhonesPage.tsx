@@ -63,6 +63,7 @@ export const PhonesPage = () => {
         </div>
         <div>
           <label htmlFor="page-items">Items on page:</label>
+<<<<<<< HEAD
           <select
             name="page-items"
             id="page-items"
@@ -76,11 +77,17 @@ export const PhonesPage = () => {
             <option value={2}>2</option>
             <option value={3}>3</option>
             <option value={4}>4</option>
+=======
+          <select name="page-items" id="page-items">
+            <option value="16">16</option>
+            <option value="32">32</option>
+>>>>>>> 221103f10937956df96522d1f653d339d9881ac5
           </select>
         </div>
       </div>
       <div className="products-catalog">
         {phones.map((phone) => (
+<<<<<<< HEAD
           <div className="products-catalog__card" key={phone.slug}>
             {`${phone.name}`}
           </div>
@@ -92,6 +99,14 @@ export const PhonesPage = () => {
         currentPage={currentPage}
         onPageChange={onPageChange}
       />
+=======
+          <div className="products-catalog__card" key={phone.id}>
+            {`${phone.title} ${phone.id}`}
+          </div>
+        ))}
+      </div>
+      <div>pagination</div>
+>>>>>>> 221103f10937956df96522d1f653d339d9881ac5
     </div>
   );
 };
