@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend_phone_catalog/static/css/main.c5611375.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.af061059.js",
+    "main.css": "/frontend_phone_catalog/static/css/main.8b038feb.css",
+    "main.js": "/frontend_phone_catalog/static/js/main.c3c139fb.js",
     "static/js/787.c8915dc9.chunk.js": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js",
     "static/media/Mont-Trial-BoldItalic.ttf": "/frontend_phone_catalog/static/media/Mont-Trial-BoldItalic.5af83cdfd93fb2a78282.ttf",
     "static/media/Mont-Trial-Bold.ttf": "/frontend_phone_catalog/static/media/Mont-Trial-Bold.cc2531ea010c551605a0.ttf",
@@ -21,12 +21,12 @@
     "static/media/footerButton.svg": "/frontend_phone_catalog/static/media/footerButton.411b5a1b4b9eda1837e8.svg",
     "static/media/icon-chevron.svg": "/frontend_phone_catalog/static/media/icon-chevron.e028d3889646e0b5e56c.svg",
     "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.b87d883446f750defdba.svg",
-    "main.c5611375.css.map": "/frontend_phone_catalog/static/css/main.c5611375.css.map",
-    "main.af061059.js.map": "/frontend_phone_catalog/static/js/main.af061059.js.map",
+    "main.8b038feb.css.map": "/frontend_phone_catalog/static/css/main.8b038feb.css.map",
+    "main.c3c139fb.js.map": "/frontend_phone_catalog/static/js/main.c3c139fb.js.map",
     "787.c8915dc9.chunk.js.map": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5611375.css",
-    "static/js/main.af061059.js"
+    "static/css/main.8b038feb.css",
+    "static/js/main.c3c139fb.js"
   ]
 }
