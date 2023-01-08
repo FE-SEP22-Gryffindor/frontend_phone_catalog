@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import { PhoneCard } from './components/PhoneCard';
 import { PhonesPage } from './modules/PhonesPage';
