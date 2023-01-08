@@ -2,19 +2,22 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './PhonesPage.scss';
 import { getPhones } from '../../api/phones';
-import { SmallPhone } from '../../types/Phone';
 import { Pagination } from '../../components/Pagination';
+import { Phone } from '../../types/Phone';
 import { PhoneCard } from '../../components/PhoneCard';
 
 export const PhonesPage = () => {
-  const [phones, setPhones] = useState<SmallPhone[]>([]);
+  const [phones, setPhones] = useState<Phone[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(2);
-  const total = 8;
+  const [totalPhonesCount, setTotalPhonesCount] = useState(0);
 
   const loadPhones = useCallback(async() => {
     try {
-      setPhones(await getPhones(currentPage, perPage));
+      const res = await getPhones(currentPage, perPage);
+
+      setPhones(await res.items);
+      setTotalPhonesCount(Number(await res.serverItemsCount) | 0);
     } catch {
       throw new Error('Error loading phones');
     }
@@ -48,11 +51,12 @@ export const PhonesPage = () => {
         <h1 className="title">Mobile phones</h1>
       </div>
       <div>
-        <p className="result-items">{`${total} models`}</p>
+        <p className="result-items">`${totalPhonesCount} models`</p>
       </div>
       <div className="sort-items">
         <div>
           <label htmlFor="phones-sort">Sort by:</label>
+
           <select name="phones-sort" id="phones-sort">
             <option value="newest">Newest</option>
           </select>
@@ -63,7 +67,6 @@ export const PhonesPage = () => {
             name="page-items"
             id="page-items"
             value={perPage}
-            // eslint-disable-next-line no-shadow
             onChange={(event) => {
               setPerPage(Number(event.target.value));
               setCurrentPage(1);
@@ -71,7 +74,8 @@ export const PhonesPage = () => {
           >
             <option value={2}>2</option>
             <option value={3}>3</option>
-            <option value={4}>4</option>
+            <option value={16}>16</option>
+            <option value={32}>32</option>
           </select>
         </div>
       </div>
@@ -81,7 +85,7 @@ export const PhonesPage = () => {
         ))}
       </div>
       <Pagination
-        total={total}
+        total={totalPhonesCount}
         perPage={perPage}
         currentPage={currentPage}
         onPageChange={onPageChange}

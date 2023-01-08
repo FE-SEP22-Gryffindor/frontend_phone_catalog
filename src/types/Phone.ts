@@ -14,7 +14,7 @@ interface About {
   description: string;
 }
 
-export interface Phone {
+export interface FullPhone {
   slug: string;
   name: string;
   price: number;
@@ -27,7 +27,7 @@ export interface Phone {
   additionalImages: string[];
 }
 
-export interface SmallPhone {
+export interface Phone {
   slug: string;
   name: string;
   price: number;
