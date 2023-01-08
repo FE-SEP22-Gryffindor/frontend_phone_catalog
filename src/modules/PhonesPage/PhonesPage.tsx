@@ -87,7 +87,7 @@ export const PhonesPage = () => {
         ))}
       </div>
       <Pagination
-        total={phones.length}
+        total={8}
         perPage={perPage}
         currentPage={currentPage}
         onPageChange={onPageChange}
