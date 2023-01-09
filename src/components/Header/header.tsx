@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import './header.scss';
 import logo from '../../img/Logo.svg';
@@ -8,6 +9,9 @@ import burgerOpenIcon from '../../img/Menu.svg';
 import burgerCloseIcon from '../../img/Close.svg';
 import { BurgerMenu } from '../BurgerMenu';
 import { Navigation } from '../Navigation';
+import {
+  CartAndFavContext,
+} from '../../components/CartAndFavContext/CartAndFavContext';
 
 const navigationLinks = [
   { to: '/', text: 'Home' },
@@ -18,6 +22,7 @@ const navigationLinks = [
 
 export const Header: React.FC = () => {
   const [burgerMenuOpen, isBurgerMenuOpen] = useState(false);
+  const { CartList } = useContext(CartAndFavContext);
 
   if (burgerMenuOpen) {
     document.body.style.overflow = 'hidden';
@@ -74,6 +79,13 @@ export const Header: React.FC = () => {
               className="header__content__buttons-right menu-moved"
             >
               <img src={shopIcon} alt="shopCard" />
+              <span
+                className={classNames('cart-quantity', {
+                  visible: CartList.length > 0,
+                })}
+              >
+                {CartList.length}
+              </span>
             </NavLink>
 
             {burgerMenuOpen ? (

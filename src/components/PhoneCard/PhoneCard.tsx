@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import classNames from 'classnames';
 import './PhoneCard.scss';
 import heartLogo from './imagesCard/heart.png';
 import heartLogoActive from './imagesCard/like_favourite_favorite_icon.svg';
 import { Link } from 'react-router-dom';
+import {
+  CartAndFavContext,
+} from '../../components/CartAndFavContext/CartAndFavContext';
 import { Phone } from '../../types/Phone';
 
 interface Props {
@@ -12,9 +15,16 @@ interface Props {
 
 export const PhoneCard: React.FC<Props> = ({ phone }) => {
   const [isActiveToCard, setIsActiveToCard] = useState(false);
-  const handleCardButton = () => setIsActiveToCard(!isActiveToCard);
+  const handleCardButton = () => {
+    setIsActiveToCard(!isActiveToCard);
+
+    setCartList((prev) => {
+      return [...prev, phone];
+    });
+  };
   const [isFavorite, setIsFavorite] = useState(false);
   const handleFavButton = () => setIsFavorite(!isFavorite);
+  const { setCartList } = useContext(CartAndFavContext);
 
   return (
     <section className="card">

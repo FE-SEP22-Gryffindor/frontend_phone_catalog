@@ -1,56 +1,44 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './CartPage.scss';
-
-// type Item = {
-//   id: number,
-//   img: string,
-//   title: string,
-//   price: number,
-// }
-
-const items = [
-  {
-    id: 1, img: 'link', title: 'title', price: 1999,
-  },
-  {
-    id: 2, img: 'link', title: 'title', price: 1999,
-  },
-  {
-    id: 3, img: 'link', title: 'title', price: 1999,
-  },
-];
-
-const sum = items.reduce(
-  (accumulator, currentValue) => accumulator + currentValue.price,
-  0,
-);
-
-const total = items.length;
+import {
+  CartAndFavContext,
+} from '../../components/CartAndFavContext/CartAndFavContext';
 
 export const CartPage = () => {
+  const { CartList } = useContext(CartAndFavContext);
+
+  const total = CartList.length;
+
+  const sum = CartList.reduce(
+    (accumulator, currentValue) => accumulator + +currentValue.discountPrice,
+    0,
+  );
+
   return (
-    <div className='container-card-page'>
+    <div className="container-card-page">
       <div className="breadcrumbs">
-        <Link to='/' className="back">Back</Link>
+        <Link to="/" className="back">
+          Back
+        </Link>
       </div>
       <div>
         <h1 className="title">Cart page</h1>
       </div>
-      <div className='cart-form'>
-        <div className='cart-items'>
-          {items.map(item => (
-            <div className='cart-item' key={item.id}>
-              <h2>{item.title}</h2>
+      <div className="cart-form">
+        <div className="cart-items">
+          {CartList.map((item) => (
+            <div className="cart-item" key={item.slug}>
+              <h2>{item.name}</h2>
             </div>
           ))}
         </div>
 
-        <div className='cart-total'>
-          <h2 className='total-amount'>${sum}</h2>
-          <p className='total-items'>Total for {total} items</p>
-          <hr className='total-hr'/>
-          <button className='btn-checkout'>Checkout</button>
+        <div className="cart-total">
+          <h2 className="total-amount">${sum}</h2>
+          <p className="total-items">Total for {total} items</p>
+          <hr className="total-hr" />
+          <button className="btn-checkout">Checkout</button>
         </div>
       </div>
     </div>
