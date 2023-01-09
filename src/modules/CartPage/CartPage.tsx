@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CartCard } from '../../components/CartCard';
 import './CartPage.scss';
 
 // type Item = {
@@ -40,16 +41,14 @@ export const CartPage = () => {
       <div className='cart-form'>
         <div className='cart-items'>
           {items.map(item => (
-            <div className='cart-item' key={item.id}>
-              <h2>{item.title}</h2>
-            </div>
+            <CartCard key={item.id}/>
           ))}
         </div>
 
         <div className='cart-total'>
           <h2 className='total-amount'>${sum}</h2>
           <p className='total-items'>Total for {total} items</p>
-          <hr className='total-hr'/>
+          <hr className='total-hr' />
           <button className='btn-checkout'>Checkout</button>
         </div>
       </div>

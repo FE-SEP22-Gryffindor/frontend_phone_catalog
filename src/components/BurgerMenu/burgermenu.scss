@@ -72,6 +72,18 @@
     height: 50%;
     display: flex;
 
+    &__is-active {
+      &::after {
+        content: ' ';
+          position: absolute;
+          width: 50%;
+          height: 4px;
+          background: #0f0f11;
+          border-radius: 8px;
+          bottom: 0;
+      }
+    }
+
     &-bottom {
       display: flex;
       align-self: flex-end;
