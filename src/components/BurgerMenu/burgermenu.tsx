@@ -37,7 +37,8 @@ export const BurgerMenu: React.FC<Props> = ({
         <NavLink
           to="/"
           onClick={() => isBurgerMenuOpen(false)}
-          className="burger__menu__buttons-bottom">
+          className="burger__menu__buttons-bottom"
+        >
           <img
             src={heartIcon}
             alt="Favourites"
@@ -48,7 +49,8 @@ export const BurgerMenu: React.FC<Props> = ({
         <NavLink
           to="/"
           onClick={() => isBurgerMenuOpen(false)}
-          className="burger__menu__buttons-bottom">
+          className="burger__menu__buttons-bottom"
+        >
           <img
             src={shopIcon}
             alt="Shop"

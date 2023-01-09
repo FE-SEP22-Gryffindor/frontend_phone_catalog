@@ -52,23 +52,27 @@ export const Header: React.FC = () => {
               <img src={logo} alt="logo" />
             </NavLink>
 
-            {!burgerMenuOpen && <Navigation
-              navigationLinks={navigationLinks}
-              burgerMenuOpen={burgerMenuOpen}
-              isBurgerMenuOpen={isBurgerMenuOpen}
-            />}
+            {!burgerMenuOpen && (
+              <Navigation
+                navigationLinks={navigationLinks}
+                burgerMenuOpen={burgerMenuOpen}
+                isBurgerMenuOpen={isBurgerMenuOpen}
+              />
+            )}
           </nav>
 
           <div className="header__content__buttons">
             <NavLink
               to="/"
-              className="header__content__buttons-right menu-moved">
+              className="header__content__buttons-right menu-moved"
+            >
               <img src={heartIcon} alt="favorites" />
             </NavLink>
 
             <NavLink
               to="/"
-              className="header__content__buttons-right menu-moved">
+              className="header__content__buttons-right menu-moved"
+            >
               <img src={shopIcon} alt="shopCard" />
             </NavLink>
 
