@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 272px;
   font-weight: 500;
 
   border: 1px solid #f3f3f3;
@@ -12,6 +11,18 @@
   background-color: #fff;
   padding: 32px;
   align-items: center;
+
+  @media (min-width: 488px) {
+    // max-width: 288px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 230px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 272px;
+  }
 }
 
 .card__img-box {

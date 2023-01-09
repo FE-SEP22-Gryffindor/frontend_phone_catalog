@@ -1,7 +1,9 @@
 .pagination {
   display: flex;
   justify-content: center;
+  padding-left: 0px;
   text-align: center;
+
 
   &__item {
     list-style: none;
