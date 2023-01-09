@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/frontend_phone_catalog/static/css/main.aca6f390.css",
+    "main.css": "/frontend_phone_catalog/static/css/main.0f44a82a.css",
     "main.js": "/frontend_phone_catalog/static/js/main.b2aff3d7.js",
     "static/js/787.c8915dc9.chunk.js": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js",
     "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.ccaf7a234c9d096c90d06573cdbddc94.svg",
@@ -17,12 +17,12 @@
     "static/media/footerButton.svg": "/frontend_phone_catalog/static/media/footerButton.411b5a1b4b9eda1837e8.svg",
     "static/media/icon-chevron.svg": "/frontend_phone_catalog/static/media/icon-chevron.e028d3889646e0b5e56c.svg",
     "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.b87d883446f750defdba.svg",
-    "main.aca6f390.css.map": "/frontend_phone_catalog/static/css/main.aca6f390.css.map",
+    "main.0f44a82a.css.map": "/frontend_phone_catalog/static/css/main.0f44a82a.css.map",
     "main.b2aff3d7.js.map": "/frontend_phone_catalog/static/js/main.b2aff3d7.js.map",
     "787.c8915dc9.chunk.js.map": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aca6f390.css",
+    "static/css/main.0f44a82a.css",
     "static/js/main.b2aff3d7.js"
   ]
 }
