@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './header.scss';
 import logo from '../../img/Logo.svg';
@@ -6,13 +6,8 @@ import heartIcon from '../../img/Favourites.svg';
 import shopIcon from '../../img/ShoppingBag.svg';
 import burgerOpenIcon from '../../img/Menu.svg';
 import burgerCloseIcon from '../../img/Close.svg';
-import classNames from 'classnames';
 import { BurgerMenu } from '../BurgerMenu';
-
-interface Props {
-  burgerMenu: boolean;
-  isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { Navigation } from '../Navigation';
 
 const navigationLinks = [
   { to: '/', text: 'Home' },
@@ -21,12 +16,28 @@ const navigationLinks = [
   { to: '/Accessories', text: 'Accessories' },
 ];
 
-export const Header: React.FC<Props> = ({ burgerMenu, isBurgerMenu }) => {
-  if (burgerMenu) {
+export const Header: React.FC = () => {
+  const [burgerMenuOpen, isBurgerMenuOpen] = useState(false);
+
+  if (burgerMenuOpen) {
     document.body.style.overflow = 'hidden';
   } else {
     document.body.style.overflow = 'auto';
   }
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.matchMedia('(min-width: 640px)').matches) {
+        isBurgerMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
 
   return (
     <header className="header">
@@ -36,49 +47,42 @@ export const Header: React.FC<Props> = ({ burgerMenu, isBurgerMenu }) => {
             <NavLink
               to="/"
               className="header__logo"
-              onClick={() => isBurgerMenu(false)}
+              onClick={() => isBurgerMenuOpen(false)}
             >
               <img src={logo} alt="logo" />
             </NavLink>
 
-            <ul className="header__content__nav__list menu-moved">
-              {navigationLinks.map((link) => (
-                <li key={link.text} className="header__content__nav__item">
-                  <NavLink
-                    to={link.to}
-                    className={({ isActive }) =>
-                      classNames('header__content__nav__link', {
-                        'header__is-active': isActive,
-                      })
-                    }
-                  >
-                    {link.text}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
+            {!burgerMenuOpen && <Navigation
+              navigationLinks={navigationLinks}
+              burgerMenuOpen={burgerMenuOpen}
+              isBurgerMenuOpen={isBurgerMenuOpen}
+            />}
           </nav>
 
           <div className="header__content__buttons">
-            <button className="header__content__buttons-right menu-moved">
+            <NavLink
+              to="/"
+              className="header__content__buttons-right menu-moved">
               <img src={heartIcon} alt="favorites" />
-            </button>
+            </NavLink>
 
-            <button className="header__content__buttons-right menu-moved">
+            <NavLink
+              to="/"
+              className="header__content__buttons-right menu-moved">
               <img src={shopIcon} alt="shopCard" />
-            </button>
+            </NavLink>
 
-            {burgerMenu ? (
+            {burgerMenuOpen ? (
               <button
                 className="header__content__buttons-right menu"
-                onClick={() => isBurgerMenu(false)}
+                onClick={() => isBurgerMenuOpen(false)}
               >
                 <img src={burgerCloseIcon} alt="Menu" />
               </button>
             ) : (
               <button
                 className="header__content__buttons-right menu"
-                onClick={() => isBurgerMenu(true)}
+                onClick={() => isBurgerMenuOpen(true)}
               >
                 <img src={burgerOpenIcon} alt="Menu" />
               </button>
@@ -86,9 +90,9 @@ export const Header: React.FC<Props> = ({ burgerMenu, isBurgerMenu }) => {
           </div>
         </div>
         <BurgerMenu
-          navLinks={navigationLinks}
-          burgerMenu={burgerMenu}
-          isBurgerMenu={isBurgerMenu}
+          navigationLinks={navigationLinks}
+          burgerMenuOpen={burgerMenuOpen}
+          isBurgerMenuOpen={isBurgerMenuOpen}
         />
       </div>
     </header>

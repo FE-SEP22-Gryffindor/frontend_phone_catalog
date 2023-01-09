@@ -6,60 +6,55 @@ import './burgermenu.scss';
 
 import heartIcon from '../../img/Favourites.svg';
 import shopIcon from '../../img/ShoppingBag.svg';
+import { Navigation } from '../Navigation';
 
 interface Props {
-  navLinks: headerNavLinks[];
-  burgerMenu: boolean;
-  isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  navigationLinks: headerNavLinks[];
+  burgerMenuOpen: boolean;
+  isBurgerMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const BurgerMenu: React.FC<Props> = ({
-  navLinks,
-  burgerMenu,
-  isBurgerMenu,
+  navigationLinks,
+  burgerMenuOpen,
+  isBurgerMenuOpen,
 }) => {
   return (
     <div
       className={classNames('burger__menu', {
-        'burger__menu-open': burgerMenu,
+        'burger__menu-open': burgerMenuOpen,
       })}
     >
       <nav className="burger__menu__nav">
-        <ul className="burger__menu__nav__list">
-          {navLinks.map((link) => (
-            <li key={link.text} className="burger__menu__nav__item">
-              <NavLink
-                to={link.to}
-                onClick={() => isBurgerMenu(false)}
-                className={({ isActive }) =>
-                  classNames('burger__menu__nav__link', {
-                    'burger__menu__is-active': isActive,
-                  })
-                }
-              >
-                {link.text}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        <Navigation
+          navigationLinks={navigationLinks}
+          burgerMenuOpen={burgerMenuOpen}
+          isBurgerMenuOpen={isBurgerMenuOpen}
+        />
       </nav>
 
       <div className="burger__menu__buttons">
-        <button className="burger__menu__buttons-bottom">
+        <NavLink
+          to="/"
+          onClick={() => isBurgerMenuOpen(false)}
+          className="burger__menu__buttons-bottom">
           <img
             src={heartIcon}
             alt="Favourites"
             className="burger__menu__buttons-images"
           />
-        </button>
+        </NavLink>
 
-        <button className="burger__menu__buttons-bottom">
+        <NavLink
+          to="/"
+          onClick={() => isBurgerMenuOpen(false)}
+          className="burger__menu__buttons-bottom">
           <img
             src={shopIcon}
             alt="Shop"
             className="burger__menu__buttons-images"
           />
-        </button>
+        </NavLink>
       </div>
     </div>
   );

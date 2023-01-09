@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React from 'react';
 import './PhonesPage.scss';
 
@@ -21,18 +20,10 @@ const phones = [
   { id: 16, title: 'Item' },
 ];
 
-interface Props {
-  burgerMenu: boolean;
-}
-
-export const PhonesPage: React.FC<Props> = ({ burgerMenu }) => {
+export const PhonesPage: React.FC = () => {
   return (
     <div className="container-phone-page">
-      <div
-        className={classNames('breadcrumbs', {
-          'breadcrumbs-hidden': burgerMenu,
-        })}
-      >
+      <div className="breadcrumbs">
         <a className="icon icon--home"></a>
         <a className="">Phones</a>
       </div>
