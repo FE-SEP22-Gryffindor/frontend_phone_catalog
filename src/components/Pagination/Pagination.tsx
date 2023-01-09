@@ -47,7 +47,7 @@ export const Pagination: React.FC<Props> = ({
       >
         <a
           className="pagination__link pagination__link-arrow"
-          href={`#${currentPage}`}
+          // href={`#${currentPage}`}
           aria-disabled={isFirstPage}
           onClick={onPrevPage}
         >
@@ -60,7 +60,7 @@ export const Pagination: React.FC<Props> = ({
             className={classNames('pagination__link', {
               'pagination__link-active': numberOfPage === currentPage,
             })}
-            href={`#${numberOfPage}`}
+            // href={`#${numberOfPage}`}
             onClick={() => onPageChange(numberOfPage)}
           >
             {numberOfPage}
@@ -74,7 +74,7 @@ export const Pagination: React.FC<Props> = ({
       >
         <a
           className="pagination__link pagination__link-arrow"
-          href={`#${currentPage}`}
+          // href={`#${currentPage}`}
           aria-disabled={isLastPage}
           onClick={onNextPage}
         >

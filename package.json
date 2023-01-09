@@ -29,8 +29,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "format": "prettier --write . --ignore-path .gitignore",
-    "lint": "eslint . --ignore-path .gitignore --fix",
-    "fix-style": "npm run format && npm run lint",
+    "lint": "eslint . --ignore-path .gitignore",
+    "fix-style": "npm run format && npm run lint -- --fix",
     "prepare": "husky install"
   },
   "eslintConfig": {
@@ -63,6 +63,6 @@
     "prettier": "2.8.1"
   },
   "lint-staged": {
-    "*.tsx, *.css": "npm run lint"
+    "*.tsx, *.scss": "npm run lint"
   }
 }

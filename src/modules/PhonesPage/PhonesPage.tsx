@@ -1,27 +1,46 @@
-import React from 'react';
-
+/* eslint-disable no-shadow */
+import React, { useCallback, useEffect, useState } from 'react';
 import './PhonesPage.scss';
-
-const phones = [
-  { id: 1, title: 'Item' },
-  { id: 2, title: 'Item' },
-  { id: 3, title: 'Item' },
-  { id: 4, title: 'Item' },
-  { id: 5, title: 'Item' },
-  { id: 6, title: 'Item' },
-  { id: 7, title: 'Item' },
-  { id: 8, title: 'Item' },
-  { id: 9, title: 'Item' },
-  { id: 10, title: 'Item' },
-  { id: 11, title: 'Item' },
-  { id: 12, title: 'Item' },
-  { id: 13, title: 'Item' },
-  { id: 14, title: 'Item' },
-  { id: 15, title: 'Item' },
-  { id: 16, title: 'Item' },
-];
+import { getPhones } from '../../api/phones';
+import { Pagination } from '../../components/Pagination';
+import { Phone } from '../../types/Phone';
+import { PhoneCard } from '../../components/PhoneCard';
 
 export const PhonesPage = () => {
+  const [phones, setPhones] = useState<Phone[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage, setPerPage] = useState(2);
+  const [totalPhonesCount, setTotalPhonesCount] = useState(0);
+
+  const loadPhones = useCallback(async() => {
+    try {
+      const res = await getPhones(currentPage, perPage);
+
+      setPhones(await res.items);
+      setTotalPhonesCount(Number(await res.serverItemsCount) | 0);
+    } catch {
+      throw new Error('Error loading phones');
+    }
+  }, [currentPage, perPage]);
+
+  useEffect(() => {
+    loadPhones();
+  }, [currentPage, perPage]);
+
+  const onPageChange = (page: number | string) => {
+    if (typeof page === 'number') {
+      setCurrentPage(page);
+    }
+
+    if (page === 'next') {
+      setCurrentPage((prevCurrent) => prevCurrent + 1);
+    }
+
+    if (page === 'prev') {
+      setCurrentPage((prevCurrent) => prevCurrent - 1);
+    }
+  };
+
   return (
     <div className="container-phone-page">
       <div className="breadcrumbs">
@@ -32,31 +51,45 @@ export const PhonesPage = () => {
         <h1 className="title">Mobile phones</h1>
       </div>
       <div>
-        <p className="result-items">95 models</p>
+        <p className="result-items">`${totalPhonesCount} models`</p>
       </div>
       <div className="sort-items">
         <div>
-          <label htmlFor="phones-sort">Sort buy:</label>
+          <label htmlFor="phones-sort">Sort by:</label>
+
           <select name="phones-sort" id="phones-sort">
             <option value="newest">Newest</option>
           </select>
         </div>
         <div>
           <label htmlFor="page-items">Items on page:</label>
-          <select name="page-items" id="page-items">
-            <option value="16">16</option>
-            <option value="32">32</option>
+          <select
+            name="page-items"
+            id="page-items"
+            value={perPage}
+            onChange={(event) => {
+              setPerPage(Number(event.target.value));
+              setCurrentPage(1);
+            }}
+          >
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={16}>16</option>
+            <option value={32}>32</option>
           </select>
         </div>
       </div>
       <div className="products-catalog">
         {phones.map((phone) => (
-          <div className="products-catalog__card" key={phone.id}>
-            {`${phone.title} ${phone.id}`}
-          </div>
+          <PhoneCard phone={phone} key={phone.slug} />
         ))}
       </div>
-      <div>pagination</div>
+      <Pagination
+        total={totalPhonesCount}
+        perPage={perPage}
+        currentPage={currentPage}
+        onPageChange={onPageChange}
+      />
     </div>
   );
 };
