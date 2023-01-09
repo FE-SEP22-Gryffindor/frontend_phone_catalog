@@ -1,0 +1,111 @@
+.container-card-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media (min-width: 488px) {
+  }
+
+  @media (min-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.container-card-page .title {
+  display: flex;
+}
+
+.back {
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+.container-card-page .back::before {
+  content: '';
+  background-image: url('../../img/icon-chevron-arrow-right.svg');
+  width: 10px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.cart-form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 1199px) {
+    grid-template-columns: repeat(1, 2fr 1fr);
+  }
+}
+
+
+.cart-items {
+  margin-right: 16px;
+}
+
+.cart-item {
+  height: 160px;
+  background-color: #fff;
+  border: 1px solid #E2E6E9;
+  border-radius: 16px;
+  margin-bottom: 30px;
+
+  @media (min-width: 640px) {
+    height: 128px;
+  }
+}
+
+.cart-total {
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #E2E6E9;
+  border-radius: 16px;
+  margin-bottom: 88px;
+}
+
+.total-amount {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+  margin-bottom: 15px;
+
+  letter-spacing: -0.01em;
+
+  color: #0F0F11;
+}
+
+.total-items {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+
+  text-align: center;
+
+  color: #89939A;
+}
+
+.total-hr {
+  width: 80%;
+  border-top: 1px solid #E2E6E9;
+}
+
+.btn-checkout {
+  padding: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  background: #F86800;
+  border-radius: 8px;
+  width: 80%;
+  border: none;
+}

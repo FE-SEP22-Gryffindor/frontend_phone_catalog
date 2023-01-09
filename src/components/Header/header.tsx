@@ -63,7 +63,10 @@ export const Header: React.FC = () => {
               <img src={`${heartIcon}`} alt="favorites" />
             </Link>
 
-            <Link to="/" className="header__content__buttons-right menu-moved">
+            <Link
+              to="/cart"
+              className="header__content__buttons-right menu-moved"
+            >
               <img src={`${shopIcon}`} alt="shopCard" />
             </Link>
 
