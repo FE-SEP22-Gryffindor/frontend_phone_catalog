@@ -70,7 +70,7 @@ export const Header: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/"
+              to="/cart"
               className="header__content__buttons-right menu-moved"
             >
               <img src={shopIcon} alt="shopCard" />
