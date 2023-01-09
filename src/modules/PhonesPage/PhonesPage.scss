@@ -1,10 +1,10 @@
 .container-phone-page {
   max-width: 1200px;
   margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media (min-width: 488px) {
-    padding-left: 16px;
-    padding-right: 16px;
   }
 
   @media (min-width: 768px) {
@@ -115,8 +115,6 @@
   grid-template-columns: repeat($columns, 1fr);
 }
 
-// $card-width: 272px;
-
 .products-catalog {
   @extend %grid-center;
   @include template-columns(1);
@@ -140,7 +138,6 @@
   &__card {
     @extend %grid-center;
     align-items: center;
-    // width: $card-width;
     height: 506px;
 
     border: 1px solid #ccc;

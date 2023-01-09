@@ -29,8 +29,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "format": "prettier --write . --ignore-path .gitignore",
-    "lint": "eslint . --ignore-path .gitignore --fix",
-    "fix-style": "npm run format && npm run lint",
+    "lint": "eslint . --ignore-path .gitignore",
+    "fix-style": "npm run format && npm run lint -- --fix",
     "prepare": "husky install"
   },
   "eslintConfig": {
@@ -55,6 +55,7 @@
     "@mate-academy/eslint-config": "0.0.20",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "classnames": "^2.3.2",
     "eslint": "^8.31.0",
     "eslint-plugin-react": "^7.31.11",
     "husky": "^8.0.3",
@@ -62,6 +63,6 @@
     "prettier": "2.8.1"
   },
   "lint-staged": {
-    "*.tsx, *.css": "npm run lint"
+    "*.tsx, *.scss": "npm run lint"
   }
 }
