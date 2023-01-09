@@ -3,11 +3,18 @@ import closeIcon from '../../img/CloseForCart.svg';
 import PhonePic from '../../img/Cart-img-Phone.png';
 import minusIcon from '../../img/Minus.svg';
 import PlusIcon from '../../img/Plus.svg';
-
 import './CartCard.scss';
+import { CartCardItem } from '../../types/CartCardItem';
 
-export const CartCard: React.FC = () => {
+interface Props {
+  card: CartCardItem
+  setTotalAmount: React.Dispatch<React.SetStateAction<number>>
+}
+
+export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
   const [counterOfItetms, setCounterOfItetms] = useState(1);
+
+  const totalAmountOfCard = card.price * counterOfItetms;
 
   return (
     <div className='cart'>
@@ -34,8 +41,12 @@ export const CartCard: React.FC = () => {
       <div className='cart__counting'>
         <div className='cart__amount'>
           <button
-            onClick={() => setCounterOfItetms(prevState => prevState - 1)}
+            onClick={() => {
+              setCounterOfItetms(prevState => prevState - 1);
+              setTotalAmount(prevState => prevState - card.price);
+            }}
             className='cart__button cart__button__minus'
+            disabled={counterOfItetms <= 1}
           >
 
             <img
@@ -48,7 +59,10 @@ export const CartCard: React.FC = () => {
           <p>{`${counterOfItetms}`}</p>
 
           <button
-            onClick={() => setCounterOfItetms(prevState => prevState + 1)}
+            onClick={() => {
+              setCounterOfItetms(prevState => prevState + 1);
+              setTotalAmount(prevState => prevState + card.price);
+            }}
             className='cart__button cart__button__plus'
           >
             <img
@@ -60,7 +74,7 @@ export const CartCard: React.FC = () => {
         </div>
 
         <h2 className='cart__value'>
-          $999
+          {`$${totalAmountOfCard}`}
         </h2>
       </div>
     </div>
