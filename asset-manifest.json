@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend_phone_catalog/static/css/main.9aecf28f.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.593825f9.js",
-    "static/js/787.c8915dc9.chunk.js": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js",
+    "main.css": "/frontend_phone_catalog/static/css/main.3a9c546b.css",
+    "main.js": "/frontend_phone_catalog/static/js/main.64db6bea.js",
     "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.ccaf7a234c9d096c90d06573cdbddc94.svg",
     "static/media/Mont-SemiBold.woff2": "/frontend_phone_catalog/static/media/Mont-SemiBold.95ab478c134f9e9da545.woff2",
     "static/media/Mont-Regular.woff2": "/frontend_phone_catalog/static/media/Mont-Regular.efd082cbd3e10b7e9c88.woff2",
@@ -11,17 +10,17 @@
     "static/media/icon-home.svg": "/frontend_phone_catalog/static/media/icon-home.9a24a70540404ccecd05.svg",
     "static/media/like_favourite_favorite_icon.svg": "/frontend_phone_catalog/static/media/like_favourite_favorite_icon.d6fa1bd595623abe9089c282515ff4b5.svg",
     "index.html": "/frontend_phone_catalog/index.html",
+    "static/media/Close.svg": "/frontend_phone_catalog/static/media/Close.cdfb6ae506fe360c9ad495bfc61f521d.svg",
     "static/media/Menu.svg": "/frontend_phone_catalog/static/media/Menu.73ddde2c093f9fb313b993eaba038f9a.svg",
     "static/media/footerButton.svg": "/frontend_phone_catalog/static/media/footerButton.411b5a1b4b9eda1837e8.svg",
     "static/media/icon-chevron-arrow-right.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-right.4a6dcc3ba009852b1fa0.svg",
     "static/media/icon-chevron.svg": "/frontend_phone_catalog/static/media/icon-chevron.e028d3889646e0b5e56c.svg",
     "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.b87d883446f750defdba.svg",
-    "main.9aecf28f.css.map": "/frontend_phone_catalog/static/css/main.9aecf28f.css.map",
-    "main.593825f9.js.map": "/frontend_phone_catalog/static/js/main.593825f9.js.map",
-    "787.c8915dc9.chunk.js.map": "/frontend_phone_catalog/static/js/787.c8915dc9.chunk.js.map"
+    "main.3a9c546b.css.map": "/frontend_phone_catalog/static/css/main.3a9c546b.css.map",
+    "main.64db6bea.js.map": "/frontend_phone_catalog/static/js/main.64db6bea.js.map"
   },
   "entrypoints": [
-    "static/css/main.9aecf28f.css",
-    "static/js/main.593825f9.js"
+    "static/css/main.3a9c546b.css",
+    "static/js/main.64db6bea.js"
   ]
 }
