@@ -3,17 +3,19 @@ import closeIcon from '../../img/CloseForCart.svg';
 import minusIcon from '../../img/Minus.svg';
 import PlusIcon from '../../img/Plus.svg';
 import './CartCard.scss';
-import { Phone } from '../../types/Phone';
+// import { Phone } from '../../types/Phone';
+import { CartCardItem } from '../../types/CartCardItem';
 
 interface Props {
-  card: Phone
+  // card: Phone
+  card: CartCardItem
   setTotalAmount: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
   const [counterOfItetms, setCounterOfItetms] = useState(1);
 
-  const totalAmountOfCard = card.price * counterOfItetms;
+  const totalAmountOfCard = card.phone.price * counterOfItetms;
 
   return (
     <div className='cart'>
@@ -28,14 +30,14 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
 
           <img
             className='cart__picture'
-            src={card.image}
+            src={card.phone.image}
             alt="Product picture" />
         </div>
 
         <p
           className='cart__header__text'
         >
-          {card.name}
+          {card.phone.name}
         </p>
       </div>
       <div className='cart__counting'>
@@ -43,7 +45,7 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
           <button
             onClick={() => {
               setCounterOfItetms(prevState => prevState - 1);
-              setTotalAmount(prevState => prevState - Number(card.price));
+              setTotalAmount(prevState => prevState - Number(card.phone.price));
             }}
             className='cart__button cart__button__minus'
             disabled={counterOfItetms <= 1}
@@ -61,7 +63,7 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
           <button
             onClick={() => {
               setCounterOfItetms(prevState => prevState + 1);
-              setTotalAmount(prevState => prevState + Number(card.price));
+              setTotalAmount(prevState => prevState + Number(card.phone.price));
             }}
             className='cart__button cart__button__plus'
           >

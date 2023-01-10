@@ -2,20 +2,17 @@
 import React, { useContext, useState } from 'react';
 import { Modal } from '../../components/Modal';
 import { CartCard } from '../../components/CartCard';
-// import { Link } from 'react-router-dom';
-
 import './CartPage.scss';
-import {
-  CartAndFavContext,
-} from '../../components/CartAndFavContext/CartAndFavContext';
+import { CartAndFavContext } from '../../components/CartAndFavContext';
 
 export const CartPage = () => {
   const { cartList } = useContext(CartAndFavContext);
   const [isModalShown, setIsModalShown] = useState(false);
   const [isYes, setIsYes] = useState(false);
   const [totalAmount, setTotalAmount] = useState(cartList.reduce(
-    (accumulator, currentValue) => accumulator + Number(currentValue.price),
-    0,
+    (accumulator, currentValue) => (
+      accumulator + Number(currentValue.phone.price)
+    ), 0,
   ));
 
   const total = cartList.length;
@@ -40,7 +37,7 @@ export const CartPage = () => {
         <div className='cart-items'>
           {cartList.map(item => (
             <CartCard
-              key={item.slug}
+              key={item.phone.slug}
               card={item}
               setTotalAmount={setTotalAmount} />
           ))}
