@@ -1,0 +1,97 @@
+.cart {
+  height: 160px;
+  background-color: #fff;
+  border: 1px solid #E2E6E9;
+  border-radius: 16px;
+  margin-bottom: 30px;
+
+  transition: 0.3s;
+
+  @media (min-width: 640px) {
+    height: 128px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: start;
+    height: 70%;
+
+    @media (min-width: 640px) {
+      height: 100%;
+      align-items: center;
+    }
+  }
+
+  &__picture {
+    height: 66px;
+    width: 66px;
+    padding-right: 10px;
+  }
+
+  &__closer {
+    width: 20px;
+  }
+
+  &__links {
+    gap: 17px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__counting {
+    padding: 0 16px;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 640px) {
+      justify-content: space-evenly;
+    }
+  }
+
+  &__amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+  }
+
+  &__button {
+    border-radius: 100%;
+    height: 32px;
+    width: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid orange;
+    }
+
+    &__minus {
+      border: 1px solid #e2e6e9;
+    }
+
+    &__plus {
+      border: 1px solid #B4BDC4;
+    }
+
+    &__close {
+      cursor: pointer;
+      border: none;
+      background-color: #fff;;
+    }
+  }
+}
