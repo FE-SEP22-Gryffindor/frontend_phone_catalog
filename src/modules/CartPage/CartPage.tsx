@@ -12,13 +12,22 @@ import './CartPage.scss';
 
 const items = [
   {
-    id: 1, img: 'link', title: 'title', price: 1999,
+    id: 1,
+    img: 'link',
+    title: 'title',
+    price: 1999,
   },
   {
-    id: 2, img: 'link', title: 'title', price: 888,
+    id: 2,
+    img: 'link',
+    title: 'title',
+    price: 1999,
   },
   {
-    id: 3, img: 'link', title: 'title', price: 1367,
+    id: 3,
+    img: 'link',
+    title: 'title',
+    price: 1999,
   },
 ];
 
@@ -31,9 +40,11 @@ export const CartPage = () => {
   ));
 
   return (
-    <div className='container-card-page'>
+    <div className="container-card-page">
       <div className="breadcrumbs">
-        <Link to='/' className="back">Back</Link>
+        <Link to="/" className="back">
+          Back
+        </Link>
       </div>
       <div>
         <h1 className="title">Cart page</h1>
