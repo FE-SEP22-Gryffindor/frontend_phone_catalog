@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import closeIcon from '../../img/CloseForCart.svg';
-import PhonePic from '../../img/Cart-img-Phone.png';
 import minusIcon from '../../img/Minus.svg';
 import PlusIcon from '../../img/Plus.svg';
 import './CartCard.scss';
-import { CartCardItem } from '../../types/CartCardItem';
+import { Phone } from '../../types/Phone';
 
 interface Props {
-  card: CartCardItem
+  card: Phone
   setTotalAmount: React.Dispatch<React.SetStateAction<number>>
 }
 
@@ -29,13 +28,14 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
 
           <img
             className='cart__picture'
-            src={PhonePic}
+            src={card.image}
             alt="Product picture" />
         </div>
 
         <p
           className='cart__header__text'
-        >Apple iPhone 14 Pro 128GB Silver (MQ023)
+        >
+          {card.name}
         </p>
       </div>
       <div className='cart__counting'>
@@ -43,7 +43,7 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
           <button
             onClick={() => {
               setCounterOfItetms(prevState => prevState - 1);
-              setTotalAmount(prevState => prevState - card.price);
+              setTotalAmount(prevState => prevState - Number(card.price));
             }}
             className='cart__button cart__button__minus'
             disabled={counterOfItetms <= 1}
@@ -61,7 +61,7 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
           <button
             onClick={() => {
               setCounterOfItetms(prevState => prevState + 1);
-              setTotalAmount(prevState => prevState + card.price);
+              setTotalAmount(prevState => prevState + Number(card.price));
             }}
             className='cart__button cart__button__plus'
           >

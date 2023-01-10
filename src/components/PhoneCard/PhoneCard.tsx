@@ -4,9 +4,6 @@ import './PhoneCard.scss';
 import heartLogo from './imagesCard/heart.png';
 import heartLogoActive from './imagesCard/like_favourite_favorite_icon.svg';
 import { Link } from 'react-router-dom';
-import {
-  CartAndFavContext,
-} from '../../components/CartAndFavContext/CartAndFavContext';
 import { Phone } from '../../types/Phone';
 import { CartAndFavContext } from '../CartAndFavContext/CartAndFavContext';
 
