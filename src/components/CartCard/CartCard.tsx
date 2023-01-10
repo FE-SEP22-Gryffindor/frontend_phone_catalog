@@ -45,6 +45,10 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
       .filter((item) => item.phone.slug !== card.phone.slug);
 
     setCartList(filteredStorage);
+
+    setTotalAmount(prevState => (
+      prevState - Number(card.phone.price) * card.quantity
+    ));
   };
 
   return (

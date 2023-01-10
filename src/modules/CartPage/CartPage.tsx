@@ -11,11 +11,12 @@ export const CartPage = () => {
   const [isYes, setIsYes] = useState(false);
   const [totalAmount, setTotalAmount] = useState(cartList.reduce(
     (accumulator, currentValue) => (
-      accumulator + Number(currentValue.phone.price)
+      accumulator + Number(currentValue.phone.price) * currentValue.quantity
     ), 0,
   ));
 
-  const total = cartList.length;
+  const totalQuantity = cartList
+    .reduce((prev, current) => prev + current.quantity, 0);
 
   return (
     <div className="container-card-page">
@@ -45,7 +46,7 @@ export const CartPage = () => {
 
         <div className='cart-total'>
           <h2 className='total-amount'>${totalAmount}</h2>
-          <p className='total-items'>Total for {total} items</p>
+          <p className='total-items'>Total for {totalQuantity} items</p>
           <hr className='total-hr' />
           <button
             className='btn-checkout'
