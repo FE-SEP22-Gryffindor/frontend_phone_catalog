@@ -8,6 +8,7 @@ import burgerOpenIcon from '../../img/Menu.svg';
 import burgerCloseIcon from '../../img/Close.svg';
 import { BurgerMenu } from '../BurgerMenu';
 import { Navigation } from '../Navigation';
+import classNames from 'classnames';
 
 const navigationLinks = [
   { to: '/', text: 'Home' },
@@ -63,15 +64,21 @@ export const Header: React.FC = () => {
 
           <div className="header__content__buttons">
             <NavLink
-              to="/"
-              className="header__content__buttons-right menu-moved"
+              to="/favorites"
+              className={({ isActive }) => classNames(
+                'header__content__buttons-right menu-moved menu-hover',
+                { 'header__content__buttons__is-active': isActive },
+              )}
             >
               <img src={heartIcon} alt="favorites" />
             </NavLink>
 
             <NavLink
               to="/cart"
-              className="header__content__buttons-right menu-moved"
+              className={({ isActive }) => classNames(
+                'header__content__buttons-right menu-moved menu-hover',
+                { 'header__content__buttons__is-active': isActive },
+              )}
             >
               <img src={shopIcon} alt="shopCard" />
             </NavLink>
