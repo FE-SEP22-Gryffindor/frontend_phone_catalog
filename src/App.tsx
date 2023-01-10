@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import { PhonesPage } from './modules/PhonesPage';

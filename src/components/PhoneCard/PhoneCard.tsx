@@ -12,22 +12,22 @@ interface Props {
 }
 
 export const PhoneCard: React.FC<Props> = ({ phone }) => {
-  const { setCartList, setFavList, cartList: CartList, favtList: FavtList }
+  const { setCartList, setFavList, cartList, favtList }
     = useContext(CartAndFavContext);
 
-  const foundItemCart = CartList.find((item) => item.slug === phone.slug);
+  const foundItemCart = cartList.find((item) => item.slug === phone.slug);
 
-  const foundItemfav = FavtList.find((item) => item.slug === phone.slug);
+  const foundItemfav = favtList.find((item) => item.slug === phone.slug);
   const [isActiveToCard, setIsActiveToCard] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(CartList));
-  }, [CartList]);
+    localStorage.setItem('cart', JSON.stringify(cartList));
+  }, [cartList]);
 
   useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(FavtList));
-  }, [FavtList]);
+    localStorage.setItem('favorites', JSON.stringify(favtList));
+  }, [favtList]);
 
   useEffect(() => {
     if (foundItemCart) {
@@ -44,12 +44,12 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
 
     // add to state if no found in storage
     if (!foundItemCart) {
-      setCartList([...CartList, phone]);
+      setCartList([...cartList, phone]);
     }
 
     // delete from state
     if (foundItemCart) {
-      const cleanStorage = CartList.filter((item) => item.slug !== phone.slug);
+      const cleanStorage = cartList.filter((item) => item.slug !== phone.slug);
 
       setCartList(cleanStorage);
     }
@@ -60,12 +60,12 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
 
     // add to state if no found in storage
     if (!foundItemfav) {
-      setFavList([...FavtList, phone]);
+      setFavList([...favtList, phone]);
     }
 
     // delete from state
     if (foundItemfav) {
-      const cleanStorage = FavtList.filter((item) => item.slug !== phone.slug);
+      const cleanStorage = favtList.filter((item) => item.slug !== phone.slug);
 
       setFavList(cleanStorage);
     }
