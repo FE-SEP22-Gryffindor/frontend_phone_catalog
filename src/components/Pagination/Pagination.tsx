@@ -41,12 +41,16 @@ export const Pagination: React.FC<Props> = ({
   return (
     <ul className="pagination">
       <li
-        className={classNames('pagination__item', {
-          disabled: isFirstPage,
-        })}
+        className="pagination__item"
       >
         <a
-          className="pagination__link pagination__link-arrow"
+          // className="pagination__link pagination__link-arrow"
+          className={classNames(
+            'pagination__link pagination__link-arrow',
+            {
+              'pagination__link--disabled': isFirstPage,
+            },
+          )}
           // href={`#${currentPage}`}
           aria-disabled={isFirstPage}
           onClick={onPrevPage}
@@ -68,12 +72,16 @@ export const Pagination: React.FC<Props> = ({
         </li>
       ))}
       <li
-        className={classNames('pagination__item', {
-          disabled: isLastPage,
-        })}
+        className="pagination__item"
       >
         <a
-          className="pagination__link pagination__link-arrow"
+          // className="pagination__link pagination__link-arrow"
+          className={classNames(
+            'pagination__link pagination__link-arrow',
+            {
+              'pagination__link--disabled': isLastPage,
+            },
+          )}
           // href={`#${currentPage}`}
           aria-disabled={isLastPage}
           onClick={onNextPage}
