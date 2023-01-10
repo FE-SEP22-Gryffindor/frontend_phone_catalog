@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/frontend_phone_catalog/static/css/main.724d5f16.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.ab37f6aa.js",
+    "main.js": "/frontend_phone_catalog/static/js/main.aa32f77f.js",
     "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.c7a7b8accc88c2e0bb1ca71156d5060f.svg",
     "static/media/Mont-SemiBold.woff2": "/frontend_phone_catalog/static/media/Mont-SemiBold.95ab478c134f9e9da545.woff2",
     "static/media/Mont-Regular.woff2": "/frontend_phone_catalog/static/media/Mont-Regular.efd082cbd3e10b7e9c88.woff2",
@@ -20,10 +20,10 @@
     "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.24d44fed422f6846ee6b.svg",
     "static/media/Minus.svg": "/frontend_phone_catalog/static/media/Minus.4f727ec4693f6105d0f625b4efa653f6.svg",
     "main.724d5f16.css.map": "/frontend_phone_catalog/static/css/main.724d5f16.css.map",
-    "main.ab37f6aa.js.map": "/frontend_phone_catalog/static/js/main.ab37f6aa.js.map"
+    "main.aa32f77f.js.map": "/frontend_phone_catalog/static/js/main.aa32f77f.js.map"
   },
   "entrypoints": [
     "static/css/main.724d5f16.css",
-    "static/js/main.ab37f6aa.js"
+    "static/js/main.aa32f77f.js"
   ]
 }
