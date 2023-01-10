@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import { PhonesPage } from './modules/PhonesPage';
-import { Footer } from './components/footer/Footer';
+import { Footer } from './components/Footer/';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { CartPage } from './modules/CartPage';
 import { Header } from './components/Header';
