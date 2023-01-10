@@ -1,5 +1,7 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { CartAndFavContext } from '../CartAndFavContext';
 import './Modal.scss';
 
 interface Props {
@@ -15,6 +17,8 @@ export const Modal: React.FC<Props> = ({
   isYes,
   onAnswer,
 }) => {
+  const { setCartList } = useContext(CartAndFavContext);
+
   return (
     <div className={classNames('modal', { modal__isActive: isShown })}>
       {!isYes && (
@@ -26,6 +30,7 @@ export const Modal: React.FC<Props> = ({
               className="modal__button modal__button--ans"
               onClick={() => {
                 onAnswer(true);
+                setCartList([]);
               }}
             >
               Yes
@@ -46,14 +51,15 @@ export const Modal: React.FC<Props> = ({
         <div className="modal__content">
           <h2>Thank you for your order!</h2>
           <p>{'We will contact to you soon:)'}</p>
-          <button
+          <Link
+            to='/'
             className="modal__button"
             onClick={() => {
               onModalShown(false);
             }}
           >
             OK
-          </button>
+          </Link>
         </div>
       )}
     </div>
