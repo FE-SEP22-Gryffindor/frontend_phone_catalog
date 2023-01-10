@@ -53,7 +53,9 @@
 }
 
 .cart-items {
-  margin-right: 16px;
+  @media (min-width: 1199px) {
+    margin-right: 16px;
+  }
 }
 
 .cart-item {
