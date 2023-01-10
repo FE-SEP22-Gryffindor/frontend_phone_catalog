@@ -8,7 +8,6 @@ import { CartAndFavContext } from '../../components/CartAndFavContext';
 export const CartPage = () => {
   const { cartList } = useContext(CartAndFavContext);
   const [isModalShown, setIsModalShown] = useState(false);
-  const [isYes, setIsYes] = useState(false);
   const [totalAmount, setTotalAmount] = useState(cartList.reduce(
     (accumulator, currentValue) => (
       accumulator + Number(currentValue.phone.price) * currentValue.quantity
@@ -52,7 +51,6 @@ export const CartPage = () => {
             className='btn-checkout'
             onClick={() => {
               setIsModalShown(true);
-              setIsYes(false);
             }}
           >
             Checkout
@@ -62,8 +60,6 @@ export const CartPage = () => {
       <Modal
         isShown={isModalShown}
         onModalShown={setIsModalShown}
-        isYes={isYes}
-        onAnswer={setIsYes}
       />
     </div>
   );
