@@ -22,14 +22,6 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cartList));
-  }, [cartList]);
-
-  useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favtList));
-  }, [favtList]);
-
-  useEffect(() => {
     if (foundItemCart) {
       setIsActiveToCard(true);
     }

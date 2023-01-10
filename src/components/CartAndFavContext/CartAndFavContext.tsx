@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Phone } from '../../types/Phone';
 
 interface ContextValues {
@@ -26,6 +26,14 @@ export const CartAndFavProvider: React.FC<Props> = ({ children }) => {
 
   const getFavStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
   const [favtList, setFavList] = useState<Phone[]>(getFavStorage);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartList));
+  }, [cartList]);
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favtList));
+  }, [favtList]);
 
   const contextValue = {
     cartList,
