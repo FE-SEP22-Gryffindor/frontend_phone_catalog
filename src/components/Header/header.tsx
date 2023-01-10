@@ -44,6 +44,9 @@ export const Header: React.FC = () => {
     };
   }, []);
 
+  const totalQuantity = cartList
+    .reduce((prev, current) => prev + current.quantity, 0);
+
   return (
     <header className="header">
       <div className="container">
@@ -90,10 +93,9 @@ export const Header: React.FC = () => {
                   'header__cart__quantity-visible': cartList.length > 0,
                 })}
               >
-                {cartList.length}
+                {totalQuantity}
               </span>
             </NavLink>
-
             {burgerMenuOpen ? (
               <button
                 className="header__content__buttons-right menu"

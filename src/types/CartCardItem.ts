@@ -1,6 +1,6 @@
+import { Phone } from './Phone';
+
 export interface CartCardItem {
-  id: number,
-  img: string,
-  title: string,
-  price: number,
+  phone: Phone,
+  quantity: number,
 }

@@ -39,6 +39,11 @@
       border: 1px solid #b4bdc4;
     }
 
+    &--disabled {
+      color: #b4bdc4;
+      cursor: not-allowed;
+    }
+
     &-active {
       color: #ffffff;
       border: 1px solid #0f0f11;
