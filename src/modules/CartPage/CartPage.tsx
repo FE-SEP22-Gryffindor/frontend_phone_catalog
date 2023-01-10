@@ -6,42 +6,14 @@ import {
   CartAndFavContext,
 } from '../../components/CartAndFavContext/CartAndFavContext';
 
-// interface Item = {
-//   id: number,
-//   img: string,
-//   title: string,
-//   price: number,
-// }
-
-const items = [
-  {
-    id: 1,
-    img: 'link',
-    title: 'title',
-    price: 1999,
-  },
-  {
-    id: 2,
-    img: 'link',
-    title: 'title',
-    price: 1999,
-  },
-  {
-    id: 3,
-    img: 'link',
-    title: 'title',
-    price: 1999,
-  },
-];
-
-const total = CartList.length;
-
 export const CartPage = () => {
   const { CartList } = useContext(CartAndFavContext);
   const [totalAmount, setTotalAmount] = useState(CartList.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.price,
+    (accumulator, currentValue) => accumulator + Number(currentValue.price),
     0,
   ));
+
+  const total = CartList.length;
 
   return (
     <div className="container-card-page">
