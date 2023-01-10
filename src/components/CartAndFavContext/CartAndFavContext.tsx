@@ -21,12 +21,11 @@ type Props = {
 };
 
 export const CartAndFavProvider: React.FC<Props> = ({ children }) => {
-
   const getCartStorage = JSON.parse(localStorage.getItem('cart') || '[]');
-  const [CartList, setCartList] = useState<Phone[]>(getCartStorage);
+  const [cartList, setCartList] = useState<Phone[]>(getCartStorage);
 
   const getFavStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
-  const [FavtList, setFavList] = useState<Phone[]>(getFavStorage);
+  const [favtList, setFavList] = useState<Phone[]>(getFavStorage);
 
   const contextValue = {
     cartList,

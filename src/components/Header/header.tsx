@@ -22,7 +22,7 @@ const navigationLinks = [
 
 export const Header: React.FC = () => {
   const [burgerMenuOpen, isBurgerMenuOpen] = useState(false);
-  const { CartList } = useContext(CartAndFavContext);
+  const { cartList: CartList } = useContext(CartAndFavContext);
 
   if (burgerMenuOpen) {
     document.body.style.overflow = 'hidden';

@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const PhoneCard: React.FC<Props> = ({ phone }) => {
-  const { setCartList, setFavList, CartList, FavtList }
+  const { setCartList, setFavList, cartList: CartList, favtList: FavtList }
     = useContext(CartAndFavContext);
 
   const foundItemCart = CartList.find((item) => item.slug === phone.slug);

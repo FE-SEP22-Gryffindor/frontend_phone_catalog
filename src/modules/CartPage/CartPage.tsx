@@ -9,17 +9,16 @@ import {
   CartAndFavContext,
 } from '../../components/CartAndFavContext/CartAndFavContext';
 
-
 export const CartPage = () => {
-  const { CartList } = useContext(CartAndFavContext);
+  const { cartList } = useContext(CartAndFavContext);
   const [isModalShown, setIsModalShown] = useState(false);
   const [isYes, setIsYes] = useState(false);
-  const [totalAmount, setTotalAmount] = useState(CartList.reduce(
+  const [totalAmount, setTotalAmount] = useState(cartList.reduce(
     (accumulator, currentValue) => accumulator + Number(currentValue.price),
     0,
   ));
 
-  const total = CartList.length;
+  const total = cartList.length;
 
   return (
     <div className="container-card-page">
@@ -39,7 +38,7 @@ export const CartPage = () => {
       </div>
       <div className='cart-form'>
         <div className='cart-items'>
-          {CartList.map(item => (
+          {cartList.map(item => (
             <CartCard
               key={item.slug}
               card={item}
@@ -51,7 +50,7 @@ export const CartPage = () => {
           <h2 className='total-amount'>${totalAmount}</h2>
           <p className='total-items'>Total for {total} items</p>
           <hr className='total-hr' />
-          <button 
+          <button
             className='btn-checkout'
             onClick={() => {
               setIsModalShown(true);
