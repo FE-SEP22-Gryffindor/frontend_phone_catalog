@@ -74,6 +74,14 @@
 
       color: #89939a;
       text-decoration: none;
+
+      @media (min-width: 1200px) {
+        padding-right: 106px;
+      }
+    }
+
+    &__link:last-child {
+      padding-right: 0px;
     }
   }
 }
