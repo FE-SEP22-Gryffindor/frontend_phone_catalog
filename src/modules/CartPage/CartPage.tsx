@@ -1,5 +1,6 @@
 /* eslint-disable no-shadow */
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from '../../components/Modal';
 // import { Link } from 'react-router-dom';
 import './CartPage.scss';
 
@@ -35,13 +36,13 @@ const sum = items.reduce(
   (accumulator, currentValue) => accumulator + currentValue.price,
   0,
 );
-// const back = history.back();
-
-// console.log(back);
 
 const total = items.length;
 
 export const CartPage = () => {
+  const [isModalShown, setIsModalShown] = useState(false);
+  const [isYes, setIsYes] = useState(false);
+
   return (
     <div className="container-card-page">
       <div className="breadcrumbs">
@@ -72,9 +73,23 @@ export const CartPage = () => {
           <h2 className="total-amount">${sum}</h2>
           <p className="total-items">Total for {total} items</p>
           <hr className="total-hr" />
-          <button className="btn-checkout">Checkout</button>
+          <button
+            className="btn-checkout"
+            onClick={() => {
+              setIsModalShown(true);
+              setIsYes(false);
+            }}
+          >
+            Checkout
+          </button>
         </div>
       </div>
+      <Modal
+        isShown={isModalShown}
+        onModalShown={setIsModalShown}
+        isYes={isYes}
+        onAnswer={setIsYes}
+      />
     </div>
   );
 };

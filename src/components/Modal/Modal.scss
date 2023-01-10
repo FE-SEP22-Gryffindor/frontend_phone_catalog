@@ -1,0 +1,61 @@
+.modal {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  scale: 0;
+  transition: 300ms linear;
+  font-family: 'Mont', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0f0f11;
+
+  &__isActive {
+    scale: 1;
+  }
+
+  &__content {
+    margin: auto;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: whitesmoke;
+    height: 30vh;
+    width: 30vw;
+  }
+
+  &__question {
+    margin: auto;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: whitesmoke;
+    height: 30vh;
+    width: 30vw;
+  }
+
+  &__answers {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__button {
+    width: 50%;
+    padding: 10px;
+    justify-self: center;
+    background: #f86800;
+    border-radius: 8px;
+    border: none;
+    color: white;
+
+    &--ans {
+      width: 30%;
+    }
+  }
+}

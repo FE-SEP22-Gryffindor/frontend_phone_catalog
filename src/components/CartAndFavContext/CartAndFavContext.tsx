@@ -3,16 +3,16 @@ import React, { useState } from 'react';
 import { Phone } from '../../types/Phone';
 
 interface ContextValues {
-  CartList: Phone[];
+  cartList: Phone[];
   setCartList: React.Dispatch<React.SetStateAction<Phone[]>>;
-  FavtList: Phone[];
+  favtList: Phone[];
   setFavList: React.Dispatch<React.SetStateAction<Phone[]>>;
 }
 
 export const CartAndFavContext = React.createContext<ContextValues>({
-  CartList: [],
+  cartList: [],
   setCartList: () => {},
-  FavtList: [],
+  favtList: [],
   setFavList: () => {},
 });
 
@@ -21,13 +21,13 @@ type Props = {
 };
 
 export const CartAndFavProvider: React.FC<Props> = ({ children }) => {
-  const [CartList, setCartList] = useState<Phone[]>([]);
-  const [FavtList, setFavList] = useState<Phone[]>([]);
+  const [cartList, setCartList] = useState<Phone[]>([]);
+  const [favtList, setFavList] = useState<Phone[]>([]);
 
   const contextValue = {
-    CartList,
+    cartList,
     setCartList,
-    FavtList,
+    favtList,
     setFavList,
   };
 
