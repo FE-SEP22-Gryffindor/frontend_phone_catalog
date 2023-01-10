@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import closeIcon from '../../img/CloseForCart.svg';
 import minusIcon from '../../img/Minus.svg';
 import PlusIcon from '../../img/Plus.svg';
 import './CartCard.scss';
 // import { Phone } from '../../types/Phone';
 import { CartCardItem } from '../../types/CartCardItem';
+import { CartAndFavContext } from '../CartAndFavContext';
 
 interface Props {
   // card: Phone
@@ -17,11 +18,24 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
 
   const totalAmountOfCard = card.phone.price * counterOfItetms;
 
+  const { setCartList, cartList }
+    = useContext(CartAndFavContext);
+
+  const handleDeleteButton = () => {
+    const filteredStorage = cartList
+      .filter((item) => item.phone.slug !== card.phone.slug);
+
+    setCartList(filteredStorage);
+  };
+
   return (
     <div className='cart'>
       <div className='cart__header'>
         <div className='cart__links'>
-          <button className='cart__button__close'>
+          <button
+            className='cart__button__close'
+            onClick={handleDeleteButton}
+          >
             <img
               className='cart__closer'
               src={closeIcon}
