@@ -35,9 +35,12 @@ export const BurgerMenu: React.FC<Props> = ({
 
       <div className="burger__menu__buttons">
         <NavLink
-          to="/"
+          to="/favorites"
           onClick={() => isBurgerMenuOpen(false)}
-          className="burger__menu__buttons-bottom"
+          className={({ isActive }) => classNames(
+            'burger__menu__buttons-bottom',
+            { 'burger__menu__buttons__is-active': isActive },
+          )}
         >
           <img
             src={heartIcon}
@@ -47,9 +50,12 @@ export const BurgerMenu: React.FC<Props> = ({
         </NavLink>
 
         <NavLink
-          to="/"
+          to="/cart"
           onClick={() => isBurgerMenuOpen(false)}
-          className="burger__menu__buttons-bottom"
+          className={({ isActive }) => classNames(
+            'burger__menu__buttons-bottom',
+            { 'burger__menu__buttons__is-active': isActive },
+          )}
         >
           <img
             src={shopIcon}

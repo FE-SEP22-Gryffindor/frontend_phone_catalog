@@ -68,15 +68,21 @@ export const Header: React.FC = () => {
 
           <div className="header__content__buttons">
             <NavLink
-              to="/"
-              className="header__content__buttons-right menu-moved"
+              to="/favorites"
+              className={({ isActive }) => classNames(
+                'header__content__buttons-right menu-moved menu-hover',
+                { 'header__content__buttons__is-active': isActive },
+              )}
             >
               <img src={heartIcon} alt="favorites" />
             </NavLink>
 
             <NavLink
               to="/cart"
-              className="header__content__buttons-right menu-moved"
+              className={({ isActive }) => classNames(
+                'header__content__buttons-right menu-moved menu-hover',
+                { 'header__content__buttons__is-active': isActive },
+              )}
             >
               <img src={shopIcon} alt="shopCard" />
               <span
