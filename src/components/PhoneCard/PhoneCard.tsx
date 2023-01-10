@@ -18,6 +18,16 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
   const foundItemCart = CartList.find((item) => item.slug === phone.slug);
 
   const foundItemfav = FavtList.find((item) => item.slug === phone.slug);
+  const [isActiveToCard, setIsActiveToCard] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(CartList));
+  }, [CartList]);
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(FavtList));
+  }, [FavtList]);
 
   useEffect(() => {
     if (foundItemCart) {
@@ -29,7 +39,6 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
     }
   }, []);
 
-  const [isActiveToCard, setIsActiveToCard] = useState(false);
   const handleCardButton = () => {
     setIsActiveToCard(!isActiveToCard);
 
@@ -46,7 +55,6 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
     }
   };
 
-  const [isFavorite, setIsFavorite] = useState(false);
   const handleFavButton = () => {
     setIsFavorite(!isFavorite);
 
