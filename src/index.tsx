@@ -6,6 +6,7 @@ import App from './App';
 import { HashRouter as Router } from 'react-router-dom';
 import { CartAndFavProvider } from './components/CartAndFavContext';
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );

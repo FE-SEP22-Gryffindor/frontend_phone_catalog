@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartCard } from '../../components/CartCard';
 import './CartPage.scss';
+import {
+  CartAndFavContext,
+} from '../../components/CartAndFavContext/CartAndFavContext';
 
 // interface Item = {
 //   id: number,
@@ -31,10 +34,11 @@ const items = [
   },
 ];
 
-const total = items.length;
+const total = CartList.length;
 
 export const CartPage = () => {
-  const [totalAmount, setTotalAmount] = useState(items.reduce(
+  const { CartList } = useContext(CartAndFavContext);
+  const [totalAmount, setTotalAmount] = useState(CartList.reduce(
     (accumulator, currentValue) => accumulator + currentValue.price,
     0,
   ));
@@ -51,9 +55,9 @@ export const CartPage = () => {
       </div>
       <div className='cart-form'>
         <div className='cart-items'>
-          {items.map(item => (
+          {CartList.map(item => (
             <CartCard
-              key={item.id}
+              key={item.slug}
               card={item}
               setTotalAmount={setTotalAmount} />
           ))}
