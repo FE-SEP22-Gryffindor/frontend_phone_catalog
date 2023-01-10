@@ -89,14 +89,13 @@ export const Header: React.FC = () => {
             >
               <img src={shopIcon} alt="shopCard" />
               <span
-                className={classNames('cart-quantity', {
-                  visible: cartList.length > 0,
+                className={classNames('header__cart__quantity', {
+                  'header__cart__quantity-visible': cartList.length > 0,
                 })}
               >
                 {totalQuantity}
               </span>
             </NavLink>
-
             {burgerMenuOpen ? (
               <button
                 className="header__content__buttons-right menu"
