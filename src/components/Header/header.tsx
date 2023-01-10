@@ -66,7 +66,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/favorites"
               className={({ isActive }) => classNames(
-                'header__content__buttons-right menu-moved',
+                'header__content__buttons-right menu-moved menu-hover',
                 { 'header__content__buttons__is-active': isActive },
               )}
             >
@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/cart"
               className={({ isActive }) => classNames(
-                'header__content__buttons-right menu-moved',
+                'header__content__buttons-right menu-moved menu-hover',
                 { 'header__content__buttons__is-active': isActive },
               )}
             >

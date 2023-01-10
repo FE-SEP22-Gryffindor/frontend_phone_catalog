@@ -168,6 +168,15 @@
 }
 
 .menu {
+
+  &-hover {
+    transition: 0.3s;
+
+    &:hover {
+      background: #e2e6e9;
+    }
+  }
+
   @include onTablet {
     display: none;
   }
