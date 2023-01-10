@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useContext } from 'react';
 import closeIcon from '../../img/CloseForCart.svg';
 import minusIcon from '../../img/Minus.svg';
@@ -41,11 +40,21 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
     setTotalAmount(prevState => prevState + Number(card.phone.price));
   };
 
+  const handleDeleteButton = () => {
+    const filteredStorage = cartList
+      .filter((item) => item.phone.slug !== card.phone.slug);
+
+    setCartList(filteredStorage);
+  };
+
   return (
     <div className='cart'>
       <div className='cart__header'>
         <div className='cart__links'>
-          <button className='cart__button__close'>
+          <button
+            className='cart__button__close'
+            onClick={handleDeleteButton}
+          >
             <img
               className='cart__closer'
               src={closeIcon}
