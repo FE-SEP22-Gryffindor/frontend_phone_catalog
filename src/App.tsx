@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
-// import { PhoneCard } from './components/PhoneCard';
 import { PhonesPage } from './modules/PhonesPage';
 import { Footer } from './components/footer/Footer';
 import { NotFoundPage } from './modules/NotFoundPage';
@@ -15,7 +14,6 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<h1>Home Page</h1>} />
-          {/* <Route path="test" element={<PhoneCard />} /> */}
           <Route path="phones" element={<PhonesPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
