@@ -1,7 +1,7 @@
 const BASE_URL
   // eslint-disable-next-line max-len
-  = 'https://deploy-preview-4--stupendous-douhua-9a8b1c.netlify.app/.netlify/functions/server/';
-// = 'http://localhost:9000/.netlify/functions/server';
+  = 'https://deploy-preview-7--stupendous-douhua-9a8b1c.netlify.app/.netlify/functions/server/';
+  // = 'http://localhost:9000/.netlify/functions/server';
 
 // To have autocompletion and avoid mistypes
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
