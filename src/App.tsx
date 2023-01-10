@@ -15,7 +15,6 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<h1>Home Page</h1>} />
-          {/* <Route path="test" element={<PhoneCard />} /> */}
           <Route path="phones" element={<PhonesPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />

@@ -1,21 +1,45 @@
-import React, { useState } from 'react';
+/* eslint-disable max-len */
+import React, { useContext } from 'react';
 import closeIcon from '../../img/CloseForCart.svg';
 import minusIcon from '../../img/Minus.svg';
 import PlusIcon from '../../img/Plus.svg';
 import './CartCard.scss';
-// import { Phone } from '../../types/Phone';
 import { CartCardItem } from '../../types/CartCardItem';
+import { CartAndFavContext } from '../CartAndFavContext';
 
 interface Props {
-  // card: Phone
   card: CartCardItem
   setTotalAmount: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
-  const [counterOfItetms, setCounterOfItetms] = useState(1);
+  const { cartList, setCartList } = useContext(CartAndFavContext);
+  const totalAmountOfCard = card.phone.price * card.quantity;
+  const handleMinus = () => {
+    const newList = cartList.map(el => {
+      if (el === card) {
+        el.quantity -= 1;
+      }
 
-  const totalAmountOfCard = card.phone.price * counterOfItetms;
+      return el;
+    });
+
+    setCartList(newList);
+    setTotalAmount(prevState => prevState - Number(card.phone.price));
+  };
+
+  const handlePlus = () => {
+    const newList = cartList.map(el => {
+      if (el === card) {
+        el.quantity += 1;
+      }
+
+      return el;
+    });
+
+    setCartList(newList);
+    setTotalAmount(prevState => prevState + Number(card.phone.price));
+  };
 
   return (
     <div className='cart'>
@@ -43,12 +67,9 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
       <div className='cart__counting'>
         <div className='cart__amount'>
           <button
-            onClick={() => {
-              setCounterOfItetms(prevState => prevState - 1);
-              setTotalAmount(prevState => prevState - Number(card.phone.price));
-            }}
+            onClick={handleMinus}
             className='cart__button cart__button__minus'
-            disabled={counterOfItetms <= 1}
+            disabled={card.quantity <= 1}
           >
 
             <img
@@ -58,13 +79,10 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
             />
           </button>
 
-          <p>{`${counterOfItetms}`}</p>
+          <p>{`${card.quantity}`}</p>
 
           <button
-            onClick={() => {
-              setCounterOfItetms(prevState => prevState + 1);
-              setTotalAmount(prevState => prevState + Number(card.phone.price));
-            }}
+            onClick={handlePlus}
             className='cart__button cart__button__plus'
           >
             <img
