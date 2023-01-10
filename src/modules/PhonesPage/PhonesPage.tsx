@@ -51,7 +51,7 @@ export const PhonesPage = () => {
         <h1 className="title">Mobile phones</h1>
       </div>
       <div>
-        <p className="result-items">`${totalPhonesCount} models`</p>
+        <p className="result-items">{`${totalPhonesCount} models`}</p>
       </div>
       <div className="sort-items">
         <div>
