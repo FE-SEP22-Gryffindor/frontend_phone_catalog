@@ -41,8 +41,9 @@
   &--specification {
     display: grid;
 
-    @media (min-width: 1199px) {
+    @media (min-width: 640px) {
       grid-template-columns: repeat(1, 1fr 1fr);
+      gap: 64px;
     }
   }
   &--name {
@@ -121,6 +122,12 @@
 
   &--tech-spec-table span:first-child {
     color: #89939A;
+  }
+
+  &--variation {
+    @media (min-width: 1200px) {
+      width:320px
+     }
   }
 }
 
