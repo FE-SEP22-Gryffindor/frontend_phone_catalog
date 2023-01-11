@@ -7,6 +7,7 @@ import { NotFoundPage } from './modules/NotFoundPage';
 import { CartPage } from './modules/CartPage';
 import { Header } from './components/Header';
 import { ItemPage } from './modules/ItemPage';
+import { HomePage } from './modules/HomePage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<h1>Home Page</h1>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="phones" element={<PhonesPage />} />
           <Route path="phones/:itemSlug" element={<ItemPage />} />
           <Route path="cart" element={<CartPage />} />
