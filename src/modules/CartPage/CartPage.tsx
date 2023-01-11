@@ -2,23 +2,20 @@
 import React, { useContext, useState } from 'react';
 import { Modal } from '../../components/Modal';
 import { CartCard } from '../../components/CartCard';
-// import { Link } from 'react-router-dom';
-
 import './CartPage.scss';
-import {
-  CartAndFavContext,
-} from '../../components/CartAndFavContext/CartAndFavContext';
+import { CartAndFavContext } from '../../components/CartAndFavContext';
 
 export const CartPage = () => {
   const { cartList } = useContext(CartAndFavContext);
   const [isModalShown, setIsModalShown] = useState(false);
-  const [isYes, setIsYes] = useState(false);
   const [totalAmount, setTotalAmount] = useState(cartList.reduce(
-    (accumulator, currentValue) => accumulator + Number(currentValue.price),
-    0,
+    (accumulator, currentValue) => (
+      accumulator + Number(currentValue.phone.price) * currentValue.quantity
+    ), 0,
   ));
 
-  const total = cartList.length;
+  const totalQuantity = cartList
+    .reduce((prev, current) => prev + current.quantity, 0);
 
   return (
     <div className="container-card-page">
@@ -40,7 +37,7 @@ export const CartPage = () => {
         <div className='cart-items'>
           {cartList.map(item => (
             <CartCard
-              key={item.slug}
+              key={item.phone.slug}
               card={item}
               setTotalAmount={setTotalAmount} />
           ))}
@@ -48,13 +45,12 @@ export const CartPage = () => {
 
         <div className='cart-total'>
           <h2 className='total-amount'>${totalAmount}</h2>
-          <p className='total-items'>Total for {total} items</p>
+          <p className='total-items'>Total for {totalQuantity} items</p>
           <hr className='total-hr' />
           <button
             className='btn-checkout'
             onClick={() => {
               setIsModalShown(true);
-              setIsYes(false);
             }}
           >
             Checkout
@@ -64,8 +60,6 @@ export const CartPage = () => {
       <Modal
         isShown={isModalShown}
         onModalShown={setIsModalShown}
-        isYes={isYes}
-        onAnswer={setIsYes}
       />
     </div>
   );

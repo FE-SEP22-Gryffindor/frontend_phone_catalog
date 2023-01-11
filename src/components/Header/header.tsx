@@ -22,7 +22,7 @@ const navigationLinks = [
 
 export const Header: React.FC = () => {
   const [burgerMenuOpen, isBurgerMenuOpen] = useState(false);
-  const { cartList: CartList } = useContext(CartAndFavContext);
+  const { cartList } = useContext(CartAndFavContext);
 
   if (burgerMenuOpen) {
     document.body.style.overflow = 'hidden';
@@ -43,6 +43,9 @@ export const Header: React.FC = () => {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, []);
+
+  const totalQuantity = cartList
+    .reduce((prev, current) => prev + current.quantity, 0);
 
   return (
     <header className="header">
@@ -86,14 +89,13 @@ export const Header: React.FC = () => {
             >
               <img src={shopIcon} alt="shopCard" />
               <span
-                className={classNames('cart-quantity', {
-                  visible: CartList.length > 0,
+                className={classNames('header__cart__quantity', {
+                  'header__cart__quantity-visible': cartList.length > 0,
                 })}
               >
-                {CartList.length}
+                {totalQuantity}
               </span>
             </NavLink>
-
             {burgerMenuOpen ? (
               <button
                 className="header__content__buttons-right menu"
