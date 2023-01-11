@@ -8,6 +8,14 @@ export const getPhones = (page: number, perPage: number) => {
   );
 };
 
+export const getNewPhones = () => {
+  return client.get<Phone[]>(`/phones/new`, 'phones-count');
+};
+
+export const getDiscountPhones = () => {
+  return client.get<Phone[]>(`/phones/discount`, 'phones-count');
+};
+
 // export const postTodo = (newTodo: Omit<Todo, 'id'>) => {
 //   return client.post<Todo>('/todos', newTodo);
 // };
