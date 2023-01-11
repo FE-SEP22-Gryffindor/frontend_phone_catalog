@@ -70,7 +70,9 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
         <img src={phone.image} alt="Phone logo" className="card__image" />
       </div>
 
-      <h2 className="card__title">{phone.name}</h2>
+      <Link to={`/phones/${phone.slug}`} className="card__title">
+        {phone.name}
+      </Link>
 
       <div className="card__price-box">
         <p className="card__price-discount">${phone.discountPrice}</p>
