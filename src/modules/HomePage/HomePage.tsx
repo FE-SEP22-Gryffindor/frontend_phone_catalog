@@ -2,6 +2,7 @@ import React from 'react';
 // import { Carousel } from '../../components/Carousel';
 // import { ProductsSlider } from '../../components/ProductsSlider';
 // import { CategoryNav } from '../../components/CategoryNav';
+import { CategoriesSection } from '../../components/CategoriesSection';
 import './HomePage.scss';
 
 export const HomePage = () => {
@@ -20,10 +21,7 @@ export const HomePage = () => {
           /> */}
           ProductsSlider - Brand New Models
         </section>
-        <section className="home__section">
-          {/* <CategoryNav /> */}
-          CategoryNav - SHOP by category
-        </section>
+        <CategoriesSection />
         <section className="home__section">
           {/* <ProductsSlider
             title="Brand new models"
