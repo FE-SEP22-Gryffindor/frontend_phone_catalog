@@ -1,6 +1,6 @@
 import { Phone } from './Phone';
 
 export interface CartCardItem {
-  item: Phone,
+  phone: Phone,
   quantity: number,
 }

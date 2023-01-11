@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { headerNavLinks } from '../../types/headerNavLinks';
 import './burgermenu.scss';
@@ -7,6 +7,7 @@ import './burgermenu.scss';
 import heartIcon from '../../img/Favourites.svg';
 import shopIcon from '../../img/ShoppingBag.svg';
 import { Navigation } from '../Navigation';
+import { CartAndFavContext } from '../CartAndFavContext';
 
 interface Props {
   navigationLinks: headerNavLinks[];
@@ -19,6 +20,8 @@ export const BurgerMenu: React.FC<Props> = ({
   burgerMenuOpen,
   isBurgerMenuOpen,
 }) => {
+  const { cartList } = useContext(CartAndFavContext);
+
   return (
     <div
       className={classNames('burger__menu', {
@@ -62,6 +65,13 @@ export const BurgerMenu: React.FC<Props> = ({
             alt="Shop"
             className="burger__menu__buttons-images"
           />
+          <span
+            className={classNames('burger__menu__cart__quantity', {
+              'burger__menu__cart__quantity-visible': cartList.length > 0,
+            })}
+          >
+            {cartList.length}
+          </span>
         </NavLink>
       </div>
     </div>

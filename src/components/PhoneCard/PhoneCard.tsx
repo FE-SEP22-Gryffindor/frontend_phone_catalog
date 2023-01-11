@@ -15,7 +15,7 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
   const { setCartList, setFavList, cartList, favtList }
     = useContext(CartAndFavContext);
 
-  const foundItemCart = cartList.find((item) => item.slug === phone.slug);
+  const foundItemCart = cartList.find((item) => item.phone.slug === phone.slug);
 
   const foundItemfav = favtList.find((item) => item.slug === phone.slug);
   const [isActiveToCard, setIsActiveToCard] = useState(false);
@@ -36,12 +36,13 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
 
     // add to state if no found in storage
     if (!foundItemCart) {
-      setCartList([...cartList, phone]);
+      setCartList([...cartList, { phone, quantity: 1 }]);
     }
 
     // delete from state
     if (foundItemCart) {
-      const cleanStorage = cartList.filter((item) => item.slug !== phone.slug);
+      const cleanStorage = cartList
+        .filter((item) => item.phone.slug !== phone.slug);
 
       setCartList(cleanStorage);
     }
@@ -69,7 +70,9 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
         <img src={phone.image} alt="Phone logo" className="card__image" />
       </div>
 
-      <h2 className="card__title">{phone.name}</h2>
+      <Link to={`/phones/${phone.slug}`} className="card__title">
+        {phone.name}
+      </Link>
 
       <div className="card__price-box">
         <p className="card__price-discount">${phone.discountPrice}</p>
