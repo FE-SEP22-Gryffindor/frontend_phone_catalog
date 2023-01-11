@@ -60,8 +60,23 @@ export const ItemPage = () => {
             <div className="price">
               <button>Add to cart</button>
             </div>
-            <div className="item-spec">
-              items specification
+            <div className="item--tech-spec">
+              <div className="item--tech-spec-table">
+                <span>Screen</span>
+                <span>{foundItem.screen}</span>
+              </div>
+              <div className="item--tech-spec-table">
+                <span>Memory</span>
+                <span>{foundItem.memory}</span>
+              </div>
+              <div className="item--tech-spec-table">
+                <span>Ram</span>
+                <span>{foundItem.ram}</span>
+              </div>
+              <div className="item--tech-spec-table">
+                <span>Year</span>
+                <span>{foundItem.year}</span>
+              </div>
             </div>
           </div>
         </div>
