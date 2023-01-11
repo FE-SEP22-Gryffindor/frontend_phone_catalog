@@ -4,6 +4,7 @@ import './ItemPage.scss';
 import { Phone } from '../../types/Phone';
 import { getPhones } from '../../api/phones';
 import { PhoneCard } from '../../components/PhoneCard';
+import { PhonePagePhotoBlock } from '../../components/PhonePagePhotoBlock';
 
 export const ItemPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -50,19 +51,7 @@ export const ItemPage = () => {
       <div className="item">
         <h2 className="item--name">{foundItem.name}</h2>
         <div className="item--specification">
-          <div className="item--gallery">
-            <div className="item--gallery-big">
-              <img alt="" src={foundItem.image}/>
-            </div>
-
-            <div className="items--gallery-small">
-              <img alt="" src={foundItem.image}/>
-              <img alt="" src={foundItem.image}/>
-              <img alt="" src={foundItem.image}/>
-              <img alt="" src={foundItem.image}/>
-              <img alt="" src={foundItem.image}/>
-            </div>
-          </div>
+          <PhonePagePhotoBlock/>
           <div className="item--variaton">
             <div className="colors">Available colors</div>
             <hr />
