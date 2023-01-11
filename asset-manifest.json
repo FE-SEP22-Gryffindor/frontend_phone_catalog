@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/frontend_phone_catalog/static/css/main.724d5f16.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.d61b0907.js",
-    "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.c7a7b8accc88c2e0bb1ca71156d5060f.svg",
+    "main.css": "/frontend_phone_catalog/static/css/main.05af2b03.css",
+    "main.js": "/frontend_phone_catalog/static/js/main.09e351cc.js",
+    "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.ccaf7a234c9d096c90d06573cdbddc94.svg",
     "static/media/Mont-SemiBold.woff2": "/frontend_phone_catalog/static/media/Mont-SemiBold.95ab478c134f9e9da545.woff2",
     "static/media/Mont-Regular.woff2": "/frontend_phone_catalog/static/media/Mont-Regular.efd082cbd3e10b7e9c88.woff2",
-    "static/media/ShoppingBag.svg": "/frontend_phone_catalog/static/media/ShoppingBag.0463874fa7338ffce131c991a273a3bf.svg",
-    "static/media/Favourites.svg": "/frontend_phone_catalog/static/media/Favourites.9981117adc65d10c3d93a295c30c331b.svg",
-    "static/media/icon-home.svg": "/frontend_phone_catalog/static/media/icon-home.ece12b86618651cd0151.svg",
-    "static/media/like_favourite_favorite_icon.svg": "/frontend_phone_catalog/static/media/like_favourite_favorite_icon.ddcf252b03c4d801b33ae4cc539ec613.svg",
+    "static/media/ShoppingBag.svg": "/frontend_phone_catalog/static/media/ShoppingBag.df23e4fbb25ff3701b16978082a61721.svg",
+    "static/media/Favourites.svg": "/frontend_phone_catalog/static/media/Favourites.12c132c09ca4cbb24783a8409e029a4b.svg",
+    "static/media/icon-home.svg": "/frontend_phone_catalog/static/media/icon-home.9a24a70540404ccecd05.svg",
+    "static/media/like_favourite_favorite_icon.svg": "/frontend_phone_catalog/static/media/like_favourite_favorite_icon.d6fa1bd595623abe9089c282515ff4b5.svg",
     "index.html": "/frontend_phone_catalog/index.html",
-    "static/media/Close.svg": "/frontend_phone_catalog/static/media/Close.6d7ba7bf99b2d90a5bbde95013328dbe.svg",
-    "static/media/CloseForCart.svg": "/frontend_phone_catalog/static/media/CloseForCart.50c10c10972396ba023825c21cea3b47.svg",
-    "static/media/Menu.svg": "/frontend_phone_catalog/static/media/Menu.d9749b7108ad61ee68f43d4dae073f22.svg",
-    "static/media/Plus.svg": "/frontend_phone_catalog/static/media/Plus.7c1298ab79730c6552a0384ce09f63b8.svg",
-    "static/media/footerButton.svg": "/frontend_phone_catalog/static/media/footerButton.da6fbd43a57be9b12e1b.svg",
-    "static/media/icon-chevron-arrow-right.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-right.74404e9d379c6643018b.svg",
-    "static/media/icon-chevron.svg": "/frontend_phone_catalog/static/media/icon-chevron.474a52a363ff8d274618.svg",
-    "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.24d44fed422f6846ee6b.svg",
-    "static/media/Minus.svg": "/frontend_phone_catalog/static/media/Minus.4f727ec4693f6105d0f625b4efa653f6.svg",
-    "main.724d5f16.css.map": "/frontend_phone_catalog/static/css/main.724d5f16.css.map",
-    "main.d61b0907.js.map": "/frontend_phone_catalog/static/js/main.d61b0907.js.map"
+    "static/media/Close.svg": "/frontend_phone_catalog/static/media/Close.cdfb6ae506fe360c9ad495bfc61f521d.svg",
+    "static/media/CloseForCart.svg": "/frontend_phone_catalog/static/media/CloseForCart.6e7f15f7413e962f75496f60bb32404f.svg",
+    "static/media/Menu.svg": "/frontend_phone_catalog/static/media/Menu.73ddde2c093f9fb313b993eaba038f9a.svg",
+    "static/media/Plus.svg": "/frontend_phone_catalog/static/media/Plus.3ae115f1c792b78efc34455de76b7b36.svg",
+    "static/media/footerButton.svg": "/frontend_phone_catalog/static/media/footerButton.411b5a1b4b9eda1837e8.svg",
+    "static/media/icon-chevron-arrow-right.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-right.4a6dcc3ba009852b1fa0.svg",
+    "static/media/icon-chevron.svg": "/frontend_phone_catalog/static/media/icon-chevron.e028d3889646e0b5e56c.svg",
+    "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.b87d883446f750defdba.svg",
+    "static/media/Minus.svg": "/frontend_phone_catalog/static/media/Minus.4b7c4fa33c66c0b35185058bd5da5567.svg",
+    "main.05af2b03.css.map": "/frontend_phone_catalog/static/css/main.05af2b03.css.map",
+    "main.09e351cc.js.map": "/frontend_phone_catalog/static/js/main.09e351cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.724d5f16.css",
-    "static/js/main.d61b0907.js"
+    "static/css/main.05af2b03.css",
+    "static/js/main.09e351cc.js"
   ]
 }
