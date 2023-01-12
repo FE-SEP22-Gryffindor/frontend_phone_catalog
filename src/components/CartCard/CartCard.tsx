@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import closeIcon from '../../img/CloseForCart.svg';
-import minusIcon from '../../img/Minus.svg';
+import minusIcon from '../../img/MinusActive.svg';
+import minusIconDisabled from '../../img/Minus.svg';
 import PlusIcon from '../../img/Plus.svg';
 import './CartCard.scss';
 import { CartCardItem } from '../../types/CartCardItem';
 import { CartAndFavContext } from '../CartAndFavContext';
+import classNames from 'classnames';
 
 interface Props {
   card: CartCardItem
@@ -13,7 +15,11 @@ interface Props {
 
 export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
   const { cartList, setCartList } = useContext(CartAndFavContext);
+
   const totalAmountOfCard = card.phone.price * card.quantity;
+
+  const disabledButton = card.quantity <= 1;
+
   const handleMinus = () => {
     const newList = cartList.map(el => {
       if (el === card) {
@@ -81,13 +87,14 @@ export const CartCard: React.FC<Props> = ({ card, setTotalAmount }) => {
         <div className='cart__amount'>
           <button
             onClick={handleMinus}
-            className='cart__button cart__button__minus'
-            disabled={card.quantity <= 1}
+            className={classNames('cart__button cart__button__minus',
+              { 'cart__button-disabled': disabledButton })}
+            disabled={disabledButton}
           >
 
             <img
               className='cart__button__icon'
-              src={minusIcon}
+              src={disabledButton ? minusIconDisabled : minusIcon}
               alt="minus"
             />
           </button>
