@@ -1,7 +1,7 @@
 import React from 'react';
 // import { SliderButton } from './SliderButton';
 import { PhoneCard } from '../PhoneCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as FFF, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 // import { products } from './testProduct';
@@ -16,16 +16,26 @@ type Props = {
   products: Phone[]
 }
 
+// const swiper1: any = new Swiper('.swiper', {
+//   modules: [Navigation, Pagination, Scrollbar],
+//   speed: 500,
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+// });
+
 export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
   return (
     <>
         <div className='container__swipe'>
 
-          <Swiper
+          <FFF
             modules={[Navigation]}
             spaceBetween={16}
             slidesPerView={4}
             navigation={true}
+            className='fffffff'
           >
 
             <span
@@ -41,7 +51,7 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
               </SwiperSlide>
             ))}
 
-          </Swiper>
+          </FFF>
 
         </div>
     </>

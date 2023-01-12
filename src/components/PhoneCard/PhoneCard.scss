@@ -11,6 +11,7 @@
   background-color: #fff;
   padding: 32px;
   align-items: center;
+  max-height: 506px;
 
   @media (min-width: 488px) {
     // max-width: 288px;
@@ -45,6 +46,7 @@
   color: #060b35;
   margin-bottom: 9.5px;
   text-decoration: none;
+  height: 50px;
 }
 
 .card__price-box {
@@ -75,9 +77,6 @@
 }
 
 .card__product-devider {
-  // align-self: flex-start;
-  // margin-bottom: 16px;
-  // border-style: solid;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #e2e6e9;
@@ -88,6 +87,7 @@
 .specs__block {
   margin: 0;
   width: 100%;
+  height: 70px;
 }
 .card__specs {
   display: flex;
