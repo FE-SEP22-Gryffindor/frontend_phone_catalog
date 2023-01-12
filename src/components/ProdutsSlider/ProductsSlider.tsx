@@ -1,43 +1,49 @@
 import React from 'react';
-import { SliderButton } from './SliderButton';
+// import { SliderButton } from './SliderButton';
 import { PhoneCard } from '../PhoneCard';
-import './ProductSlider.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
-import { products } from './testProduct';
+// import { products } from './testProduct';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import './ProductSlider.scss';
+import { Phone } from '../../types/Phone';
 
 type Props = {
   title: string,
+  products: Phone[]
 }
 
-export const ProductsSlider: React.FC<Props> = ({ title }) => {
+export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
   return (
-    <div className='products-slider'>
-      <div className='products-slider__header grid'>
-        <h2 className='products-slider__title'>{title}</h2>
+    <>
+        <div className='container__swipe'>
 
-      <SliderButton
-          direction='prev'
-          disabled={false}
-      />
-      <SliderButton
-          direction='next'
-          disabled={false}
-      />
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={16}
+            slidesPerView={4}
+            navigation={true}
+          >
 
-      </div>
+            <span
+              slot='container-start'
+              className='products-slider__title'>{title}
+            </span>
 
-      <div className='products-slider__products-container'>
-        <div className='products-slider__products'>
-          {products.map((product) => (
-            <div
-              className='products-slider__products-container'
+            {products.map((product) => (
+              <SwiperSlide className='swiper-slide'
               key={product.slug}
-            >
-              <PhoneCard phone={product}/>
-              </div>
-          ))}
+              >
+                <PhoneCard phone={product}/>
+              </SwiperSlide>
+            ))}
+
+          </Swiper>
+
         </div>
-      </div>
-    </div>
+    </>
   );
 };

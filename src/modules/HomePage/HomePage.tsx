@@ -44,28 +44,20 @@ export const HomePage = () => {
 
   return (
     <div className="home">
-      <div className="container container--with-min-height">
-        <section className="home__section">
-          {/* <Carousel /> */}
+      <div>
           COROUSEL
-        </section>
-        <section className="home__section">
+
           <ProductsSlider
             title="Brand new models"
-            // filterCriteria="no-discount"
-            // sortBy="age"
+            products={newPhones}
           />
-        </section>
-        <section className="home__section">
+
           <CategoriesSection />
-        </section>
-        <section className="home__section">
+
           <ProductsSlider
             title="Hot prices"
-            // filterCriteria="discount"
-            // sortBy="discount-value"
+            products={discountPhones}
           />
-        </section>
       </div>
     </div>
   );
