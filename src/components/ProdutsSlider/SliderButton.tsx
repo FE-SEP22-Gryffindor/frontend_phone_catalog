@@ -16,6 +16,7 @@ export const SliderButton: React.FC<Props> = ({
         button
         products-slider__button
         products-slider__button--${direction}
+        swiper-button-${direction}
       `}
       disabled = {disabled}
     >

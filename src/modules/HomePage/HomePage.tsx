@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Carousel } from '../../components/Carousel/Carousel';
-// import { Carousel } from '../../components/Carousel';
 import { ProductsSlider } from '../../components/ProdutsSlider';
-// import { CategoryNav } from '../../components/CategoryNav';
 import { CategoriesSection } from '../../components/CategoriesSection';
 import './HomePage.scss';
 import { getDiscountPhones, getNewPhones } from '../../api/phones';
@@ -37,31 +35,28 @@ export const HomePage = () => {
     loadDiscountPhones();
   }, []);
 
-  // eslint-disable-next-line no-console
-  console.log('new:', newPhones);
+  // // eslint-disable-next-line no-console
+  // console.log('new:', newPhones);
 
-  // eslint-disable-next-line no-console
-  console.log('discount:', discountPhones);
+  // // eslint-disable-next-line no-console
+  // console.log('discount:', discountPhones);
 
   return (
     <div className="home">
       <div className="container container--with-min-height">
         <Carousel />
-        <section className="home__section">
-          <ProductsSlider
-            title="Brand new models"
-            // filterCriteria="no-discount"
-            // sortBy="age"
-          />
-        </section>
+
+        <ProductsSlider
+          title="Brand new models"
+          products={newPhones}
+        />
+
         <CategoriesSection />
-        <section className="home__section">
-          <ProductsSlider
-            title="Hot prices"
-            // filterCriteria="discount"
-            // sortBy="discount-value"
-          />
-        </section>
+
+        <ProductsSlider
+          title="Hot prices"
+          products={discountPhones}
+        />
       </div>
     </div>
   );
