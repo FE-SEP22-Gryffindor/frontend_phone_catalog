@@ -4,17 +4,19 @@ import { PhoneCard } from '../PhoneCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
-import { products } from './testProduct';
+// import { products } from './testProduct';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './ProductSlider.scss';
+import { Phone } from '../../types/Phone';
 
 type Props = {
   title: string,
+  products: Phone[]
 }
 
-export const ProductsSlider: React.FC<Props> = ({ title }) => {
+export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
   return (
     <>
         <div className='container__swipe'>

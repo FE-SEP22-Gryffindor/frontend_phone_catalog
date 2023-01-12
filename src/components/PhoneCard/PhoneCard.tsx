@@ -75,8 +75,13 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
       </Link>
 
       <div className="card__price-box">
-        <p className="card__price-discount">${phone.discountPrice}</p>
-        <p className="card__price-price">${phone.price}</p>
+        {phone.discountPrice
+          ? <p className="card__price-discount">${phone.discountPrice}</p>
+          : <p className="card__price-discount">${phone.price}</p>}
+
+        {phone.discountPrice
+          ? <p className="card__price-price">${phone.price}</p>
+          : null}
       </div>
 
       <div className="card__product-devider"></div>
