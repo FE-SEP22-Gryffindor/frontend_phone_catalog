@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Carousel } from '../../components/Carousel/Carousel';
-// import { Carousel } from '../../components/Carousel';
 import { ProductsSlider } from '../../components/ProdutsSlider';
-// import { CategoryNav } from '../../components/CategoryNav';
 import { CategoriesSection } from '../../components/CategoriesSection';
 import './HomePage.scss';
 import { getDiscountPhones, getNewPhones } from '../../api/phones';
@@ -37,25 +35,22 @@ export const HomePage = () => {
     loadDiscountPhones();
   }, []);
 
-  // eslint-disable-next-line no-console
-  console.log('new:', newPhones);
-
-  // eslint-disable-next-line no-console
-  console.log('discount:', discountPhones);
-
   return (
     <div className="home">
       <div>
         <Carousel />
-          <ProductsSlider
-            title="Brand new models"
-            products={newPhones}
-          />
+
+        <ProductsSlider
+          title="Brand new models"
+          products={newPhones}
+        />
+
         <CategoriesSection />
-          <ProductsSlider
-            title="Hot prices"
-            products={discountPhones}
-          />
+
+        <ProductsSlider
+          title="Hot prices"
+          products={discountPhones}
+        />
       </div>
     </div>
   );

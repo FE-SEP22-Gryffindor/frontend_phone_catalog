@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-shadow */
 /* eslint-disable react/jsx-boolean-value */
 import React, { useEffect, useState } from 'react';
@@ -6,7 +7,6 @@ import { Autoplay, Navigation } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import styles from './Carousel.module.scss';
 import './Carousel.scss';
 
 import img1 from './apple1_700.jpg';
@@ -38,20 +38,20 @@ export const Carousel: React.FC = () => {
 
   return (
     <>
-      <h1 className='carousel__title'></h1>
-      <div className={styles.container}>
+      <h1 className='carousel__title'>Welcome to Nice Gadgets store!</h1>
+      <div className="container">
         <Swiper
           navigation={true}
           loop={true}
           modules={[Autoplay, Navigation]}
-          className={styles.swiper}
+          className="swiper__slider"
         >
           {swiperImg.map((item) => (
-            <SwiperSlide key={item.id} className={styles.swiper__slide}>
+            <SwiperSlide key={item.id} className="swiper__slide">
                 <img
                   src={item.img}
-                  alt="phone"
-                  className={styles.swiper__img}
+                  alt={`apple${item.id}`}
+                  className="swiper__img"
                 />
             </SwiperSlide>
           ))}

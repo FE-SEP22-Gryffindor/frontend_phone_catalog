@@ -3,7 +3,7 @@
   margin-bottom: 64px;
 }
 
-.products-slider__title {
+.phone_slider .products-slider__title {
   font-family: 'Mont';
   font-style: normal;
   font-weight: 800;
@@ -14,7 +14,7 @@
   display: flex;
   margin-bottom: 24px;
 }
-.swiper-button-next {
+.phone_slider .swiper-button-next {
   background-image: url(./img/Slider-Button-Default-right.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -23,14 +23,14 @@
   left: calc(100% - 40px);
 }
 
-.swiper-button-next:hover {
+.phone_slider .swiper-button-next:hover {
   background-image: url(./img/Slider-Button-Hover-right.svg);
 }
 
-.swiper-button-next::after {
+.phone_slider .swiper-button-next::after {
   display: none;
 }
-.swiper-button-prev {
+.phone_slider .swiper-button-prev {
   background-image: url(./img/Slider-Button-Default-right.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -40,11 +40,11 @@
   left: calc(100% - 80px);
 }
 
-.swiper-button-prev:hover {
+.phone_slider .swiper-button-prev:hover {
   background-image: url(./img/Slider-Button-Hover-right.svg);
 }
 
-.swiper-button-prev::after {
+.phone_slider .swiper-button-prev::after {
   display: none;
 }
 

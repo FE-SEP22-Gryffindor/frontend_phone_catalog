@@ -26,6 +26,7 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
             spaceBetween={16}
             slidesPerView={4}
             navigation={true}
+            className="phone_slider"
           >
 
             <span
