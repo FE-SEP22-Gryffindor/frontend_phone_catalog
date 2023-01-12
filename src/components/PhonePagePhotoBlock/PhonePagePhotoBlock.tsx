@@ -35,8 +35,22 @@ export const PhonePagePhotoBlock: React.FC = () => {
   const [activePhoto, setActivePhoto] = useState(PhonePhoto[0].image);
 
   return (
-    <div className='photo__block'>
-      <div className='photo__block__main'>
+  // <div className="item--gallery">
+  //   <div className="item--gallery-big">
+  //     <img alt="" src={foundItem.image}/>
+  //   </div>
+
+  //   <div className="items--gallery-small">
+  //     <img alt="" src={foundItem.image}/>
+  //     <img alt="" src={foundItem.image}/>
+  //     <img alt="" src={foundItem.image}/>
+  //     <img alt="" src={foundItem.image}/>
+  //     <img alt="" src={foundItem.image}/>
+  //   </div>
+  // </div>
+
+    <div className='item--gallery'>
+      <div className='item--gallery-big'>
         <img
           src={activePhoto}
           alt="mainPhoto"
@@ -44,21 +58,25 @@ export const PhonePagePhotoBlock: React.FC = () => {
         />
       </div>
 
-      <div className='photo__block__secondary'>
+      <div className='items--gallery-small'>
         {PhonePhoto.map(phone => (
-          <div
-            key={phone.id}
-            className={classNames('photo__block__secondary__container',
-              { 'photo__block-active': phone.image === activePhoto })
-            }
-            onClick={() => setActivePhoto(phone.image)}
-          >
+          // <div
+          //   key={phone.id}
+            // className={classNames('photo__block__secondary__container',
+            //   { 'photo__block-active': phone.image === activePhoto })
+            // }
+          //   onClick={() => setActivePhoto(phone.image)}
+          // >
             <img
               src={phone.image}
               alt="secondary-photo"
-              className='photo-secondary'
+              key={phone.id}
+              className={classNames('photo-secondary',
+                { 'photo-secondary-active': phone.image === activePhoto })
+              }
+              onClick={() => setActivePhoto(phone.image)}
             />
-          </div>
+          // </div>
         ))}
       </div>
     </div>

@@ -50,8 +50,8 @@ export const ItemPage = () => {
           Back
         </a>
       </div>
+      <h2 className="item--name">{foundItem.name}</h2>
       <div className="item">
-        <h2 className="item--name">{foundItem.name}</h2>
         <div className="item--specification">
           <PhonePagePhotoBlock/>
           <div className="item--variaton">

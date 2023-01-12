@@ -35,15 +35,9 @@ export const HomePage = () => {
     loadDiscountPhones();
   }, []);
 
-  // // eslint-disable-next-line no-console
-  // console.log('new:', newPhones);
-
-  // // eslint-disable-next-line no-console
-  // console.log('discount:', discountPhones);
-
   return (
     <div className="home">
-      <div className="container container--with-min-height">
+      <div>
         <Carousel />
 
         <ProductsSlider
