@@ -1,0 +1,36 @@
+.capacity {
+  &__title {
+    display: flex;
+  }
+
+  &__block {
+    display: flex;
+    gap: 8px;
+
+    &__picker {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      background: white;
+      width: 56px;
+      height: 32px;
+      border: 1px solid #B4BDC3;
+      border-radius: 4px;
+
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        border: 1px solid orange;
+      }
+
+      &-active {
+        color: white;
+        background: black;
+        border: 1px solid black;
+      }
+    }
+  }
+}

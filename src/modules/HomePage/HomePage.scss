@@ -6,3 +6,15 @@
     margin-bottom: 80px;
   }
 }
+
+
+.container {
+  display: block;
+  width: 1136px;
+  height: 100%;
+  margin: 0 auto;
+
+  // &--with-min-height {
+  //   min-height: calc(100vh - 64px - 96px);
+  // }
+}

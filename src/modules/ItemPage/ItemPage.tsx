@@ -5,6 +5,8 @@ import { Phone } from '../../types/Phone';
 import { getPhones } from '../../api/phones';
 import { PhoneCard } from '../../components/PhoneCard';
 import { PhonePagePhotoBlock } from '../../components/PhonePagePhotoBlock';
+import { ColorBlock } from '../../components/ColorBlock';
+import { CapacityBlock } from '../../components/CapacityBlock';
 
 export const ItemPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -53,9 +55,9 @@ export const ItemPage = () => {
         <div className="item--specification">
           <PhonePagePhotoBlock/>
           <div className="item--variaton">
-            <div className="colors">Available colors</div>
+            <ColorBlock />
             <hr />
-            <div className="capacity">Capacity</div>
+            <CapacityBlock />
             <hr />
             <div className="price">
               <button>Add to cart</button>

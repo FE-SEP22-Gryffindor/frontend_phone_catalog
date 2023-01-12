@@ -1,0 +1,70 @@
+@import url(../../font/fonts.scss);
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(24, 32px);
+  column-gap: 16px;
+}
+
+.products-slider {
+  font-family: 'Mont', Helvetica, sans-serif;
+  font-style: normal ;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: -0.01em;
+  color: #0F0F11;
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 32px;
+    justify-self: start;
+    grid-column: 1 / -15 ;
+  }
+
+  &__button {
+    height: 32px;
+    align-self: center;
+    border-radius: 50%;
+    border-width: 0px;
+
+    &--prev {
+      grid-column: -3 / -2;
+      background-image: url(./img/Slider-Button-Default-right.svg);
+      transform: rotate(180deg);
+
+      &:hover{
+        background-image: url(./img/Slider-Button-Hover-right.svg);
+      }
+    }
+
+    &--next {
+      grid-column: -2 / -1;
+      background-image: url(./img/Slider-Button-Default-right.svg);
+    }
+
+    &:hover {
+      background-image: url(./img/Slider-Button-Hover-right.svg);
+    }
+  }
+
+  &__products-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__products {
+    display: flex;
+    width: max-content;
+    gap: 16px;
+  }
+
+}
+
+
+
