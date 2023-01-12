@@ -45,23 +45,17 @@ export const HomePage = () => {
 
   return (
     <div className="home">
-      <div className="container container--with-min-height">
+      <div>
         <Carousel />
-        <section className="home__section">
           <ProductsSlider
             title="Brand new models"
-            // filterCriteria="no-discount"
-            // sortBy="age"
+            products={newPhones}
           />
-        </section>
         <CategoriesSection />
-        <section className="home__section">
           <ProductsSlider
             title="Hot prices"
-            // filterCriteria="discount"
-            // sortBy="discount-value"
+            products={discountPhones}
           />
-        </section>
       </div>
     </div>
   );
