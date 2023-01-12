@@ -7,31 +7,31 @@ import './HomePage.scss';
 export const HomePage = () => {
   return (
     <div className="home">
-      <div className="container container--with-min-height">
+      <div>
         <section className="home__section">
           {/* <Carousel /> */}
           COROUSEL
         </section>
-        <section className="home__section">
+        {/* <section className="home__section"> */}
           <ProductsSlider
             title="Brand new models"
             // filterCriteria="no-discount"
             // sortBy="age"
           />
-        </section>
+        {/* </section> */}
 
         <section className="home__section">
           {/* <CategoryNav /> */}
           CategoryNav - SHOP by category
         </section>
 
-        <section className="home__section">
+        {/* <section className="home__section"> */}
           <ProductsSlider
             title="Hot prices"
             // filterCriteria="discount"
             // sortBy="discount-value"
           />
-        </section>
+        {/* </section> */}
       </div>
     </div>
   );

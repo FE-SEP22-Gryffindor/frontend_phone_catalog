@@ -1,9 +1,14 @@
 import React from 'react';
-import { SliderButton } from './SliderButton';
+// import { SliderButton } from './SliderButton';
 import { PhoneCard } from '../PhoneCard';
-import './ProductSlider.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 import { products } from './testProduct';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import './ProductSlider.scss';
 
 type Props = {
   title: string,
@@ -11,33 +16,35 @@ type Props = {
 
 export const ProductsSlider: React.FC<Props> = ({ title }) => {
   return (
-    <div className='products-slider'>
-      <div className='products-slider__header grid'>
-        <h2 className='products-slider__title'>{title}</h2>
+    <>
+      {/* <div className='products-slider__header grid'> */}
 
-      <SliderButton
-          direction='prev'
-          disabled={false}
-      />
-      <SliderButton
-          direction='next'
-          disabled={false}
-      />
+      {/* </div> */}
 
-      </div>
+        <div className='container__swipe'>
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={16}
+            slidesPerView={4}
+            navigation={true}
+          >
 
-      <div className='products-slider__products-container'>
-        <div className='products-slider__products'>
-          {products.map((product) => (
-            <div
-              className='products-slider__products-container'
+            <span
+              slot='container-start'
+              className='products-slider__title'>{title}
+            </span>
+
+            {products.map((product) => (
+              <SwiperSlide className='swiper-slide'
               key={product.slug}
-            >
-              <PhoneCard phone={product}/>
-              </div>
-          ))}
+              >
+                <PhoneCard phone={product}/>
+              </SwiperSlide>
+            ))}
+
+          </Swiper>
+
         </div>
-      </div>
-    </div>
+    </>
   );
 };
