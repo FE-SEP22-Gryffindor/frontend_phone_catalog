@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { Carousel } from '../../components/Carousel/Carousel';
 // import { Carousel } from '../../components/Carousel';
 import { ProductsSlider } from '../../components/ProdutsSlider';
 // import { CategoryNav } from '../../components/CategoryNav';
@@ -45,15 +46,12 @@ export const HomePage = () => {
   return (
     <div className="home">
       <div>
-          COROUSEL
-
+        <Carousel />
           <ProductsSlider
             title="Brand new models"
             products={newPhones}
           />
-
-          <CategoriesSection />
-
+        <CategoriesSection />
           <ProductsSlider
             title="Hot prices"
             products={discountPhones}
