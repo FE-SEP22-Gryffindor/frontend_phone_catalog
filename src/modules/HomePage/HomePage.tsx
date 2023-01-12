@@ -2,6 +2,7 @@ import React from 'react';
 // import { Carousel } from '../../components/Carousel';
 import { ProductsSlider } from '../../components/ProdutsSlider';
 // import { CategoryNav } from '../../components/CategoryNav';
+import { CategoriesSection } from '../../components/CategoriesSection';
 import './HomePage.scss';
 
 export const HomePage = () => {
@@ -19,12 +20,9 @@ export const HomePage = () => {
             // sortBy="age"
           />
         </section>
-
         <section className="home__section">
-          {/* <CategoryNav /> */}
-          CategoryNav - SHOP by category
+          <CategoriesSection />
         </section>
-
         <section className="home__section">
           <ProductsSlider
             title="Hot prices"
