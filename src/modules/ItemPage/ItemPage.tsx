@@ -60,7 +60,15 @@ export const ItemPage = () => {
             <CapacityBlock />
             <hr />
             <div className="price">
-              <button>Add to cart</button>
+            {/* <Link
+              to="#buy"
+              className={classNames('button__block-add', {
+                'button__block-add-active': isActiveToCard,
+              })}
+              onClick={handleCardButton}
+            >
+              {!isActiveToCard ? 'Add to cart' : 'Added'}
+            </Link> */}
             </div>
             <div className="item--tech-spec">
               <div className="item--tech-spec-table">
