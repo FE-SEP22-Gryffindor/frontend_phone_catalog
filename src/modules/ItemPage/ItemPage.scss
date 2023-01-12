@@ -192,6 +192,8 @@ hr {
   max-width: 100%;
   overflow: hidden;
   gap: 16px;
+  padding-top: 11px;
+  padding-bottom: 11px;
 
   @media (min-width: 1199px) {
     justify-content: space-around;
