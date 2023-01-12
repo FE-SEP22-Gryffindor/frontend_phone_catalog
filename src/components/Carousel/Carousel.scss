@@ -1,0 +1,17 @@
+.swiper {
+  width: 500px;
+  height: 300px;
+  // border: 2px solid black;
+
+  &-slide {
+    border: 2px solid black;
+    background-color: wheat;
+  }
+
+  &-button {
+    height: 400px;
+    width: 32px;
+    border: 1px solid #b4bdc4;
+    border-radius: 48px;
+  }
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Carousel } from '../../components/Carousel/Carousel';
+
 // import { Carousel } from '../../components/Carousel';
 // import { ProductsSlider } from '../../components/ProductsSlider';
 // import { CategoryNav } from '../../components/CategoryNav';
@@ -9,7 +11,7 @@ export const HomePage = () => {
     <div className="home">
       <div className="container container--with-min-height">
         <section className="home__section">
-          {/* <Carousel /> */}
+          <Carousel />
           COROUSEL
         </section>
         <section className="home__section">
