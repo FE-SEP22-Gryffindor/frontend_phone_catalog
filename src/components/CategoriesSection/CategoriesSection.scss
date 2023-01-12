@@ -1,0 +1,44 @@
+.categories-section {
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr 1fr 1fr);
+  }
+
+  & a {
+    text-decoration: none;
+  }
+
+  &-image {
+    @media (min-width: 1199px) {
+      max-width: 368px;
+    }
+  }
+
+  &-image img{
+    max-width: 100%;
+  }
+
+  &-image figcaption{
+    text-align: start;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+
+    color: #0F0F11;
+  }
+
+  &-image p{
+    text-align: start;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #89939A;
+  }
+  
+}
+.categories-section-title {
+  text-align: start;
+}

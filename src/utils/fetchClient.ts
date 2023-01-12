@@ -1,6 +1,6 @@
 const BASE_URL
   // eslint-disable-next-line max-len
-  = 'https://deploy-preview-7--stupendous-douhua-9a8b1c.netlify.app/.netlify/functions/server/';
+  = 'https://deploy-preview-8--stupendous-douhua-9a8b1c.netlify.app/.netlify/functions/server/';
   // = 'http://localhost:9000/.netlify/functions/server';
 
 // To have autocompletion and avoid mistypes

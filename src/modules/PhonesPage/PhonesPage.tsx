@@ -5,6 +5,7 @@ import { getPhones } from '../../api/phones';
 import { Pagination } from '../../components/Pagination';
 import { Phone } from '../../types/Phone';
 import { PhoneCard } from '../../components/PhoneCard';
+import { Loader } from '../../components/Loader';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -43,53 +44,59 @@ export const PhonesPage = () => {
 
   return (
     <div className="container-phone-page">
-      <div className="breadcrumbs">
-        <a className="icon icon--home"></a>
-        <a className="">Phones</a>
-      </div>
-      <div>
-        <h1 className="title">Mobile phones</h1>
-      </div>
-      <div>
-        <p className="result-items">{`${totalPhonesCount} models`}</p>
-      </div>
-      <div className="sort-items">
-        <div>
-          <label htmlFor="phones-sort">Sort by:</label>
+      {phones.length
+        ? (
+          <>
+            <div className="breadcrumbs">
+              <a className="icon icon--home"></a>
+              <a className="">Phones</a>
+            </div>
+            <div>
+              <h1 className="title">Mobile phones</h1>
+            </div>
+            <div>
+              <p className="result-items">{`${totalPhonesCount} models`}</p>
+            </div>
+            <div className="sort-items">
+              <div>
+                <label htmlFor="phones-sort">Sort by:</label>
 
-          <select name="phones-sort" id="phones-sort">
-            <option value="newest">Newest</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="page-items">Items on page:</label>
-          <select
-            name="page-items"
-            id="page-items"
-            value={perPage}
-            onChange={(event) => {
-              setPerPage(Number(event.target.value));
-              setCurrentPage(1);
-            }}
-          >
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={16}>16</option>
-            <option value={32}>32</option>
-          </select>
-        </div>
-      </div>
-      <div className="products-catalog">
-        {phones.map((phone) => (
-          <PhoneCard phone={phone} key={phone.slug} />
-        ))}
-      </div>
-      <Pagination
-        total={totalPhonesCount}
-        perPage={perPage}
-        currentPage={currentPage}
-        onPageChange={onPageChange}
-      />
+                <select name="phones-sort" id="phones-sort">
+                  <option value="newest">Newest</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="page-items">Items on page:</label>
+                <select
+                  name="page-items"
+                  id="page-items"
+                  value={perPage}
+                  onChange={(event) => {
+                    setPerPage(Number(event.target.value));
+                    setCurrentPage(1);
+                  }}
+                >
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                  <option value={16}>16</option>
+                  <option value={32}>32</option>
+                </select>
+              </div>
+            </div>
+            <div className="products-catalog">
+              {phones.map((phone) => (
+                <PhoneCard phone={phone} key={phone.slug} />
+              ))}
+            </div>
+            <Pagination
+              total={totalPhonesCount}
+              perPage={perPage}
+              currentPage={currentPage}
+              onPageChange={onPageChange}
+            />
+          </>
+        )
+        : (<Loader />)}
     </div>
   );
 };
