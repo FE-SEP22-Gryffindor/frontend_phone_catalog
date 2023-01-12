@@ -17,11 +17,8 @@ type Props = {
 export const ProductsSlider: React.FC<Props> = ({ title }) => {
   return (
     <>
-      {/* <div className='products-slider__header grid'> */}
-
-      {/* </div> */}
-
         <div className='container__swipe'>
+
           <Swiper
             modules={[Navigation]}
             spaceBetween={16}
