@@ -1,0 +1,61 @@
+.colors {
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-block {
+    display: flex;
+    gap: 8px;
+
+    &__container {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid #E2E6E9;
+      border-radius: 50%;
+
+      cursor: pointer;
+      transition: 0.3s;
+
+      @media (min-width: 640px) {
+        width: 32px;
+        height: 32px;
+      }
+
+      &:hover {
+        border: 1px solid orange;
+      }
+
+      &-active {
+        border: 1px solid black;
+      }
+    }
+
+    &__picker {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      box-sizing: border-box;
+
+      &-gold {
+        background: #fcdbc1;
+      }
+
+      &-grey {
+        background: gray;
+      }
+
+      &-black {
+        background: #4c4c4c;
+      }
+
+      &-silver {
+        background: #f0f0f0;
+      }
+    }
+  }
+}
