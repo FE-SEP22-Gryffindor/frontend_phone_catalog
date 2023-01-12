@@ -2,7 +2,7 @@
   display: flex;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
   left: 0;
@@ -23,10 +23,12 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 20px;
-    border-radius: 12px;
-    background-color: whitesmoke;
+    background-color: white;
     height: 30vh;
     width: 30vw;
+    border: 1px solid #E2E6E9;
+    border-radius: 16px;
+
   }
 
   &__question {
@@ -34,10 +36,11 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 20px;
-    border-radius: 12px;
-    background-color: whitesmoke;
+    background-color: white;
     height: 30vh;
     width: 30vw;
+    border: 1px solid #E2E6E9;
+    border-radius: 16px;
   }
 
   &__answers {
