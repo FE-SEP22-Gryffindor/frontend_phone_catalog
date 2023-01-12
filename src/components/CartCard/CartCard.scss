@@ -81,7 +81,15 @@
     }
 
     &__minus {
+      border: 1px solid #B4BDC4;
+    }
+
+    &-disabled {
       border: 1px solid #e2e6e9;
+
+      &:hover {
+        border: 1px solid #e2e6e9;
+      }
     }
 
     &__plus {
@@ -91,7 +99,8 @@
     &__close {
       cursor: pointer;
       border: none;
-      background-color: #fff;;
+      background-color: #fff;
+      ;
     }
   }
 }

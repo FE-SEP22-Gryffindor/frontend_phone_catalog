@@ -5,6 +5,9 @@ import { CartCard } from '../../components/CartCard';
 import './CartPage.scss';
 import { CartAndFavContext } from '../../components/CartAndFavContext';
 
+import cartIsEmptyPicture from '../../img/cartIsEmpty.png';
+import { Link } from 'react-router-dom';
+
 export const CartPage = () => {
   const { cartList } = useContext(CartAndFavContext);
   const [isModalShown, setIsModalShown] = useState(false);
@@ -30,37 +33,65 @@ export const CartPage = () => {
           Back
         </a>
       </div>
-      <div>
-        <h1 className="title">Cart page</h1>
-      </div>
-      <div className='cart-form'>
-        <div className='cart-items'>
-          {cartList.map(item => (
-            <CartCard
-              key={item.phone.slug}
-              card={item}
-              setTotalAmount={setTotalAmount} />
-          ))}
-        </div>
 
-        <div className='cart-total'>
-          <h2 className='total-amount'>${totalAmount}</h2>
-          <p className='total-items'>Total for {totalQuantity} items</p>
-          <hr className='total-hr' />
-          <button
-            className='btn-checkout'
-            onClick={() => {
-              setIsModalShown(true);
-            }}
-          >
-            Checkout
-          </button>
-        </div>
-      </div>
-      <Modal
-        isShown={isModalShown}
-        onModalShown={setIsModalShown}
-      />
+      {cartList.length
+        ? (
+          <>
+            <div>
+              <h1 className="title">Cart page</h1>
+            </div>
+            <div className='cart-form'>
+              <div className='cart-items'>
+                {cartList.map(item => (
+                  <CartCard
+                    key={item.phone.slug}
+                    card={item}
+                    setTotalAmount={setTotalAmount} />
+                ))}
+              </div>
+
+              <div className='cart-total'>
+                <h2 className='total-amount'>${totalAmount}</h2>
+                <p className='total-items'>Total for {totalQuantity} items</p>
+                <hr className='total-hr' />
+                <button
+                  className='btn-checkout'
+                  onClick={() => {
+                    setIsModalShown(true);
+                  }}
+                >
+                  Checkout
+                </button>
+              </div>
+            </div>
+            <Modal
+              isShown={isModalShown}
+              onModalShown={setIsModalShown}
+            />
+          </>
+        ) : (
+          <div className='card-is-empty'>
+            <img
+              className='card-is-empty__picture'
+              src={cartIsEmptyPicture}
+              alt="EmptyCard"
+            />
+
+            <h1 className='card-is-empty__title'>
+              Your cart is empty, pls go back and choose something :P
+            </h1>
+
+            <Link
+              className='card-is-empty__link'
+              to={'/'}
+            >
+              <button className='btn-checkout'>
+                Back to Home
+              </button>
+            </Link>
+          </div>
+        )
+      }
     </div>
   );
 };

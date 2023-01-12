@@ -47,3 +47,11 @@
 .phone_slider .swiper-button-prev::after {
   display: none;
 }
+
+.swiper-slide {
+  padding-bottom: 12px;
+}
+
+.swiper-slide:first-child {
+  padding-left: 8px;
+}
