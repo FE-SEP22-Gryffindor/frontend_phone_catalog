@@ -12,20 +12,6 @@
   }
 }
 
-.container {
-  margin: 0 auto;
-  padding-left: 16px;
-  transition: 0.3s ease all;
-
-  @include onTablet {
-    padding-left: 24px;
-  }
-
-  @include onDesktop {
-    padding-left: 32px;
-  }
-}
-
 .header {
   background-color: #fff;
   width: 100%;
@@ -40,6 +26,21 @@
       padding-right: 32px;
     }
   }
+
+  
+&__container {
+  margin: 0 auto;
+  padding-left: 16px;
+  transition: 0.3s ease all;
+
+  @include onTablet {
+    padding-left: 24px;
+  }
+
+  @include onDesktop {
+    padding-left: 32px;
+  }
+}
 
   &__content {
     overflow: hidden;
