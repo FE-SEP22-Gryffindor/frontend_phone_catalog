@@ -46,10 +46,7 @@ export const HomePage = () => {
   return (
     <div className="home">
       <div className="container container--with-min-height">
-        <section className="home__section">
-          <Carousel />
-          COROUSEL
-        </section>
+        <Carousel />
         <section className="home__section">
           <ProductsSlider
             title="Brand new models"
@@ -57,9 +54,7 @@ export const HomePage = () => {
             // sortBy="age"
           />
         </section>
-        <section className="home__section">
-          <CategoriesSection />
-        </section>
+        <CategoriesSection />
         <section className="home__section">
           <ProductsSlider
             title="Hot prices"

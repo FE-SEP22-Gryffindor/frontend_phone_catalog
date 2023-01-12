@@ -1,9 +1,12 @@
-import React, { useRef, useState } from 'react';
+/* eslint-disable no-shadow */
+/* eslint-disable react/jsx-boolean-value */
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import styles from './Carousel.module.scss';
 import './Carousel.scss';
 
 import img1 from './apple1_700.jpg';
@@ -19,36 +22,41 @@ const swiperImg = [
 ];
 
 export const Carousel: React.FC = () => {
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setInnerWidth(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setInnerWidth(window.innerWidth);
+      });
+    };
+  }, [innerWidth]);
+
   return (
     <>
-    <Swiper
-        navigation={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
-        // loop={true}
-        // autoplay={{
-        //   delay: 50000,
-        //   disableOnInteraction: false,
-        // }}
-        className="mySwiper"
-      >
-        {swiperImg.map(item => (
-          <SwiperSlide key={item.id}>
-        <img src={item.img} alt={`apple${item.id}`} />
-          </SwiperSlide>
-        ))}
-        {/* <SwiperSlide>
-        </SwiperSlide> */}
-        {/* <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
-      </Swiper>
+      <h1 className='carousel__title'></h1>
+      <div className={styles.container}>
+        <Swiper
+          navigation={true}
+          loop={true}
+          modules={[Autoplay, Navigation]}
+          className={styles.swiper}
+        >
+          {swiperImg.map((item) => (
+            <SwiperSlide key={item.id} className={styles.swiper__slide}>
+                <img
+                  src={item.img}
+                  alt="phone"
+                  className={styles.swiper__img}
+                />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </>
   );
 };

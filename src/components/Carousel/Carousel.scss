@@ -1,17 +1,47 @@
-.swiper {
-  width: 500px;
-  height: 300px;
-  // border: 2px solid black;
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  height: 400px;
+  width: 32px;
+  border: 1px solid #b4bdc4;
+  border-radius: 48px;
+  top: 0;
+  margin: 0;
+  padding: 0;
 
-  &-slide {
-    border: 2px solid black;
-    background-color: wheat;
+  @media (max-width: 1199) {
+    height: 189px;
   }
 
-  &-button {
-    height: 400px;
-    width: 32px;
-    border: 1px solid #b4bdc4;
-    border-radius: 48px;
+  @media (max-width: 639px) {
+    display: none;;
   }
+}
+.swiper .swiper-button-next:after,
+.swiper .swiper-button-prev:after {
+  display: none;
+}
+
+.swiper .swiper-button-next {
+  background: white url('./RightArrowHover.svg') no-repeat
+    center;
+}
+
+.swiper .swiper-button-prev {
+  background: white url('./LeftArrowHover.svg') no-repeat
+    center;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-rtl .swiper-button-prev {
+  right: 0;
+}
+
+.swiper .swiper-button-next.swiper-button-disabled,
+.swiper .swiper-button-prev.swiper-button-disabled {
+  opacity: 1;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-rtl .swiper-button-next {
+  left: 0;
 }
