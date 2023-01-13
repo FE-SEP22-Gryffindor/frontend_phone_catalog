@@ -18,6 +18,11 @@
 
   &-image img{
     width: 100%;
+    transition: transform .5s ease;
+  }
+
+  &-image img:hover {
+    transform: scale(1.02);
   }
 
   &-image figcaption{
