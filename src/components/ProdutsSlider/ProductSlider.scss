@@ -4,15 +4,19 @@
 }
 
 .phone_slider .products-slider__title {
-  font-family: 'Mont';
-  font-style: normal;
   font-weight: 800;
-  font-size: 32px;
-  line-height: 41px;
-  letter-spacing: -0.01em;
+  font-size: 22px;
+  line-height: 140%;
   color: #0F0F11;
   display: flex;
   margin-bottom: 24px;
+
+  @media (min-width: 640px) {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+  }
 }
 .phone_slider .swiper-button-next {
   background-image: url(./img/Slider-Button-Default-right.svg);
