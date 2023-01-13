@@ -2,37 +2,41 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import './PhonePagePhotoBlock.scss';
 
-import PhoneZagluwkaFirst from '../../img/Phone_zagluwka_1.jpg';
-import PhoneZagluwkaSecond from '../../img/Phone_zagluwka_2.jpg';
-import PhoneZagluwkaThird from '../../img/Phone_zagluwka_3.jpg';
-import PhoneZagluwkaFourth from '../../img/Phone_zagluwka_4.png';
-import PhoneZagluwkaFifth from '../../img/Phone_zagluwka_5.png';
+// import PhoneZagluwkaFirst from '../../img/Phone_zagluwka_1.jpg';
+// import PhoneZagluwkaSecond from '../../img/Phone_zagluwka_2.jpg';
+// import PhoneZagluwkaThird from '../../img/Phone_zagluwka_3.jpg';
+// import PhoneZagluwkaFourth from '../../img/Phone_zagluwka_4.png';
+// import PhoneZagluwkaFifth from '../../img/Phone_zagluwka_5.png';
 
-const PhonePhoto = [
-  {
-    id: 1,
-    image: PhoneZagluwkaFirst,
-  },
-  {
-    id: 2,
-    image: PhoneZagluwkaSecond,
-  },
-  {
-    id: 3,
-    image: PhoneZagluwkaThird,
-  },
-  {
-    id: 4,
-    image: PhoneZagluwkaFourth,
-  },
-  {
-    id: 5,
-    image: PhoneZagluwkaFifth,
-  },
-];
+// const PhonePhoto = [
+//   {
+//     id: 1,
+//     image: PhoneZagluwkaFirst,
+//   },
+//   {
+//     id: 2,
+//     image: PhoneZagluwkaSecond,
+//   },
+//   {
+//     id: 3,
+//     image: PhoneZagluwkaThird,
+//   },
+//   {
+//     id: 4,
+//     image: PhoneZagluwkaFourth,
+//   },
+//   {
+//     id: 5,
+//     image: PhoneZagluwkaFifth,
+//   },
+// ];
 
-export const PhonePagePhotoBlock: React.FC = () => {
-  const [activePhoto, setActivePhoto] = useState(PhonePhoto[0].image);
+interface Props {
+  images: string[],
+}
+
+export const PhonePagePhotoBlock: React.FC<Props> = ({ images }) => {
+  const [activePhoto, setActivePhoto] = useState(images[0]);
 
   return (
   // <div className="item--gallery">
@@ -59,7 +63,7 @@ export const PhonePagePhotoBlock: React.FC = () => {
       </div>
 
       <div className='items--gallery-small'>
-        {PhonePhoto.map(phone => (
+        {images.map(image => (
           // <div
           //   key={phone.id}
             // className={classNames('photo__block__secondary__container',
@@ -68,13 +72,13 @@ export const PhonePagePhotoBlock: React.FC = () => {
           //   onClick={() => setActivePhoto(phone.image)}
           // >
             <img
-              src={phone.image}
+              src={image}
               alt="secondary-photo"
-              key={phone.id}
+              key={image}
               className={classNames('photo-secondary',
-                { 'photo-secondary-active': phone.image === activePhoto })
+                { 'photo-secondary-active': image === activePhoto })
               }
-              onClick={() => setActivePhoto(phone.image)}
+              onClick={() => setActivePhoto(image)}
             />
           // </div>
         ))}
