@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './ItemPage.scss';
-import { FullPhone } from '../../types/Phone';
+import { FullPhone, Phone } from '../../types/Phone';
 import { getOnePhone, getNewPhones } from '../../api/phones';
 // import { PhoneCard } from '../../components/PhoneCard';
 import { ProductsSlider } from '../../components/ProdutsSlider';
