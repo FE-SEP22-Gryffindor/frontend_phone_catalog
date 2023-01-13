@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend_phone_catalog/static/css/main.f84b7aa7.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.fd4664d0.js",
+    "main.css": "/frontend_phone_catalog/static/css/main.f3a1f31a.css",
+    "main.js": "/frontend_phone_catalog/static/js/main.1b0f693e.js",
     "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.ccaf7a234c9d096c90d06573cdbddc94.svg",
     "static/media/ap4_1100.jpg": "/frontend_phone_catalog/static/media/ap4_1100.e0bb1516ed0e897ca4a4.jpg",
     "static/media/ap2_1100.jpg": "/frontend_phone_catalog/static/media/ap2_1100.44d47766eb568d503d46.jpg",
@@ -33,11 +33,11 @@
     "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.b87d883446f750defdba.svg",
     "static/media/Minus.svg": "/frontend_phone_catalog/static/media/Minus.4b7c4fa33c66c0b35185058bd5da5567.svg",
     "static/media/MinusActive.svg": "/frontend_phone_catalog/static/media/MinusActive.6147cb5db4c975f91de08b377dc8a814.svg",
-    "main.f84b7aa7.css.map": "/frontend_phone_catalog/static/css/main.f84b7aa7.css.map",
-    "main.fd4664d0.js.map": "/frontend_phone_catalog/static/js/main.fd4664d0.js.map"
+    "main.f3a1f31a.css.map": "/frontend_phone_catalog/static/css/main.f3a1f31a.css.map",
+    "main.1b0f693e.js.map": "/frontend_phone_catalog/static/js/main.1b0f693e.js.map"
   },
   "entrypoints": [
-    "static/css/main.f84b7aa7.css",
-    "static/js/main.fd4664d0.js"
+    "static/css/main.f3a1f31a.css",
+    "static/js/main.1b0f693e.js"
   ]
 }
