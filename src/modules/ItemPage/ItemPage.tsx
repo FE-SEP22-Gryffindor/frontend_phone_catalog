@@ -2,28 +2,25 @@ import React, { useCallback, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './ItemPage.scss';
 import { FullPhone } from '../../types/Phone';
-import { getOnePhone } from '../../api/phones';
-import { PhoneCard } from '../../components/PhoneCard';
+import { getOnePhone, getNewPhones } from '../../api/phones';
+// import { PhoneCard } from '../../components/PhoneCard';
+import { ProductsSlider } from '../../components/ProdutsSlider';
 import { PhonePagePhotoBlock } from '../../components/PhonePagePhotoBlock';
 import { ColorBlock } from '../../components/ColorBlock';
 import { CapacityBlock } from '../../components/CapacityBlock';
 
 export const ItemPage = () => {
-  // const [phones, setPhones] = useState<Phone[]>([]);
-  //
-  // const loadPhones = useCallback(async() => {
-  //   try {
-  //     const res = await getPhones(1, 32);
-  //
-  //     setPhones(await res.items);
-  //   } catch {
-  //     throw new Error('Error loading phones');
-  //   }
-  // }, []);
-  //
-  // useEffect(() => {
-  //   loadPhones();
-  // }, []);
+  const [newPhones, setNewPhones] = useState<Phone[]>([]);
+
+  const loadNewPhones = useCallback(async() => {
+    try {
+      const res = await getNewPhones();
+
+      setNewPhones(await res.items);
+    } catch {
+      throw new Error('Error loading new phones');
+    }
+  }, []);
 
   const { itemSlug } = useParams();
 
@@ -45,6 +42,7 @@ export const ItemPage = () => {
 
   useEffect(() => {
     loadPhone();
+    loadNewPhones();
   }, []);
 
   if (!item) {
@@ -137,27 +135,10 @@ export const ItemPage = () => {
           </div>
         </div>
         </div>
-
-        <div className="related-items">
-          <div className="related-items-header">
-            <h2>You may also like</h2>
-            <span className="related-items-navigation">
-              <a className="pagination__link pagination__link-arrow">
-                {'<'}
-              </a>
-              <a className="pagination__link pagination__link-arrow">
-                {'>'}
-              </a>
-            </span>
-          </div>
-          <div className="related-items-carusel">
-            <PhoneCard phone={item} />
-            <PhoneCard phone={item} />
-            <PhoneCard phone={item} />
-            <PhoneCard phone={item} />
-            {/* <PhoneCard phone={foundItem} /> */}
-          </div>
-        </div>
+        <ProductsSlider
+          title="Related phones"
+          products={newPhones}
+        />
       </div>
     </div>
   );

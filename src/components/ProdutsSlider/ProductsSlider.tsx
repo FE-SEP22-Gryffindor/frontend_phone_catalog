@@ -24,9 +24,31 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
           <Swiper
             modules={[Navigation]}
             spaceBetween={16}
-            slidesPerView={4}
+            // slidesPerView={4}
             navigation={true}
             className="phone_slider"
+            breakpoints={{
+              // when window width is >= 640px
+              640: {
+                width: 640,
+                slidesPerView: 3,
+              },
+              // when window width is >= 768px
+              768: {
+                width: 768,
+                slidesPerView: 3,
+              },
+
+              910: {
+                width: 910,
+                slidesPerView: 3,
+              },
+
+              1200: {
+                width: 1200,
+                slidesPerView: 4,
+              },
+            }}
           >
 
             <span
