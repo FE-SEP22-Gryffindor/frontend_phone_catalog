@@ -2,14 +2,26 @@ import React, { useCallback, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './ItemPage.scss';
 import { Phone } from '../../types/Phone';
-import { getPhones } from '../../api/phones';
-import { PhoneCard } from '../../components/PhoneCard';
+import { getPhones, getNewPhones } from '../../api/phones';
+// import { PhoneCard } from '../../components/PhoneCard';
+import { ProductsSlider } from '../../components/ProdutsSlider';
 import { PhonePagePhotoBlock } from '../../components/PhonePagePhotoBlock';
 import { ColorBlock } from '../../components/ColorBlock';
 import { CapacityBlock } from '../../components/CapacityBlock';
 
 export const ItemPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
+  const [newPhones, setNewPhones] = useState<Phone[]>([]);
+
+  const loadNewPhones = useCallback(async() => {
+    try {
+      const res = await getNewPhones();
+
+      setNewPhones(await res.items);
+    } catch {
+      throw new Error('Error loading new phones');
+    }
+  }, []);
 
   const loadPhones = useCallback(async() => {
     try {
@@ -23,6 +35,7 @@ export const ItemPage = () => {
 
   useEffect(() => {
     loadPhones();
+    loadNewPhones();
   }, []);
 
   const { itemSlug } = useParams();
@@ -148,27 +161,10 @@ export const ItemPage = () => {
           </div>
         </div>
         </div>
-
-        <div className="related-items">
-          <div className="related-items-header">
-            <h2>You may also like</h2>
-            <span className="related-items-navigation">
-              <a className="pagination__link pagination__link-arrow">
-                {'<'}
-              </a>
-              <a className="pagination__link pagination__link-arrow">
-                {'>'}
-              </a>
-            </span>
-          </div>
-          <div className="related-items-carusel">
-            <PhoneCard phone={foundItem} />
-            <PhoneCard phone={foundItem} />
-            <PhoneCard phone={foundItem} />
-            <PhoneCard phone={foundItem} />
-            {/* <PhoneCard phone={foundItem} /> */}
-          </div>
-        </div>
+        <ProductsSlider
+          title="Related phones"
+          products={newPhones}
+        />
       </div>
     </div>
   );
