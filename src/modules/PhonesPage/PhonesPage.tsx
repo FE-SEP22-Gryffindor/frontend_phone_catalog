@@ -6,11 +6,12 @@ import { Pagination } from '../../components/Pagination';
 import { Phone } from '../../types/Phone';
 import { PhoneCard } from '../../components/PhoneCard';
 import { Loader } from '../../components/Loader';
+import { Link } from 'react-router-dom';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [perPage, setPerPage] = useState(2);
+  const [perPage, setPerPage] = useState(16);
   const [totalPhonesCount, setTotalPhonesCount] = useState(0);
 
   const loadPhones = useCallback(async() => {
@@ -48,7 +49,7 @@ export const PhonesPage = () => {
         ? (
           <>
             <div className="breadcrumbs">
-              <a className="icon icon--home"></a>
+              <Link to="/" className="icon icon--home"></Link>
               <a className="">Phones</a>
             </div>
             <div>
