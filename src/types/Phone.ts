@@ -1,15 +1,15 @@
-interface Specs {
-  screen: string;
-  resolution: string;
-  processor: string;
-  ram: string;
-  memory: string;
-  camera: string;
-  zoom: string;
-  cell: string;
-}
+// interface Specs {
+//   screen: string;
+//   resolution: string;
+//   processor: string;
+//   ram: string;
+//   memory: string;
+//   camera: string;
+//   zoom: string;
+//   cell: string;
+// }
 
-interface About {
+interface Abouts {
   header: string;
   description: string;
 }
@@ -21,10 +21,17 @@ export interface FullPhone {
   discountPrice: number;
   color: string;
   year: number;
-  specs: Specs;
-  about: About[];
+  screen: string;
+  resolution: string;
+  processor: string;
+  ram: string;
+  memory: string;
+  camera: string;
+  zoom: string;
+  cell: string;
   image: string;
   additionalImages: string[];
+  abouts: Abouts[];
 }
 
 export interface Phone {

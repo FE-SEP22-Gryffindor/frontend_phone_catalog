@@ -1,5 +1,6 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+/* eslint-disable no-shadow */
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss';
 import { PhonesPage } from './modules/PhonesPage';
 import { Footer } from './components/Footer';
@@ -10,6 +11,12 @@ import { ItemPage } from './modules/ItemPage';
 import { HomePage } from './modules/HomePage';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div className="App">
       <Header />
