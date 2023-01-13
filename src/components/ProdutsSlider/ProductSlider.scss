@@ -68,3 +68,9 @@
 .swiper-slide:first-child {
   padding-left: 8px;
 }
+
+.swiper-slide {
+  /* can't replace library swipe styles */
+  margin-right: 0px !important;
+  /* can't replace library swipe styles */
+}

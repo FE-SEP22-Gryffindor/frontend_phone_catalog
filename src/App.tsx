@@ -9,6 +9,7 @@ import { CartPage } from './modules/CartPage';
 import { Header } from './components/Header';
 import { ItemPage } from './modules/ItemPage';
 import { HomePage } from './modules/HomePage';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const location = useLocation();

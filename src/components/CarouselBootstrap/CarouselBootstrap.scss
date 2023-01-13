@@ -1,0 +1,56 @@
+.carousel-inner {
+
+  @media (min-width: 640px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+
+  @media (min-width: 1200px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+.home-corusel .carousel-control-next, .home-corusel .carousel-control-prev {
+  width: 3%;
+  border: 1px solid #B4BDC3;
+  border-radius: 15px;
+  background: #fff;
+  opacity: 1;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.home-corusel .carousel-control-prev-icon {
+  background-image: url(./Chevron-Arrow-Left.svg);
+}
+
+.home-corusel .carousel-control-next-icon {
+  background-image: url(./Chevron-Arrow-Right.svg);
+}
+.home-corusel {
+  margin-bottom: 50px;
+
+  @media (max-width: 480px) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.home-corusel .w-100 {
+  @media (max-width: 480px) {
+    height: 320px;
+  }
+}
+.home-corusel .carousel-indicators {
+  bottom: -50px;
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.home-corusel .carousel-indicators [data-bs-target] {
+  background-color: #000;
+}

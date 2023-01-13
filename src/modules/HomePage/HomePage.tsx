@@ -5,6 +5,9 @@ import { CategoriesSection } from '../../components/CategoriesSection';
 import './HomePage.scss';
 import { getDiscountPhones, getNewPhones } from '../../api/phones';
 import { Phone } from '../../types/Phone';
+import {
+  CarouselBootstrap,
+} from '../../components/CarouselBootstrap/CarouselBootstrap';
 
 export const HomePage = () => {
   const [newPhones, setNewPhones] = useState<Phone[]>([]);
@@ -38,7 +41,8 @@ export const HomePage = () => {
   return (
     <div className="home">
       <div>
-        <Carousel />
+        {/* <Carousel /> */}
+        <CarouselBootstrap />
 
         <ProductsSlider
           title="Brand new models"
