@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import logo from '../../img/Logo.svg';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
@@ -15,13 +16,13 @@ export const Footer: React.FC = () => {
           github
         </a>
 
-        <a href="/" className="footer__nav__link">
+        <Link to="/tablets" className="footer__nav__link">
           contacts
-        </a>
+        </Link>
 
-        <a href="/" className="footer__nav__link">
+        <Link to="/tablets" className="footer__nav__link">
           rights
-        </a>
+        </Link>
       </div>
 
       <div className="footer__topscroll">

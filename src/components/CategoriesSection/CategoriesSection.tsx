@@ -14,18 +14,18 @@ export const CategoriesSection: React.FC = () => {
           <div className="categories-section-image">
             <img src={categoryPhoneImage} alt="" />
             <figcaption>Mobile phones</figcaption>
-            <p>95 models</p>
+            <p>30 models</p>
           </div>
         </Link>
 
         <div className="categories-section-image">
           <img src={categoryTabImage} alt="" />
-          <figcaption>Mobile phones</figcaption>
-          <p>95 models</p>
+          <figcaption>Tablets</figcaption>
+          <p>0 models</p>
         </div><div className="categories-section-image">
           <img src={categoryTabAccessories} alt="" />
-          <figcaption>Mobile phones</figcaption>
-          <p>95 models</p>
+          <figcaption>Accessories</figcaption>
+          <p>0 models</p>
         </div>
       </section>
     </>
