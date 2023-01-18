@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/frontend_phone_catalog/static/css/main.b6c0bfc5.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.5546348f.js",
+    "main.css": "/frontend_phone_catalog/static/css/main.e908c2ec.css",
+    "main.js": "/frontend_phone_catalog/static/js/main.be1c7208.js",
     "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.ccaf7a234c9d096c90d06573cdbddc94.svg",
-    "static/media/ap4_1100.jpg": "/frontend_phone_catalog/static/media/ap4_1100.e0bb1516ed0e897ca4a4.jpg",
-    "static/media/ap2_1100.jpg": "/frontend_phone_catalog/static/media/ap2_1100.44d47766eb568d503d46.jpg",
+    "static/media/slider-2.png": "/frontend_phone_catalog/static/media/slider-2.b8cd0b321081cfcb2221.png",
+    "static/media/slider-1.png": "/frontend_phone_catalog/static/media/slider-1.16856bab31719947eb41.png",
     "static/media/Category-accessories.png": "/frontend_phone_catalog/static/media/Category-accessories.23f1df3dd1b1487478b1.png",
     "static/media/Category-tab.png": "/frontend_phone_catalog/static/media/Category-tab.5d2552477f5711ef6383.png",
-    "static/media/apple1_700.jpg": "/frontend_phone_catalog/static/media/apple1_700.49010722551b0c301474.jpg",
     "static/media/Category-phone.png": "/frontend_phone_catalog/static/media/Category-phone.e96d8161cbcaec9492ae.png",
-    "static/media/apple3_700.jpg": "/frontend_phone_catalog/static/media/apple3_700.df2a95fd13698b8033ad.jpg",
     "static/media/Mont-SemiBold.woff2": "/frontend_phone_catalog/static/media/Mont-SemiBold.95ab478c134f9e9da545.woff2",
     "static/media/Mont-Regular.woff2": "/frontend_phone_catalog/static/media/Mont-Regular.efd082cbd3e10b7e9c88.woff2",
     "static/media/Mont-Bold.woff2": "/frontend_phone_catalog/static/media/Mont-Bold.8b7a4e0626328dd44205.woff2",
@@ -26,18 +24,16 @@
     "static/media/footerButton.svg": "/frontend_phone_catalog/static/media/footerButton.411b5a1b4b9eda1837e8.svg",
     "static/media/Slider-Button-Default-right.svg": "/frontend_phone_catalog/static/media/Slider-Button-Default-right.0984337b8868e216de2e.svg",
     "static/media/Slider-Button-Hover-right.svg": "/frontend_phone_catalog/static/media/Slider-Button-Hover-right.4132e7acd513d491a10e.svg",
-    "static/media/RightArrowHover.svg": "/frontend_phone_catalog/static/media/RightArrowHover.a96d198de7ec6e137ad0.svg",
-    "static/media/LeftArrowHover.svg": "/frontend_phone_catalog/static/media/LeftArrowHover.f8da456077b13aabd737.svg",
     "static/media/icon-chevron-arrow-right.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-right.4a6dcc3ba009852b1fa0.svg",
     "static/media/icon-chevron.svg": "/frontend_phone_catalog/static/media/icon-chevron.e028d3889646e0b5e56c.svg",
     "static/media/icon-chevron-arrow-down.svg": "/frontend_phone_catalog/static/media/icon-chevron-arrow-down.b87d883446f750defdba.svg",
     "static/media/Minus.svg": "/frontend_phone_catalog/static/media/Minus.4b7c4fa33c66c0b35185058bd5da5567.svg",
     "static/media/MinusActive.svg": "/frontend_phone_catalog/static/media/MinusActive.6147cb5db4c975f91de08b377dc8a814.svg",
-    "main.b6c0bfc5.css.map": "/frontend_phone_catalog/static/css/main.b6c0bfc5.css.map",
-    "main.5546348f.js.map": "/frontend_phone_catalog/static/js/main.5546348f.js.map"
+    "main.e908c2ec.css.map": "/frontend_phone_catalog/static/css/main.e908c2ec.css.map",
+    "main.be1c7208.js.map": "/frontend_phone_catalog/static/js/main.be1c7208.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6c0bfc5.css",
-    "static/js/main.5546348f.js"
+    "static/css/main.e908c2ec.css",
+    "static/js/main.be1c7208.js"
   ]
 }
