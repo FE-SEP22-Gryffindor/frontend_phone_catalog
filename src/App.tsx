@@ -11,6 +11,7 @@ import { ItemPage } from './modules/ItemPage';
 import { HomePage } from './modules/HomePage';
 import { TabletsPage } from './modules/TabletsPage';
 import { AccessoriesPage } from './modules/AccessoriesPage';
+import { FavoritesPage } from './modules/FavoritesPage';
 
 function App() {
   // const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
           <Route path="phones" element={<PhonesPage />} />
           <Route path="tablets" element={<TabletsPage />} />
           <Route path="accessories" element={<AccessoriesPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
           <Route path="phones/:itemSlug" element={<ItemPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />

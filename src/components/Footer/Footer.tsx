@@ -12,6 +12,7 @@ export const Footer: React.FC = () => {
         <a
           href="https://github.com/FE-SEP22-Gryffindor"
           className="footer__nav__link"
+          target="_blank" rel="noreferrer"
         >
           github
         </a>
