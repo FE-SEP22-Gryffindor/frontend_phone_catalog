@@ -54,17 +54,45 @@
 
 .swiper-slide {
   padding-bottom: 12px;
-  // max-width: 212px;
+  max-width: 212px;
 
   @media (min-width: 640px) {
-    // max-width: 237px;
+    max-width: 237px;
   }
 
   @media (min-width: 1200px) {
-    // max-width: 25%;
+    max-width: 25%;
   }
 }
 
 .swiper-slide:first-child {
   padding-left: 8px;
+}
+
+.phone_slider {
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .phone_slider {
+    width: 640px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .phone_slider {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 910px) {
+  .phone_slider {
+    width: 910px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .phone_slider {
+    width: 1200px;
+  }
 }

@@ -9,6 +9,8 @@ import { CartPage } from './modules/CartPage';
 import { Header } from './components/Header';
 import { ItemPage } from './modules/ItemPage';
 import { HomePage } from './modules/HomePage';
+import { TabletsPage } from './modules/TabletsPage';
+import { AccessoriesPage } from './modules/AccessoriesPage';
 
 function App() {
   // const location = useLocation();
@@ -24,6 +26,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="phones" element={<PhonesPage />} />
+          <Route path="tablets" element={<TabletsPage />} />
+          <Route path="accessories" element={<AccessoriesPage />} />
           <Route path="phones/:itemSlug" element={<ItemPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
