@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/frontend_phone_catalog/static/css/main.e908c2ec.css",
-    "main.js": "/frontend_phone_catalog/static/js/main.be1c7208.js",
+    "main.js": "/frontend_phone_catalog/static/js/main.811b34a1.js",
     "static/media/Logo.svg": "/frontend_phone_catalog/static/media/Logo.ccaf7a234c9d096c90d06573cdbddc94.svg",
     "static/media/slider-2.png": "/frontend_phone_catalog/static/media/slider-2.b8cd0b321081cfcb2221.png",
     "static/media/slider-1.png": "/frontend_phone_catalog/static/media/slider-1.16856bab31719947eb41.png",
@@ -30,10 +30,10 @@
     "static/media/Minus.svg": "/frontend_phone_catalog/static/media/Minus.4b7c4fa33c66c0b35185058bd5da5567.svg",
     "static/media/MinusActive.svg": "/frontend_phone_catalog/static/media/MinusActive.6147cb5db4c975f91de08b377dc8a814.svg",
     "main.e908c2ec.css.map": "/frontend_phone_catalog/static/css/main.e908c2ec.css.map",
-    "main.be1c7208.js.map": "/frontend_phone_catalog/static/js/main.be1c7208.js.map"
+    "main.811b34a1.js.map": "/frontend_phone_catalog/static/js/main.811b34a1.js.map"
   },
   "entrypoints": [
     "static/css/main.e908c2ec.css",
-    "static/js/main.be1c7208.js"
+    "static/js/main.811b34a1.js"
   ]
 }
