@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Carousel } from '../../components/Carousel/Carousel';
+// import { Carousel } from '../../components/Carousel/Carousel';
 import { ProductsSlider } from '../../components/ProdutsSlider';
+import { Slider } from '../../components/Slider';
 import { CategoriesSection } from '../../components/CategoriesSection';
 import './HomePage.scss';
 import { getDiscountPhones, getNewPhones } from '../../api/phones';
@@ -38,7 +39,8 @@ export const HomePage = () => {
   return (
     <div className="home">
       <div>
-        <Carousel />
+        {/* <Carousel /> */}
+        <Slider />
 
         <ProductsSlider
           title="Brand new models"
